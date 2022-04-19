@@ -24,7 +24,7 @@ source ../mv_test1/bin/activate
 #python gen_datasets.py --output-mode multiple --mode all 
 
 #model training
-#python train.py --ds-name datasets/single_faces_cropped --log-interval 1 --epochs 1 --experiment-name finetuning-classifier-on-paintings-temp
+python train.py --root kaokore --log-interval 1 --epochs 10 --arch vgg --label status
 
 #kaokore dataset generation and analysis
-python3 dataset.py --root "kaokore" --label gender --version protov0
+#python dataset.py --root "kaokore" --label gender --version protov0.1

@@ -2,7 +2,7 @@ import argparse
 from torch.optim import Adam, SGD
 from models import *
 from utils import *
-from dataset import Kaokore
+from dataset import Kaokore, gen_val_transforms, gen_train_transforms
 
 import warnings
 from argparse import Namespace
@@ -18,13 +18,14 @@ import torch
 from torch.utils.data import DataLoader, Subset
 from torch.multiprocessing import cpu_count
 from torch.optim import RMSprop
+from torch.optim.lr_scheduler import LambdaLR
 
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 
 from models import FinetunedModel
 from utils import *
-from ds_augmentations import AugDatasetWrapper
+#from ds_augmentations import AugDatasetWrapper
 import pandas as pd
 
 
@@ -34,23 +35,28 @@ class FinetunedClassifierModule(pl.LightningModule):
         super().__init__()
         hparams = Namespace(**hparams) if isinstance(hparams, dict) else hparams
         self.hparam = hparams
-        self.model = FinetunedModel(hparams.n_classes, hparams.freeze_base,
-                                    self.hparam.hidden_size)
-        self.loss = nn.BCEWithLogitsLoss()
+        self.model = setup_base_models(hparams.arch, hparams.n_classes)
+        self.loss = nn.CrossEntropyLoss()
         #self.device = device
 
 
     def total_steps(self):
         return len(self.train_dataloader()) // self.hparam.epochs
 
+    def get_transforms(self, split):
+        return gen_val_transforms(self.hparam)
+        #if split=='train':
+        #    return gen_train_transforms(self.hparam)
+        #else:
+        #    return gen_val_transforms(self.hparam)
+
+
     def get_dataloader(self, split):
-        ds = ImageFolder(self.hparam.ds_name)  # change this for the datasets
-        if split == 'train':
-            split_ds = Subset(ds, self.hparam.train_ids)
-        elif split == 'test':
-            split_ds = Subset(ds, self.hparam.validation_ids)
+
+        split_ds = Kaokore(self.hparam, split, self.hparam.label, transform=self.get_transforms(split))
+
         return DataLoader(
-            AugDatasetWrapper(split_ds, target_size=self.hparam.img_size),
+            split_ds,
             batch_size=self.hparam.batch_size,
             shuffle=split == "train",
             num_workers=cpu_count(),
@@ -60,7 +66,7 @@ class FinetunedClassifierModule(pl.LightningModule):
         return self.get_dataloader("train")
 
     def val_dataloader(self):
-        return self.get_dataloader("test")
+        return self.get_dataloader("dev")
 
     def test_dataloader(self):
         return self.get_dataloader("test")
@@ -83,7 +89,7 @@ class FinetunedClassifierModule(pl.LightningModule):
         return self.step(batch, "train")
 
     def validation_step(self, batch, batch_idx):
-        return self.step(batch, "val")
+        return self.step(batch, "dev")
 
     def validation_end(self, outputs):
         
@@ -93,10 +99,20 @@ class FinetunedClassifierModule(pl.LightningModule):
             loss = torch.stack([x["val_loss"] for x in outputs]).mean()
             return {"val_loss": loss, "log": {"val_loss": loss}}
 
+    def choose_optimizer(self, params):
+        choices = ['sgd', 'adam']
+        if self.hparam.optimizer=='sgd':
+            return SGD(params, self.hparam.lr, self.hparam.momentum, weight_decay=self.hparam.wd)
+        elif self.hparam.optimizer=='adam':
+            return Adam(params, self.hparam.lr, weight_decay=self.hparam.wd)
+
+    
     def configure_optimizers(self):
-        optimizer = optimizer(self.model.parameters(), self.hparam)
+        optimizer = self.choose_optimizer(self.model.parameters())
+        lambda_sched = lambda epoch: lr_scheduler(epoch, self.hparam)
         schedulers = [
-            CosineAnnealingLR(optimizer, self.hparam.epochs)
+            #CosineAnnealingLR(optimizer, self.hparam.epochs),
+            LambdaLR(optimizer, lambda_sched)
         ] if self.hparam.epochs > 1 else []
         return [optimizer], schedulers
 
@@ -141,24 +157,36 @@ class LogPredictionsCallback(Callback):
 
 
 def train(args, device):
-    train_idx, val_idx, n_classes,classes_names = get_train_val_split(args, get_n_classes = True)
+    #train_idx, val_idx, n_classes,classes_names = get_train_val_split(args, get_n_classes = True)
+    gen_to_cls = {'male': 0, 'female': 1} if args.label == 'gender' else {'noble': 0, 'warrior': 1, 'incarnation': 2, 'commoner': 3}
 
     # using the suggested lr
     hparams_cls = Namespace(
         arch=args.arch,
+
         lr=args.lr,
+        momentum=args.momentum,
+        wd=args.wd,
+        optimizer=args.optimizer,
+        lr_adjust_freq=args.lr_adjust_freq,
+
         epochs=args.epochs,
+
+        label=args.label,
         batch_size=args.batch_size,
-        n_classes=n_classes,
-        class_names=classes_names,
-        train_ids=train_idx,
-        validation_ids=val_idx,
+        root=args.root,
+        image_size=(args.image_size, args.image_size),
+        n_classes=len(gen_to_cls),
+        class_names=gen_to_cls.keys(),
+
         hidden_size=args.hidden_size,
         freeze_base=args.freeze_base,
-        img_size=(args.image_size, args.image_size),
+        
         device = device,
-        ds_name=args.ds_name,
     )
+
+    df = pd.read_csv(f'{args.root}/labels.csv')
+    image_dir = f'{args.root}/images_256/'
 
     module = FinetunedClassifierModule(hparams_cls)
 
@@ -178,47 +206,12 @@ def train(args, device):
                          callbacks= [LogPredictionsCallback()],
                          log_every_n_steps=args.log_interval)  # need the last arg to log the training iterations per step
 
+    #print(next(iter(module.train_dataloader())))
     trainer.fit(module)
 
     print('finished training')
     
-
-
-if __name__ == '__main__':
-
-    warnings.filterwarnings("ignore", "(Possibly )?corrupt EXIF data", UserWarning)
-
-    #add an option to do hyperparameter search (the lr finetuning bit)
-    # Training settings
-    parser = argparse.ArgumentParser(description='Paintings Classifier')
-
-    parser.add_argument('--ds-name', type=str, default='datasets/paintings', metavar='S',
-                        help='Name of the dataset to train and validate on (default: datasets/paintings)')
-    parser.add_argument('--image-size', type=int, default=512, metavar='N',
-                        help='input image size for model training and inference (default: 512)')
-
-    parser.add_argument('--batch-size', type=int, default=16, metavar='N',
-                        help='input batch size for training (default: 16)')
-    parser.add_argument('--test-batch-size', type=int, default=16, metavar='N',
-                        help='input batch size for testing (default: 16)')
-    parser.add_argument('--epochs', type=int, default=10, metavar='N',
-                        help='number of epochs to train (default: 10)')
-    parser.add_argument('--lr', type=float, default=1e-3, metavar='LR',
-                        help='learning rate (default: 1e-3)')
     
-
-    
-    parser.add_argument('--num-workers', type=int, default=4, metavar='N',
-                        help='Number of workers (default: 4)')
-
-    
-
-    
-
-    args = parser.parse_args()
-    
-
-
 if __name__=='__main__':
 
     #modify this for possible architectures:
@@ -229,6 +222,7 @@ if __name__=='__main__':
     parser.add_argument('--arch', type=str, choices=model_choices, required=True)
     parser.add_argument('--use-cuda', action='store_true', default=True,
                         help='enables/disables CUDA training')
+    
     parser.add_argument('--label', type=str, choices=['gender', 'status'], required=True)
     parser.add_argument('--root', type=str, required=True)
 
@@ -253,9 +247,9 @@ if __name__=='__main__':
     parser.add_argument('--save-model', action='store_true', default=False,
                         help='For Saving the current Model')
 
-    parser.add_argument('--experiment-name', type=str, default = 'finetuning-classifier-on-paintings',
+    parser.add_argument('--experiment-name', type=str, default = 'finetuning-classifier-on-kaokore',
                         help='Model experiment name')
-    parser.add_argument('--ver-name', type=str, default = 'paintings',
+    parser.add_argument('--ver-name', type=str, default = 'proto_v0',
                         help="Model experiment's version/run name")
 
     args = parser.parse_args()

@@ -40,8 +40,8 @@ def load_labels(path):
 
 class Kaokore(Dataset):
 
-    def __init__(self, root, split='train', category='gender', transform=None):
-        self.root = root = os.path.expanduser(root)
+    def __init__(self, args, split='train', category='gender', transform=None):
+        self.root = os.path.expanduser(args.root)
 
         self.split = verify_str_arg(split, ['train', 'dev', 'test'])
 
@@ -50,7 +50,7 @@ class Kaokore(Dataset):
         self.gen_to_cls = {'male': 0, 'female': 1} if args.label == 'gender' else {'noble': 0, 'warrior': 1, 'incarnation': 2, 'commoner': 3}
         self.cls_to_gen = {v:k for k,v in self.gen_to_cls.items()}
 
-        labels = load_labels(os.path.join(root, 'labels.csv'))
+        labels = load_labels(os.path.join(args.root, 'labels.csv'))
         self.entries = [
             (label_entry['image'], int(label_entry[category]))
             for label_entry in labels
@@ -110,8 +110,30 @@ def color_hist(y, lbls, dataset, workers):
         w_img = wandb.Image('misc/'+class_name+'_color_hist.jpg', caption='Color Histogram')
         wandb.log({'color_hist': w_img})
 
-    
 
+def gen_val_transforms(args):
+    return transforms.Compose([transforms.ToTensor(),
+        transforms.Normalize([1.,1.,1.],[0.5,0.5,0.5]),
+        transforms.Resize((args.image_size, args.image_size))])
+
+
+def gen_train_transforms(args):
+    return transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize([1.,1.,1.],[0.5,0.5,0.5]),
+        transforms.Resize((args.image_size, args.image_size)),
+        transforms.RandomHorizontalFlip(p=0.5),
+        transforms.RandomPerspective(distortion_scale=0.6, p=0.5),
+        transforms.RandomApply(transforms=[
+            transforms.RandomVerticalFlip(p=0.5),
+            transforms.RandomAdjustSharpness(sharpness_factor=2),
+            transforms.RandomRotation(degrees=(0, 180)),
+            transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5))
+            ], p=0.5)
+
+        ]
+        
+    )
 
 #dataset analysis
 if __name__=='__main__':
@@ -145,12 +167,9 @@ if __name__=='__main__':
     df = pd.read_csv(f'{args.root}/labels.csv')
     image_dir = f'{args.root}/images_256/'
 
-    train_transforms = transforms.Compose([transforms.ToTensor(),
-     transforms.Resize((args.image_size, args.image_size))])
-
-    train_ds = Kaokore(args.root, 'train', args.label, transform=train_transforms)
-    val_ds = Kaokore(args.root, 'dev', args.label)
-    test_ds = Kaokore(args.root, 'test', args.label)
+    train_ds = Kaokore(args, 'train', args.label, transform=gen_train_transforms(args))
+    val_ds = Kaokore(args, 'dev', args.label, transform=gen_val_transforms(args))
+    test_ds = Kaokore(args, 'test', args.label, transform=gen_val_transforms(args))
 
     print('Total images in the train dataset: ',len(train_ds))
     print('Total images in the validation dataset: ',len(val_ds))
