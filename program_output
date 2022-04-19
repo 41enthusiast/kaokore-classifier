@@ -1,0 +1,8 @@
+Total images in the train dataset:  6756
+Total images in the validation dataset:  845
+Total images in the test dataset:  845
+Logging the class frequency
+Logging a sample image grid
+Logging per class color histograms
+Program finished.
+

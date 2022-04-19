@@ -1,0 +1,16 @@
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+2022-04-19 09:38:59.141182: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib:/usr/local/lib
+2022-04-19 09:38:59.141211: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+wandb: wandb version 0.12.14 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/paintings-classifier/wandb/run-20220419_093855-3rh04kng
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run protov
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-dataset-analysis
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-dataset-analysis/runs/3rh04kng
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 1.274 MB of 1.274 MB uploaded (0.000 MB deduped)wandb: \ 1.274 MB of 1.274 MB uploaded (0.000 MB deduped)wandb: | 1.274 MB of 1.274 MB uploaded (0.000 MB deduped)wandb: / 1.274 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: - 1.274 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: \ 1.274 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: | 1.276 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: / 1.276 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: - 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: \ 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: | 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: / 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: - 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: \ 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb: | 1.277 MB of 1.277 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced protov: https://wandb.ai/mridulav/kaokore-dataset-analysis/runs/3rh04kng
+wandb: Synced 5 W&B file(s), 4 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220419_093855-3rh04kng/logs
