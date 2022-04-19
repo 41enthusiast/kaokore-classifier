@@ -41,6 +41,7 @@ class FinetunedModel(nn.Module):
 
 def vgg_model(n_classes, pooling='avg', freeze_base=True):
     model = vgg16(True)
+    
 
     if pooling=='avg':
         for i, layer in model.features.named_children():
@@ -53,7 +54,7 @@ def vgg_model(n_classes, pooling='avg', freeze_base=True):
             param.requires_grad = False
     
     #the modified pretrained model
-    model.classifier[0] = nn.Sequential(
+    model.classifier = nn.Sequential(
             nn.Linear(in_features=model.classifier[0].in_features, out_features=n_classes)
         )
 
@@ -80,9 +81,7 @@ def resnet_model(n_classes, pooling='avg', freeze_base=True):
     model = resnet50(True)
 
     if pooling=='avg':
-        for i, layer in model.features.named_children():
-            if isinstance(layer, torch.nn.MaxPool2d):
-                model.features[int(i)] = nn.AvgPool2d(kernel_size=2, stride=2, padding=0)
+        model.maxpool = nn.AvgPool2d(kernel_size=2, stride=2, padding=0)
 
     if freeze_base:
         print("Freezing embeddings")
@@ -101,9 +100,9 @@ def densenet_model(n_classes, pooling='avg', freeze_base=True):
     model = densenet121(True)
 
     if pooling=='avg':
-        for i, layer in model.features.named_children():
+        for c, (i, layer) in enumerate(model.features.named_children()):
             if isinstance(layer, torch.nn.MaxPool2d):
-                model.features[int(i)] = nn.AvgPool2d(kernel_size=2, stride=2, padding=0)
+                model.features[c] = nn.AvgPool2d(kernel_size=2, stride=2, padding=0)
 
     if freeze_base:
         print("Freezing embeddings")

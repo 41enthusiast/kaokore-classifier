@@ -55,11 +55,14 @@ class FinetunedClassifierModule(pl.LightningModule):
 
         split_ds = Kaokore(self.hparam, split, self.hparam.label, transform=self.get_transforms(split))
 
+        print(split_ds[-1], self.hparam.batch_size, split, cpu_count())
+        #temp = DataLoader(split_ds, batch_size=2, num_workers= 1, shuffle=True)
+        #print('loaded successfully')
         return DataLoader(
             split_ds,
             batch_size=self.hparam.batch_size,
             shuffle=split == "train",
-            num_workers=cpu_count(),
+            num_workers=cpu_count()
             drop_last=False)
 
     def train_dataloader(self):
@@ -206,7 +209,8 @@ def train(args, device):
                          callbacks= [LogPredictionsCallback()],
                          log_every_n_steps=args.log_interval)  # need the last arg to log the training iterations per step
 
-    #print(next(iter(module.train_dataloader())))
+    print(next(iter(module.train_dataloader())))
+    print('Training the model')
     trainer.fit(module)
 
     print('finished training')
@@ -227,7 +231,7 @@ if __name__=='__main__':
     parser.add_argument('--root', type=str, required=True)
 
     parser.add_argument('--image_size', type=int, default=256)
-    parser.add_argument('--batch-size', type=int, default=32)
+    parser.add_argument('--batch-size', type=int, default=16)
     parser.add_argument('--num-workers', type=int, default=4, metavar='N',
                         help='Number of workers (default: 4)')
     parser.add_argument('--epochs', type=int, default=20)

@@ -1,70 +1,29 @@
 wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
-2022-04-19 13:44:33.400328: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib:/usr/local/lib
-2022-04-19 13:44:33.400354: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-04-19 14:32:07.747039: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib:/usr/local/lib
+2022-04-19 14:32:07.747066: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 wandb: wandb version 0.12.14 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.12.11
-wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/wandb/run-20220419_134431-17ueyauk
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/wandb/run-20220419_143201-nmstb7ht
 wandb: Run `wandb offline` to turn off syncing.
 wandb: Syncing run proto_v0
 wandb: ⭐️ View project at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore
-wandb: 🚀 View run at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/17ueyauk
+wandb: 🚀 View run at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/nmstb7ht
 wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
 GPU available: True, used: True
 TPU available: False, using: 0 TPU cores
 IPU available: False, using: 0 IPUs
 HPU available: False, using: 0 HPUs
-LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
-
-  | Name  | Type             | Params
--------------------------------------------
-0 | model | VGG              | 35.7 M
-1 | loss  | CrossEntropyLoss | 0     
--------------------------------------------
-100 K     Trainable params
-35.6 M    Non-trainable params
-35.7 M    Total params
-142.773   Total estimated model params size (MB)
-/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py:487: UserWarning: This DataLoader will create 32 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(_create_warning_msg(
 wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
-wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: | 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: / 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: - 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: \ 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: | 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: / 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb: - 0.014 MB of 0.014 MB uploaded (0.000 MB deduped)wandb:                                                                                
-wandb: Synced proto_v0: https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/17ueyauk
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.002 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: | 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: / 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: | 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: / 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced proto_v0: https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/nmstb7ht
 wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20220419_134431-17ueyauk/logs
+wandb: Find logs at: ./wandb/run-20220419_143201-nmstb7ht/logs
 Traceback (most recent call last):
-  File "train.py", line 261, in <module>
+  File "train.py", line 265, in <module>
     train(args, device)
-  File "train.py", line 210, in train
-    trainer.fit(module)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 771, in fit
-    self._call_and_handle_interrupt(
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 724, in _call_and_handle_interrupt
-    return trainer_fn(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 812, in _fit_impl
-    results = self._run(model, ckpt_path=self.ckpt_path)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1237, in _run
-    results = self._run_stage()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1324, in _run_stage
-    return self._run_train()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1346, in _run_train
-    self._run_sanity_check()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1414, in _run_sanity_check
-    val_loop.run()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 153, in advance
-    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 111, in advance
-    batch = next(data_fetcher)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 184, in __next__
-    return self.fetching_function()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 259, in fetching_function
-    self._fetch_next_batch(self.dataloader_iter)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 273, in _fetch_next_batch
-    batch = next(iterator)
+  File "train.py", line 212, in train
+    print(next(iter(module.train_dataloader())))
   File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
     data = self._next_data()
   File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1224, in _next_data
@@ -102,38 +61,10 @@ TypeError: upsample_bilinear2d() received an invalid combination of arguments - 
 
 
 Traceback (most recent call last):
-  File "train.py", line 261, in <module>
+  File "train.py", line 265, in <module>
     train(args, device)
-  File "train.py", line 210, in train
-    trainer.fit(module)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 771, in fit
-    self._call_and_handle_interrupt(
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 724, in _call_and_handle_interrupt
-    return trainer_fn(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 812, in _fit_impl
-    results = self._run(model, ckpt_path=self.ckpt_path)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1237, in _run
-    results = self._run_stage()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1324, in _run_stage
-    return self._run_train()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1346, in _run_train
-    self._run_sanity_check()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1414, in _run_sanity_check
-    val_loop.run()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 153, in advance
-    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 111, in advance
-    batch = next(data_fetcher)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 184, in __next__
-    return self.fetching_function()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 259, in fetching_function
-    self._fetch_next_batch(self.dataloader_iter)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 273, in _fetch_next_batch
-    batch = next(iterator)
+  File "train.py", line 212, in train
+    print(next(iter(module.train_dataloader())))
   File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
     data = self._next_data()
   File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1224, in _next_data
