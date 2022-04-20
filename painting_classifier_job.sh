@@ -8,8 +8,8 @@
 #SBATCH --job-name=paintings-classifier # Name of the job
 #SBATCH --mem=4G # Request 4Gb of memory
 
-#SBATCH -o program_output
-#SBATCH -e whoopsies
+#SBATCH -o program_output.txt
+#SBATCH -e whoopsies.txt
 
 # Load the global bash profile
 source /etc/profile
@@ -24,7 +24,7 @@ source ../mv_test1/bin/activate
 #python gen_datasets.py --output-mode multiple --mode all 
 
 #model training
-python train.py --root kaokore --log-interval 1 --epochs 10 --arch vgg --label status
+python train.py --root kaokore --log-interval 50 --epochs 20 --batch-size 32 --arch vgg --label status --ver-name proto_v0.2
 
 #kaokore dataset generation and analysis
 #python dataset.py --root "kaokore" --label gender --version protov0.1

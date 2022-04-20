@@ -7,9 +7,9 @@ import torch
 from torch.utils.data import Dataset, DataLoader, Subset
 import argparse
 import numpy as np
-#import lycon
+# import lycon
 import pandas as pd
-#import keras as k
+# import keras as k
 import matplotlib.pyplot as plt
 from torchvision import transforms
 from torchvision.utils import make_grid
@@ -35,7 +35,7 @@ def load_labels(path):
             headers[column_index]: row[column_index]
             for column_index in range(len(row))
         }
-                for row in reader]
+            for row in reader]
 
 
 class Kaokore(Dataset):
@@ -47,8 +47,9 @@ class Kaokore(Dataset):
 
         self.category = verify_str_arg(category, ['gender', 'status'])
 
-        self.gen_to_cls = {'male': 0, 'female': 1} if args.label == 'gender' else {'noble': 0, 'warrior': 1, 'incarnation': 2, 'commoner': 3}
-        self.cls_to_gen = {v:k for k,v in self.gen_to_cls.items()}
+        self.gen_to_cls = {'male': 0, 'female': 1} if args.label == 'gender' else {'noble': 0, 'warrior': 1,
+                                                                                   'incarnation': 2, 'commoner': 3}
+        self.cls_to_gen = {v: k for k, v in self.gen_to_cls.items()}
 
         labels = load_labels(os.path.join(args.root, 'labels.csv'))
         self.entries = [
@@ -75,17 +76,17 @@ class Kaokore(Dataset):
 
 def class_freq_pie(y, paint_labels, cat):
     paint_class_count = torch.bincount(y)
-    plt.pie(paint_class_count, labels = paint_labels, autopct='%1.2f%%')
-    plt.title(cat+' class frequency of the face cropped dataset')
+    plt.pie(paint_class_count, labels=paint_labels, autopct='%1.2f%%')
+    plt.title(cat + ' class frequency of the face cropped dataset')
     plt.savefig('misc/pie_class_freq.jpg')
     plt.clf()
     w_img = wandb.Image('misc/pie_class_freq.jpg', caption='Class Frequency')
-    wandb.log({'class_freq':w_img})
+    wandb.log({'class_freq': w_img})
 
 
 def color_hist(y, lbls, dataset, workers):
-    #get subsets of the dataset classes for the color histogram analysis
-    classes_indices = [(y==i).nonzero(as_tuple = True)[0] for i in lbls.values()]
+    # get subsets of the dataset classes for the color histogram analysis
+    classes_indices = [(y == i).nonzero(as_tuple=True)[0] for i in lbls.values()]
 
     for cls_indices, class_name in zip(classes_indices, lbls.keys()):
         cls_subset = Subset(dataset, cls_indices)
@@ -96,31 +97,31 @@ def color_hist(y, lbls, dataset, workers):
         )
         c_x, _ = next(iter(cls_loader))
 
-        #color histogram
+        # color histogram
 
-        imhist_r = torch.histc(c_x[0,:,:], bins = 255, min = 0, max =1)
-        imhist_g = torch.histc(c_x[1,:,:], bins = 255, min = 0, max =1)
-        imhist_b = torch.histc(c_x[2,:,:], bins = 255, min = 0, max =1)
-        plt.bar(range(0,255), imhist_r, align = 'center', color = 'r', alpha = 0.4)
-        plt.bar(range(0,255), imhist_g, align = 'center', color = 'g', alpha = 0.4)
-        plt.bar(range(0,255), imhist_b, align = 'center', color = 'b', alpha = 0.4)
-        plt.title('Color histogram for the class '+ class_name)
-        plt.savefig('misc/'+class_name+'_color_hist.jpg')
+        imhist_r = torch.histc(c_x[0, :, :], bins=255, min=0, max=1)
+        imhist_g = torch.histc(c_x[1, :, :], bins=255, min=0, max=1)
+        imhist_b = torch.histc(c_x[2, :, :], bins=255, min=0, max=1)
+        plt.bar(range(0, 255), imhist_r, align='center', color='r', alpha=0.4)
+        plt.bar(range(0, 255), imhist_g, align='center', color='g', alpha=0.4)
+        plt.bar(range(0, 255), imhist_b, align='center', color='b', alpha=0.4)
+        plt.title('Color histogram for the class ' + class_name)
+        plt.savefig('misc/' + class_name + '_color_hist.jpg')
         plt.clf()
-        w_img = wandb.Image('misc/'+class_name+'_color_hist.jpg', caption='Color Histogram')
+        w_img = wandb.Image('misc/' + class_name + '_color_hist.jpg', caption='Color Histogram')
         wandb.log({'color_hist': w_img})
 
 
 def gen_val_transforms(args):
     return transforms.Compose([transforms.ToTensor(),
-        transforms.Normalize([1.,1.,1.],[0.5,0.5,0.5]),
-        transforms.Resize((args.image_size, args.image_size))])
+                               transforms.Normalize([1., 1., 1.], [0.5, 0.5, 0.5]),
+                               transforms.Resize((args.image_size, args.image_size))])
 
 
 def gen_train_transforms(args):
     return transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize([1.,1.,1.],[0.5,0.5,0.5]),
+        transforms.Normalize([1., 1., 1.], [0.5, 0.5, 0.5]),
         transforms.Resize((args.image_size, args.image_size)),
         transforms.RandomHorizontalFlip(p=0.5),
         transforms.RandomPerspective(distortion_scale=0.6, p=0.5),
@@ -129,20 +130,19 @@ def gen_train_transforms(args):
             transforms.RandomAdjustSharpness(sharpness_factor=2),
             transforms.RandomRotation(degrees=(0, 180)),
             transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5))
-            ], p=0.5)
+        ], p=0.5)
 
-        ]
-        
+    ]
+
     )
 
-#dataset analysis
-if __name__=='__main__':
-    
-    #models = {'vgg16': VGG16, 'resnet50': ResNet50, 'mobilenetv2': MobileNetV2, 'densenet121': DenseNet121}
 
+# dataset analysis
+if __name__ == '__main__':
+    # models = {'vgg16': VGG16, 'resnet50': ResNet50, 'mobilenetv2': MobileNetV2, 'densenet121': DenseNet121}
 
     parser = argparse.ArgumentParser(description="Train a Keras model on the KaoKore dataset")
-    #parser.add_argument('--arch', type=str, choices=models.keys(), required=True)
+    # parser.add_argument('--arch', type=str, choices=models.keys(), required=True)
     parser.add_argument('--label', type=str, choices=['gender', 'status'], required=True)
     parser.add_argument('--root', type=str, required=True)
     parser.add_argument('--version', type=str, required=True)
@@ -151,18 +151,18 @@ if __name__=='__main__':
     parser.add_argument('--batch-size', type=int, default=32)
     parser.add_argument('--num-workers', type=int, default=4, metavar='N',
                         help='Number of workers (default: 4)')
-    #parser.add_argument('--epochs', type=int, default=20)
-    #parser.add_argument('--optimizer', type=str, choices=['sgd', 'adam'], default='adam')
-    #arser.add_argument('--lr-adjust-freq' , type=int, default=10, help='How many epochs per LR adjustment (*=0.1)')
+    # parser.add_argument('--epochs', type=int, default=20)
+    # parser.add_argument('--optimizer', type=str, choices=['sgd', 'adam'], default='adam')
+    # arser.add_argument('--lr-adjust-freq' , type=int, default=10, help='How many epochs per LR adjustment (*=0.1)')
 
-    #parser.add_argument('--lr', type=float, default=0.001)
-    #parser.add_argument('--momentum', type=float, default=0.9)
-    #parser.add_argument('--wd', type=float, default=1e-4, help='weight decay (L2 penalty)')
+    # parser.add_argument('--lr', type=float, default=0.001)
+    # parser.add_argument('--momentum', type=float, default=0.9)
+    # parser.add_argument('--wd', type=float, default=1e-4, help='weight decay (L2 penalty)')
 
     args = parser.parse_args()
 
     wandb.init(project='kaokore-dataset-analysis', name=args.version,
-     config = {'type': args.label, 'image-size': args.image_size})
+               config={'type': args.label, 'image-size': args.image_size})
 
     df = pd.read_csv(f'{args.root}/labels.csv')
     image_dir = f'{args.root}/images_256/'
@@ -171,15 +171,15 @@ if __name__=='__main__':
     val_ds = Kaokore(args, 'dev', args.label, transform=gen_val_transforms(args))
     test_ds = Kaokore(args, 'test', args.label, transform=gen_val_transforms(args))
 
-    print('Total images in the train dataset: ',len(train_ds))
-    print('Total images in the validation dataset: ',len(val_ds))
-    print('Total images in the test dataset: ',len(test_ds))
-    
-    #training dataset analysis
-    train_loader = DataLoader(train_ds, batch_size=len(train_ds), num_workers= args.num_workers, shuffle=True)
-    x, y = next(iter(train_loader)) 
+    print('Total images in the train dataset: ', len(train_ds))
+    print('Total images in the validation dataset: ', len(val_ds))
+    print('Total images in the test dataset: ', len(test_ds))
 
-    #class freq analysis
+    # training dataset analysis
+    train_loader = DataLoader(train_ds, batch_size=len(train_ds), num_workers=args.num_workers, shuffle=True)
+    x, y = next(iter(train_loader))
+
+    # class freq analysis
     print('Logging the class frequency')
     class_freq_pie(y, train_ds.gen_to_cls.keys(), args.label)
 
@@ -191,7 +191,4 @@ if __name__=='__main__':
     print('Logging per class color histograms')
     color_hist(y, train_ds.gen_to_cls, train_ds, args.num_workers)
 
-
     print('Program finished.')
-
-

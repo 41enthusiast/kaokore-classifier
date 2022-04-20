@@ -1,103 +1,0 @@
-wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
-2022-04-19 14:32:07.747039: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib:/usr/local/lib
-2022-04-19 14:32:07.747066: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-wandb: wandb version 0.12.14 is available!  To upgrade, please run:
-wandb:  $ pip install wandb --upgrade
-wandb: Tracking run with wandb version 0.12.11
-wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/wandb/run-20220419_143201-nmstb7ht
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run proto_v0
-wandb: ⭐️ View project at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore
-wandb: 🚀 View run at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/nmstb7ht
-wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
-GPU available: True, used: True
-TPU available: False, using: 0 TPU cores
-IPU available: False, using: 0 IPUs
-HPU available: False, using: 0 HPUs
-wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
-wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.002 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: | 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: / 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: | 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: / 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: - 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb: \ 0.009 MB of 0.009 MB uploaded (0.000 MB deduped)wandb:                                                                                
-wandb: Synced proto_v0: https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/nmstb7ht
-wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20220419_143201-nmstb7ht/logs
-Traceback (most recent call last):
-  File "train.py", line 265, in <module>
-    train(args, device)
-  File "train.py", line 212, in train
-    print(next(iter(module.train_dataloader())))
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
-    data = self._next_data()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1224, in _next_data
-    return self._process_data(data)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1250, in _process_data
-    data.reraise()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/_utils.py", line 457, in reraise
-    raise exception
-TypeError: Caught TypeError in DataLoader worker process 0.
-Original Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
-    data = fetcher.fetch(index)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/home2/txlx81/new_repos/kaokore-classifier/dataset.py", line 71, in __getitem__
-    image = self.transform(image)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 95, in __call__
-    img = t(img)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 349, in forward
-    return F.resize(img, self.size, self.interpolation, self.max_size, self.antialias)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/functional.py", line 438, in resize
-    return F_t.resize(img, size=size, interpolation=interpolation.value, max_size=max_size, antialias=antialias)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/functional_tensor.py", line 490, in resize
-    img = interpolate(img, size=[new_h, new_w], mode=interpolation, align_corners=align_corners)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py", line 3919, in interpolate
-    return torch._C._nn.upsample_bilinear2d(input, output_size, align_corners, scale_factors)
-TypeError: upsample_bilinear2d() received an invalid combination of arguments - got (Tensor, list, bool, NoneType), but expected one of:
- * (Tensor input, tuple of ints output_size, bool align_corners, tuple of floats scale_factors)
-      didn't match because some of the arguments have invalid types: (Tensor, !list!, bool, !NoneType!)
- * (Tensor input, tuple of ints output_size, bool align_corners, float scales_h, float scales_w, *, Tensor out)
-
-
-Traceback (most recent call last):
-  File "train.py", line 265, in <module>
-    train(args, device)
-  File "train.py", line 212, in train
-    print(next(iter(module.train_dataloader())))
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
-    data = self._next_data()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1224, in _next_data
-    return self._process_data(data)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1250, in _process_data
-    data.reraise()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/_utils.py", line 457, in reraise
-    raise exception
-TypeError: Caught TypeError in DataLoader worker process 0.
-Original Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
-    data = fetcher.fetch(index)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/home2/txlx81/new_repos/kaokore-classifier/dataset.py", line 71, in __getitem__
-    image = self.transform(image)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 95, in __call__
-    img = t(img)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/transforms.py", line 349, in forward
-    return F.resize(img, self.size, self.interpolation, self.max_size, self.antialias)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/functional.py", line 438, in resize
-    return F_t.resize(img, size=size, interpolation=interpolation.value, max_size=max_size, antialias=antialias)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/transforms/functional_tensor.py", line 490, in resize
-    img = interpolate(img, size=[new_h, new_w], mode=interpolation, align_corners=align_corners)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py", line 3919, in interpolate
-    return torch._C._nn.upsample_bilinear2d(input, output_size, align_corners, scale_factors)
-TypeError: upsample_bilinear2d() received an invalid combination of arguments - got (Tensor, list, bool, NoneType), but expected one of:
- * (Tensor input, tuple of ints output_size, bool align_corners, tuple of floats scale_factors)
-      didn't match because some of the arguments have invalid types: (Tensor, !list!, bool, !NoneType!)
- * (Tensor input, tuple of ints output_size, bool align_corners, float scales_h, float scales_w, *, Tensor out)
-
-

@@ -12,22 +12,45 @@ def lr_scheduler(epoch, args):
 
 
 # evaluating the model
-def evaluate(data_loader, model):
+def evaluate(data_loader, model, n_classes):
     with torch.no_grad():
         progress = ["/", "-", "\\", "|", "/", "-", "\\", "|"]
         model.eval().cuda()
         true_y, pred_y = [], []
         for i, batch_ in enumerate(data_loader):
-            X, y = batch_
+            x, y = batch_
             print(progress[i % len(progress)], end="\r")
-            y_pred = (model(X.cuda()).sigmoid() > 0.5).int().squeeze()#threshold of 0.5 chosen
+            y_pred = model(x.cuda()).argmax(dim=1)
             #print(y.shape, y_pred.shape)
             true_y.extend(y.squeeze().cpu())
-            pred_y.extend(y_pred.squeeze().cpu())
+            pred_y.extend(y_pred.cpu())
         true_y = torch.stack(true_y)
         pred_y = torch.stack(pred_y)
+
         print(true_y.shape, pred_y.shape)
-        return classification_report(true_y, pred_y, digits=3, output_dict=True)
+
+        stacked = torch.stack((true_y,  pred_y), dim=1)
+
+        # make the confusion matrix
+        cm = torch.zeros(n_classes, n_classes, dtype=torch.int64)
+        for p in stacked:
+            tl, pl = p.tolist()
+            cm[int(tl), int(pl)] = cm[int(tl), int(pl)] + 1
+
+        class_precision = lambda mat, index: mat[index, index]/(mat[:, index]-mat[index, index])
+        class_recall = lambda mat, index: mat[index, index] / (mat[index, :] - mat[index, index])
+
+        per_class_acc = cm.diag() / cm.sum(1)
+        per_class_precision = [class_precision(cm, i) for i in range(len(cm))]
+        per_class_recall = [class_recall(cm, i) for i in range(len(cm))]
+
+        total_acc = true_y == pred_y
+        total_acc = sum(total_acc)/len(total_acc)
+        global_stats = {'total accuracy': total_acc}
+
+        print(per_class_acc, per_class_precision, per_class_recall, global_stats)
+
+        return per_class_acc, per_class_precision, per_class_recall, global_stats
 
 
 def make_confusion_matrix(module, loader, device):
@@ -50,10 +73,11 @@ def make_confusion_matrix(module, loader, device):
 
     # set up model predictions and targets in right format for making the confusion matrix
     preds, tgts = get_all_preds(module.model.to(device))
+    #print(preds.argmax(dim=1).shape, tgts.shape)
     stacked = torch.stack(
         (
             tgts.squeeze()
-            , (preds.sigmoid() > 0.5).int().squeeze()  # threshold of 0.5 chosen
+            , preds.argmax(dim=1)
         )
         , dim=1
     )
@@ -90,9 +114,9 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix'
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
-    plt.savefig('temp_cm_logging.jpg')
+    plt.savefig('misc/temp_cm_logging.jpg')
     plt.close('all')
-    return read_image('temp_cm_logging.jpg')/255
+    return read_image('misc/temp_cm_logging.jpg')/255
 
 
 def get_most_and_least_confident_predictions(model, loader, device):
@@ -118,8 +142,8 @@ def get_most_and_least_confident_predictions(model, loader, device):
             dim=0
         )
     #print(preds.shape, tgts.shape)
-    confidence = (preds.sigmoid()-tgts).abs()
-    print(confidence.shape)
+    confidence = (preds.max(dim=1)[0]-tgts).abs()
+    #print(confidence.shape)
 
     # get indices with most and least confident scores
     mc_scores, most_confident = confidence.topk(4, dim=0)
