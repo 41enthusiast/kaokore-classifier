@@ -2,29 +2,23 @@ import argparse
 from torch.optim import Adam, SGD
 from models import *
 from utils import *
-from dataset import Kaokore, gen_val_transforms, gen_train_transforms
+from dataset import Kaokore, gen_val_transforms, gen_train_transforms, make_balanced_dataset_sampler
 
 import warnings
 from argparse import Namespace
 import argparse
 
+#import wandb
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import Callback
 
 from torch import nn
-from torch.optim.lr_scheduler import CosineAnnealingLR
-import torch
+#from torch.optim.lr_scheduler import CosineAnnealingLR
 from torch.utils.data import DataLoader, Subset
-from torch.multiprocessing import cpu_count
-from torch.optim import RMSprop
+#from torch.multiprocessing import cpu_count
 from torch.optim.lr_scheduler import LambdaLR
 
-from torchvision import transforms
-from torchvision.datasets import ImageFolder
-
-from models import FinetunedModel
-from utils import *
 import pandas as pd
 
 
@@ -50,12 +44,22 @@ class FinetunedClassifierModule(pl.LightningModule):
     def get_dataloader(self, split):
         #print(self.get_transforms(split))
         split_ds = Kaokore(self.hparam, split, self.hparam.label, transform=self.get_transforms(split))
-        return DataLoader(
-            split_ds,
-            batch_size=self.hparam.batch_size,
-            shuffle=split == "train",
-            num_workers=self.hparam.num_workers,#cpu_count()
-            drop_last=False)
+
+        if self.hparam.class_balance and split == 'train':
+            cls_balanced_ds = make_balanced_dataset_sampler(split_ds, self.hparam)
+            return DataLoader(
+                split_ds,
+                batch_size=self.hparam.batch_size,
+                sampler=cls_balanced_ds,
+                num_workers=self.hparam.num_workers,#cpu_count()
+                drop_last=False)
+        else:
+            return DataLoader(
+                split_ds,
+                batch_size=self.hparam.batch_size,
+                shuffle=split == "train",
+                num_workers=self.hparam.num_workers,#cpu_count()
+                drop_last=False)
 
     def train_dataloader(self):
         return self.get_dataloader("train")
@@ -119,7 +123,7 @@ class LogPredictionsCallback(Callback):
         cm = make_confusion_matrix(module, module.val_dataloader(), module.device)
         cm_img = plot_confusion_matrix(cm, module.hparam.class_names)
         trainer.logger.log_image(key='Confusion matrix', images=[cm_img],
-                                 caption=['Confusion matrix for shakespeare and queen victoria images'])
+                                 caption=['Confusion matrix for painting images'])
 
         # log most and least confident images
         (lc_scores, lc_imgs), (mc_scores, mc_imgs) = get_most_and_least_confident_predictions(module.model,
@@ -140,6 +144,13 @@ class LogPredictionsCallback(Callback):
             data.append([classes[i], c_acc, c_recl, c_prec, 2*c_prec*c_recl/(c_prec + c_recl)])
         trainer.logger.log_table(key="Evaluation metrics", columns=list(labels), data=data)
         trainer.logger.log_metrics(global_stats)
+
+        #layer contribution to the loss
+        barplot_img = layer_grad_contrib(trainer.optimizers[0], module.model, module.test_dataloader(), module.loss, module.device)
+        trainer.logger.log_image(key='barplot',
+                                 images=[barplot_img],
+                                 caption=['Gradient based relevance from test']
+                                 )
 
 
 
@@ -170,6 +181,7 @@ def train(args, device):
 
         hidden_size=args.hidden_size,
         freeze_base=args.freeze_base,
+        class_balance=args.balance,
 
         device=device,
     )
@@ -186,7 +198,7 @@ def train(args, device):
                              'architecture': args.arch,
                              'dataset': 'Kaokore',
                              'epochs': args.epochs,
-                             'optimizer':args.optimizer
+                             'optimizer': args.optimizer
                          })
     logger.watch(module, log='all', log_freq=args.log_interval)
 
@@ -210,7 +222,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Train a Keras model on the KaoKore dataset")
     parser.add_argument('--arch', type=str, choices=model_choices, required=True)
     parser.add_argument('--use-cuda', action='store_true', default=True,
-                        help='enables/disables CUDA training')
+                        help='enables CUDA training')
 
     parser.add_argument('--label', type=str, choices=['gender', 'status'], required=True)
     parser.add_argument('--root', type=str, required=True)
@@ -225,7 +237,9 @@ if __name__ == '__main__':
     parser.add_argument('--hidden-size', type=int, default=512, metavar='N',
                         help='hidden size of the fc layer of the model (default: 512)')
     parser.add_argument('--freeze-base', action='store_true', default=False,
-                        help='Freeze the pretrained model before training? (default: True)')
+                        help='Freeze the pretrained model before training')
+    parser.add_argument('--balance', action='store_true', default=False,
+                        help='Resample the dataset for class balancing')
 
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--momentum', type=float, default=0.9)

@@ -144,15 +144,60 @@ def get_most_and_least_confident_predictions(model, loader, device):
             dim=0
         )
     #print(preds.shape, tgts.shape)
-    confidence = (F.log_softmax(preds).max(dim=1)[0]-tgts).abs()
+    confidence = F.softmax(preds, dim=1).max(dim=1)[0]
     #print(confidence.shape)
 
     # get indices with most and least confident scores
-    mc_scores, most_confident = confidence.topk(4, dim=0)
-    lc_scores, least_confident = confidence.topk(4, dim=0, largest=False)
+    lc_scores, least_confident = confidence.topk(4, dim=0)
+    mc_scores, most_confident = confidence.topk(4, dim=0, largest=False)
 
     # get the images according to confidence scores, 4 each
     mc_imgs = all_images[most_confident.squeeze()]
     lc_imgs = all_images[least_confident.squeeze()]
 
     return (mc_scores, mc_imgs), (lc_scores, lc_imgs)
+
+
+
+
+
+def layer_grad_contrib(optimizer, model, loader, criterion, device):
+    for param in model.parameters():
+        param.requires_grad = True
+    avgs_grad_of_params = {}
+    for batch in loader:
+        optimizer.zero_grad()
+        x, y = batch
+        pred = model(x.to(device))
+        loss = criterion(pred, y.to(device))
+        loss.backward()
+        for name, parameter in model.named_parameters():
+            #print(name)
+            #print(parameter)
+            #print(parameter.grad)
+            if name in avgs_grad_of_params:
+                avgs_grad_of_params[name] += [parameter.grad.abs().mean()]
+            else:
+                avgs_grad_of_params[name] = [parameter.grad.abs().mean()]
+        avg_grad_of_params = {}
+        ttl = 0.0
+        for i in avgs_grad_of_params:
+            avg_grad_of_params[i]=torch.stack(avgs_grad_of_params[i]).mean()
+            ttl += avg_grad_of_params[i]
+        rel_importance = {i: (avg_grad_of_params[i]/ttl*100).cpu().numpy() for i in avg_grad_of_params}
+    model.eval()
+
+    #make the bar plot
+    plt.barh(y=[i for i in range(len(rel_importance))],
+             width=list(rel_importance.values()),
+             )
+    plt.ylabel('Relative Layerwise contribution to loss')
+    plt.xlabel('Percentage')
+    plt.yticks([i for i in range(len(rel_importance))],
+               list(rel_importance.keys()),
+               rotation='horizontal'
+               )
+    plt.tight_layout()
+    plt.savefig('misc/lyr_contrib_logging.jpg')
+    plt.close('all')
+    return read_image('misc/lyr_contrib_logging.jpg') / 255

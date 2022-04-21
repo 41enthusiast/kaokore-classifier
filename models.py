@@ -120,3 +120,6 @@ def setup_base_models(arch, nclasses, pooling='avg'):
     models = {'vgg': vgg_model, 'resnet': resnet_model, 'mobilenet': mobilenet_model, 'densenet': densenet_model}
 
     return models[arch](nclasses, pooling)
+
+
+
