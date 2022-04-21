@@ -4,6 +4,7 @@ from sklearn.metrics import classification_report
 import itertools
 import matplotlib.pyplot as plt
 from torchvision.io import read_image
+import torch.nn.functional as F
 
 
 def lr_scheduler(epoch, args):
@@ -143,7 +144,7 @@ def get_most_and_least_confident_predictions(model, loader, device):
             dim=0
         )
     #print(preds.shape, tgts.shape)
-    confidence = (preds.max(dim=1)[0]-tgts).abs()
+    confidence = (F.log_softmax(preds).max(dim=1)[0]-tgts).abs()
     #print(confidence.shape)
 
     # get indices with most and least confident scores

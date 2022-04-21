@@ -114,14 +114,13 @@ def color_hist(y, lbls, dataset, workers):
 
 def gen_val_transforms(args):
     return transforms.Compose([transforms.ToTensor(),
-                               transforms.Normalize([1., 1., 1.], [0.5, 0.5, 0.5]),
-                               transforms.Resize((args.image_size, args.image_size))])
+                               transforms.Resize((args.image_size, args.image_size)),
+                               transforms.Normalize([1., 1., 1.], [0.5, 0.5, 0.5])])
 
 
 def gen_train_transforms(args):
     return transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize([1., 1., 1.], [0.5, 0.5, 0.5]),
         transforms.Resize((args.image_size, args.image_size)),
         transforms.RandomHorizontalFlip(p=0.5),
         transforms.RandomPerspective(distortion_scale=0.6, p=0.5),
@@ -130,7 +129,8 @@ def gen_train_transforms(args):
             transforms.RandomAdjustSharpness(sharpness_factor=2),
             transforms.RandomRotation(degrees=(0, 180)),
             transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5))
-        ], p=0.5)
+        ], p=0.5),
+        transforms.Normalize([1., 1., 1.], [0.5, 0.5, 0.5])
 
     ]
 

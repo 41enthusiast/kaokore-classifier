@@ -34,7 +34,7 @@ class FinetunedClassifierModule(pl.LightningModule):
         super().__init__()
         hparams = Namespace(**hparams) if isinstance(hparams, dict) else hparams
         self.hparam = hparams
-        self.model = setup_base_models(hparams.arch, hparams.n_classes)
+        self.model = setup_base_models(hparams.arch, hparams.n_classes, hparams.freeze_base)
         self.loss = nn.CrossEntropyLoss()
 
     def total_steps(self):
@@ -113,6 +113,8 @@ class FinetunedClassifierModule(pl.LightningModule):
 class LogPredictionsCallback(Callback):
 
     def on_validation_epoch_end(self, trainer, module):
+
+
         # confusion matrix
         cm = make_confusion_matrix(module, module.val_dataloader(), module.device)
         cm_img = plot_confusion_matrix(cm, module.hparam.class_names)
@@ -129,7 +131,7 @@ class LogPredictionsCallback(Callback):
         trainer.logger.log_image(key='Most Confident Images', images=[img for img in mc_imgs], caption=mc_captions)
 
     def on_train_end(self, trainer, module):
-        per_class_acc, per_class_precision, per_class_recall, global_stats = evaluate(module.val_dataloader(), module.model, module.hparam.n_classes)
+        per_class_acc, per_class_precision, per_class_recall, global_stats = evaluate(module.test_dataloader(), module.model, module.hparam.n_classes)
         classes = list(module.hparam.class_names)
 
         labels = ['Category name:', 'Per Class Accuracy', 'Recall', 'Precision', 'F1 Score']
@@ -222,7 +224,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr-adjust-freq', type=int, default=10, help='How many epochs per LR adjustment (*=0.1)')
     parser.add_argument('--hidden-size', type=int, default=512, metavar='N',
                         help='hidden size of the fc layer of the model (default: 512)')
-    parser.add_argument('--freeze-base', action='store_true', default=True,
+    parser.add_argument('--freeze-base', action='store_true', default=False,
                         help='Freeze the pretrained model before training? (default: True)')
 
     parser.add_argument('--lr', type=float, default=0.001)
