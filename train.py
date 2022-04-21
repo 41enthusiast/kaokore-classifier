@@ -112,7 +112,7 @@ class FinetunedClassifierModule(pl.LightningModule):
 
 class LogPredictionsCallback(Callback):
 
-    def on_validation_epoch_end(self, trainer, module, outputs, batch, batch_idx, dataloader_idx):
+    def on_validation_epoch_end(self, trainer, module):
         # confusion matrix
         cm = make_confusion_matrix(module, module.val_dataloader(), module.device)
         cm_img = plot_confusion_matrix(cm, module.hparam.class_names)
@@ -129,24 +129,16 @@ class LogPredictionsCallback(Callback):
         trainer.logger.log_image(key='Most Confident Images', images=[img for img in mc_imgs], caption=mc_captions)
 
     def on_train_end(self, trainer, module):
-        eval_metrics = evaluate(module.val_dataloader(), module.model)
-        classes = module.hparam.class_names
-        #data = []
-        #tkeys = list(eval_metrics.keys())
-        #print(tkeys, len(classes))
-        #print(eval_metrics)
+        per_class_acc, per_class_precision, per_class_recall, global_stats = evaluate(module.val_dataloader(), module.model, module.hparam.n_classes)
+        classes = list(module.hparam.class_names)
 
-        #labels = ['Category Name'] + list(eval_metrics[tkeys[0]].keys())
-        #for i in range(len(classes)):
-        #    data[i].append(eval_metrics[tkeys[i]].values())
+        labels = ['Category name:', 'Per Class Accuracy', 'Recall', 'Precision', 'F1 Score']
+        data =[]
+        for i, (c_acc, c_prec, c_recl) in enumerate(zip (per_class_acc, per_class_precision, per_class_recall)):
+            data.append([classes[i], c_acc, c_recl, c_prec, 2*c_prec*c_recl/(c_prec + c_recl)])
+        trainer.logger.log_table(key="Evaluation metrics", columns=list(labels), data=data)
+        trainer.logger.log_metrics(global_stats)
 
-        # df = pd.DataFrame(eval_metrics).transpose()
-
-        #trainer.logger.log_table(key="Evaluation metrics", columns=list(labels), data=data)
-
-        #module.log('total_accuracy', eval_metrics['accurcy'])
-        # trainer.logger.experiment.summary(eval_metrics)
-        # trainer.logger.experiment.log(eval_metrics)
 
 
 def train(args, device):
@@ -192,6 +184,7 @@ def train(args, device):
                              'architecture': args.arch,
                              'dataset': 'Kaokore',
                              'epochs': args.epochs,
+                             'optimizer':args.optimizer
                          })
     logger.watch(module, log='all', log_freq=args.log_interval)
 

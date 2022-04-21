@@ -37,8 +37,9 @@ def evaluate(data_loader, model, n_classes):
             tl, pl = p.tolist()
             cm[int(tl), int(pl)] = cm[int(tl), int(pl)] + 1
 
-        class_precision = lambda mat, index: mat[index, index]/(mat[:, index]-mat[index, index])
-        class_recall = lambda mat, index: mat[index, index] / (mat[index, :] - mat[index, index])
+        print()
+        class_precision = lambda mat, index: mat[index, index]/(mat[:, index].sum())
+        class_recall = lambda mat, index: mat[index, index] / (mat[index, :].sum())
 
         per_class_acc = cm.diag() / cm.sum(1)
         per_class_precision = [class_precision(cm, i) for i in range(len(cm))]

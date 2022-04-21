@@ -1,14 +1,14 @@
 wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
-2022-04-20 23:07:04.878620: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib:/usr/local/lib
-2022-04-20 23:07:04.878668: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-04-21 01:39:03.022030: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/lib:/usr/local/lib
+2022-04-21 01:39:03.022063: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 wandb: wandb version 0.12.14 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.12.11
-wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/wandb/run-20220420_230702-1fax257m
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/wandb/run-20220421_013901-3k2ufeht
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run proto_v0.1
+wandb: Syncing run proto_v1.1
 wandb: ⭐️ View project at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore
-wandb: 🚀 View run at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/1fax257m
+wandb: 🚀 View run at https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/3k2ufeht
 wandb: logging graph, to disable use `wandb.watch(log_graph=False)`
 GPU available: True, used: True
 TPU available: False, using: 0 TPU cores
@@ -25,329 +25,19 @@ LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 14.7 M    Non-trainable params
 14.8 M    Total params
 59.260    Total estimated model params size (MB)
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7f37cc131280>
-Traceback (most recent call last):
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1358, in __del__
-    self._shutdown_workers()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1341, in _shutdown_workers
-    if w.is_alive():
-  File "/usr/lib/python3.8/multiprocessing/process.py", line 160, in is_alive
-    assert self._parent_pid == os.getpid(), 'can only test a child process'
-AssertionError: can only test a child process
-wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
-wandb: - 226.069 MB of 226.069 MB uploaded (0.000 MB deduped)wandb: \ 226.069 MB of 226.069 MB uploaded (0.000 MB deduped)wandb: | 226.069 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: / 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: - 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: \ 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: | 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: / 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: - 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb: \ 226.079 MB of 226.079 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 15.490 MB of 15.490 MB uploaded (0.000 MB deduped)wandb: \ 15.490 MB of 15.490 MB uploaded (0.000 MB deduped)wandb: | 15.490 MB of 15.490 MB uploaded (0.000 MB deduped)wandb: / 15.490 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: - 15.490 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: \ 15.500 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: | 15.500 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: / 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: - 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: \ 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: | 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: / 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: - 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb: \ 15.503 MB of 15.503 MB uploaded (0.000 MB deduped)wandb:                                                                                
 wandb: 
 wandb: Run history:
-wandb:               epoch ▁▁▁▁▂▂▂▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇███
-wandb: trainer/global_step ▁▁▁▁▂▂▂▂▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇▇▇█
+wandb:               epoch ▁▁▁▁▂▂▂▂▂▂▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▇▇▇▇▇▇████
+wandb:      total accuracy ▁
+wandb: trainer/global_step ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇████
 wandb: 
 wandb: Run summary:
-wandb:               epoch 10
-wandb: trainer/global_step 2299
+wandb:               epoch 19
+wandb:      total accuracy 0.58462
+wandb: trainer/global_step 4239
 wandb: 
-wandb: Synced proto_v0.1: https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/1fax257m
-wandb: Synced 5 W&B file(s), 2503 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20220420_230702-1fax257m/logs
-Traceback (most recent call last):
-  File "train.py", line 255, in <module>
-    train(args, device)
-  File "train.py", line 205, in train
-    trainer.fit(module)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 771, in fit
-    self._call_and_handle_interrupt(
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 724, in _call_and_handle_interrupt
-    return trainer_fn(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 812, in _fit_impl
-    results = self._run(model, ckpt_path=self.ckpt_path)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1237, in _run
-    results = self._run_stage()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1324, in _run_stage
-    return self._run_train()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1354, in _run_train
-    self.fit_loop.run()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 269, in advance
-    self._outputs = self.epoch_loop.run(self._data_fetcher)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 205, in run
-    self.on_advance_end()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 255, in on_advance_end
-    self._run_validation()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 309, in _run_validation
-    self.val_loop.run()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 153, in advance
-    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 133, in advance
-    self._on_evaluation_batch_end(output, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 263, in _on_evaluation_batch_end
-    self.trainer._call_callback_hooks(hook_name, output, *kwargs.values())
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1637, in _call_callback_hooks
-    fn(self, self.lightning_module, *args, **kwargs)
-  File "train.py", line 118, in on_validation_batch_end
-    cm_img = plot_confusion_matrix(cm, module.hparam.class_names)
-  File "/home2/txlx81/new_repos/kaokore-classifier/utils.py", line 96, in plot_confusion_matrix
-    return read_image('misc/temp_cm_logging.jpg')/255
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/io/image.py", line 245, in read_image
-    data = read_file(path)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/io/image.py", line 47, in read_file
-    data = torch.ops.image.read_file(path)
-RuntimeError: Expected a non empty file
-Traceback (most recent call last):
-  File "train.py", line 255, in <module>
-    train(args, device)
-  File "train.py", line 205, in train
-    trainer.fit(module)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 771, in fit
-    self._call_and_handle_interrupt(
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 724, in _call_and_handle_interrupt
-    return trainer_fn(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 812, in _fit_impl
-    results = self._run(model, ckpt_path=self.ckpt_path)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1237, in _run
-    results = self._run_stage()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1324, in _run_stage
-    return self._run_train()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1354, in _run_train
-    self.fit_loop.run()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 269, in advance
-    self._outputs = self.epoch_loop.run(self._data_fetcher)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 205, in run
-    self.on_advance_end()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 255, in on_advance_end
-    self._run_validation()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/training_epoch_loop.py", line 309, in _run_validation
-    self.val_loop.run()
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 153, in advance
-    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/base.py", line 204, in run
-    self.advance(*args, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 133, in advance
-    self._on_evaluation_batch_end(output, **kwargs)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 263, in _on_evaluation_batch_end
-    self.trainer._call_callback_hooks(hook_name, output, *kwargs.values())
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1637, in _call_callback_hooks
-    fn(self, self.lightning_module, *args, **kwargs)
-  File "train.py", line 118, in on_validation_batch_end
-    cm_img = plot_confusion_matrix(cm, module.hparam.class_names)
-  File "/home2/txlx81/new_repos/kaokore-classifier/utils.py", line 96, in plot_confusion_matrix
-    return read_image('misc/temp_cm_logging.jpg')/255
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/io/image.py", line 245, in read_image
-    data = read_file(path)
-  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/io/image.py", line 47, in read_file
-    data = torch.ops.image.read_file(path)
-RuntimeError: Expected a non empty file
+wandb: Synced proto_v1.1: https://wandb.ai/mridulav/finetuning-classifier-on-kaokore/runs/3k2ufeht
+wandb: Synced 5 W&B file(s), 191 media file(s), 1 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220421_013901-3k2ufeht/logs

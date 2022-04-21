@@ -24,7 +24,7 @@ source ../mv_test1/bin/activate
 #python gen_datasets.py --output-mode multiple --mode all 
 
 #model training
-python train.py --root kaokore --log-interval 50 --epochs 20 --batch-size 32 --arch vgg --label status --ver-name proto_v0.2
+python train.py --root kaokore --log-interval 50 --epochs 20 --batch-size 32 --arch vgg --label status --ver-name proto_v1.1 --optimizer adam --lr 0.001
 
 #kaokore dataset generation and analysis
 #python dataset.py --root "kaokore" --label gender --version protov0.1
