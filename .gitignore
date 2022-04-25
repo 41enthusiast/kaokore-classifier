@@ -3,3 +3,4 @@ misc/
 dataset_v1.2/
 wandb/
 finetuning-classifier-on-kaokore/
+kaokore*/

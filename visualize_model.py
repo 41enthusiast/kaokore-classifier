@@ -90,7 +90,7 @@ def plot_with_attention(tr_err, ts_err, tr_acc, ts_acc, img, att_out, no_images=
     plt.close()
 
 def train(model, args, train_loader, att_flag=False):
-    device = args.device
+    device = torch.device('cuda' if args.use_cuda and torch.cuda.is_available() else 'cpu')
     bsz = args.batch_size
     net = model.to(device)
     criterion = nn.CrossEntropyLoss()
@@ -102,14 +102,13 @@ def train(model, args, train_loader, att_flag=False):
         net.train()
         for i, (x,y) in zip(range(4000 // bsz), train_loader):
             net.optim.zero_grad()
-            x = torch.FloatTensor(x).to(device)
-            y = torch.FloatTensor(y).to(device)
+            x = x.float().to(device)
+            y = y.long().to(device)
             p, q = net.forward(x)
-            loss = -torch.mean(y * torch.log(p + 1e-8) + (1 - y) * torch.log(1 - p + 1e-8))
+            loss = criterion(p,y)
             loss.backward()
             errs.append(loss.cpu().detach().item())
-            pred = torch.round(p)
-            accs.append(torch.sum(pred == y).cpu().detach().item() / bsz)
+            accs.append(torch.sum(p.argmax(dim=1) == y).cpu().detach().item() / bsz)
             net.optim.step()
         tr_err.append(np.mean(errs))
         tr_acc.append(np.mean(accs))
@@ -117,13 +116,13 @@ def train(model, args, train_loader, att_flag=False):
         errs, accs = [], []
         net.eval()
         for i, (x,y) in zip(range(1000 // bsz), train_loader):
-            x = torch.FloatTensor(x).to(device)
-            y = torch.FloatTensor(y).to(device)
+            x = x.float().to(device)
+            y = y.long().to(device)
             p, q = net.forward(x)
             loss = criterion(p,y)
             errs.append(loss.cpu().detach().item())
-            pred = torch.round(p)
-            accs.append(torch.sum(pred == y).cpu().detach().item() / bsz)
+            print(p.argmax(dim=1))
+            accs.append(torch.sum(p.argmax(dim=1) == y).cpu().detach().item() / bsz)
         ts_err.append(np.mean(errs))
         ts_acc.append(np.mean(accs))
 
@@ -293,7 +292,7 @@ def get_attention_info(x, model):
     return joint_attentions, grid_size
 
 
-def visualize_attention_maps(joint_att, grid_size, img, img_size)
+def visualize_attention_maps(joint_att, grid_size, img, img_size):
     for i, v in enumerate(joint_att):
         v = joint_att[-1]
         mask = v[0, 1:].reshape(grid_size, grid_size).detach().numpy()
@@ -316,6 +315,8 @@ if __name__ == '__main__':
     model_choices = ['vgg', 'resnet', 'densenet']
 
     parser = argparse.ArgumentParser(description="Train a Keras model on the KaoKore dataset")
+    parser.add_argument('--use-cuda', action='store_true', default=False,
+                        help='enables CUDA training')
     parser.add_argument('--arch', type=str, choices=model_choices, required=True)
     parser.add_argument('--label', type=str, choices=['gender', 'status'], required=True)
     parser.add_argument('--root', type=str, required=True)
@@ -355,7 +356,7 @@ if __name__ == '__main__':
     w_img = wandb.Image(x0, caption=f'Input Image')
     wandb.log({'input_image': w_img})
 
-    model_wts, conv_lyrs, conv_model = get_conv_part_of_models(args.arch)(x)
+    (model_wts, conv_lyrs), conv_model = get_conv_part_of_models(args.arch)
 
     #visualize_feat_maps(conv_lyrs, x0)
     #visualize_model_conv_filters(model_wts)
@@ -369,10 +370,10 @@ if __name__ == '__main__':
     else:
         n_classes = 4
 
-    att_model = NetAttention(feat_sz, conv_model, temperature)
+    att_model = NetAttention(feat_sz, conv_model, temperature, n_classes)
 
     print('Training')
-    train(att_model, train_loader, True)
+    train(att_model, args, train_loader, True)
 
     print('Visualizing attention per layer for the model')
     joint_att0, grid_size0 = get_attention_info(x0, att_model)
