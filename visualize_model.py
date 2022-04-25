@@ -7,6 +7,7 @@ from torchvision.utils import make_grid
 import cv2
 from torchvision.models import vgg16, densenet121, resnet50
 
+import time
 import numpy as np
 import pandas as pd
 import argparse
@@ -30,6 +31,110 @@ class ScaledDotProductAttention(nn.Module):
         output = torch.matmul(attn, v)
         return output, attn
 
+class NetAttention(nn.Module):
+    def __init__(self, feat_size, convpart, temperature,n_classes, dropout=0.1):
+        super().__init__()
+        self.conv = convpart
+        self.attn1 = ScaledDotProductAttention(temperature)
+        self.final = nn.Linear(feat_size, n_classes)
+        self.optim = torch.optim.Adam(self.parameters(), lr=1e-4)
+
+    def forward(self, x):
+        z = self.conv(x)#the img of bsz, ch, h,w as input
+        q = torch.reshape(z, (z.size(0), -1 , z.size(1)))#bsz, seq_len, features
+        q = q.unsqueeze(2)
+        q, w = self.attn1(q, q, q)#i cant find a simpler attention used unless i train a lstm :/ - soft n hard attention. so self attention will have to do for now
+        q = torch.reshape(q, (z.size(0), z.size(1), z.size(2), z.size(3)))#bsz, seqlen, feath, featw
+        z = q.mean(3).mean(2)#avg over the features
+        p = torch.softmax(self.final(z),1)
+        return p, q
+
+def plot_without_attention(tr_err, ts_err, tr_acc, ts_acc, img):
+    plt.clf()
+    fig, axs = plt.subplots(1, 4, figsize=(20, 5))
+    axs[0].plot(tr_err, label='tr_err')
+    axs[0].plot(ts_err, label='ts_err')
+    axs[0].legend()
+    axs[1].plot(tr_acc, label='tr_err')
+    axs[1].plot(ts_acc, label='ts_err')
+    axs[1].legend()
+    axs[2].axis('off')
+    axs[3].axis('off')
+    plt.savefig(f"misc/without_attn.png")
+    # plt.show()
+    w_img = wandb.Image(f'misc/without_attn.png', caption='Plot without attention')
+    wandb.log({'Plot without attention': w_img})
+    plt.close()
+
+def plot_with_attention(tr_err, ts_err, tr_acc, ts_acc, img, att_out, no_images=6):
+    plt.clf()
+    fig, axs = plt.subplots(1+no_images, 4, figsize=(20, (no_images+1)*5))
+    axs[0, 0].plot(tr_err, label='tr_err')
+    axs[0, 0].plot(ts_err, label='ts_err')
+    axs[0, 0].legend()
+    axs[0, 1].plot(tr_acc, label='tr_err')
+    axs[0, 1].plot(ts_acc, label='ts_err')
+    axs[0, 1].legend()
+    axs[0, 2].axis('off')
+    axs[0, 3].axis('off')
+    for img_no in range(6):
+        im = img[img_no].cpu().detach().numpy().transpose(1, 2, 0)*0.5 + 0.5
+        axs[img_no+1, 0].imshow(im)
+        for i in range(3):
+            att_out_img = att_out[img_no, i+1].cpu().detach().numpy()
+            axs[img_no+1, i+1].imshow(att_out_img)
+    plt.savefig(f"misc/with_attn.png")
+    # plt.show()
+    w_img = wandb.Image(f'misc/with_attn.png', caption='Plot with attention')
+    wandb.log({'Plot with attention': w_img})
+    plt.close()
+
+def train(model, args, train_loader, att_flag=False):
+    device = args.device
+    bsz = args.batch_size
+    net = model.to(device)
+    criterion = nn.CrossEntropyLoss()
+
+    tr_err, ts_err = [], []
+    tr_acc, ts_acc = [], []
+    for epoch in range(args.epochs):
+        errs, accs = [], []
+        net.train()
+        for i, (x,y) in zip(range(4000 // bsz), train_loader):
+            net.optim.zero_grad()
+            x = torch.FloatTensor(x).to(device)
+            y = torch.FloatTensor(y).to(device)
+            p, q = net.forward(x)
+            loss = -torch.mean(y * torch.log(p + 1e-8) + (1 - y) * torch.log(1 - p + 1e-8))
+            loss.backward()
+            errs.append(loss.cpu().detach().item())
+            pred = torch.round(p)
+            accs.append(torch.sum(pred == y).cpu().detach().item() / bsz)
+            net.optim.step()
+        tr_err.append(np.mean(errs))
+        tr_acc.append(np.mean(accs))
+
+        errs, accs = [], []
+        net.eval()
+        for i, (x,y) in zip(range(1000 // bsz), train_loader):
+            x = torch.FloatTensor(x).to(device)
+            y = torch.FloatTensor(y).to(device)
+            p, q = net.forward(x)
+            loss = criterion(p,y)
+            errs.append(loss.cpu().detach().item())
+            pred = torch.round(p)
+            accs.append(torch.sum(pred == y).cpu().detach().item() / bsz)
+        ts_err.append(np.mean(errs))
+        ts_acc.append(np.mean(accs))
+
+        if att_flag == False:
+            plot_without_attention(tr_err, ts_err, tr_acc, ts_acc, x[0])
+        else:
+            plot_with_attention(tr_err, ts_err, tr_acc, ts_acc, x, q)
+
+        print(f'Min train error: {np.min(tr_err)}')
+        print(f'Min test error: {np.min(ts_err)}')
+
 
 def vgg_model(pooling='avg', freeze_base=True):
     model = vgg16(True)
@@ -44,7 +149,7 @@ def vgg_model(pooling='avg', freeze_base=True):
         for param in model.parameters():
             param.requires_grad = False
 
-    return retrieve_all_conv_layers(model.features)
+    return retrieve_all_conv_layers(model.features), model.features
 
 
 def resnet_model(pooling='avg', freeze_base=True):
@@ -59,10 +164,10 @@ def resnet_model(pooling='avg', freeze_base=True):
             param.requires_grad = False
 
     # to get the features only
-    #del model.fc
-    #del model.avgpool
+    del model.fc
+    del model.avgpool
 
-    return retrieve_all_conv_layers(model)
+    return retrieve_all_conv_layers(model), model
 
 
 def densenet_model(pooling='avg', freeze_base=True):
@@ -78,7 +183,7 @@ def densenet_model(pooling='avg', freeze_base=True):
         for param in model.parameters():
             param.requires_grad = False
 
-    return retrieve_all_conv_layers(model.features)
+    return retrieve_all_conv_layers(model.features), model.features
 
 
 def get_conv_part_of_models(arch, pooling='avg'):
@@ -221,7 +326,7 @@ if __name__ == '__main__':
     parser.add_argument('--num-workers', type=int, default=4, metavar='N',
                         help='Number of workers (default: 4)')
 
-    # parser.add_argument('--epochs', type=int, default=20)
+    parser.add_argument('--epochs', type=int, default=20)
     # parser.add_argument('--optimizer', type=str, choices=['sgd', 'adam'], default='adam')
     # arser.add_argument('--lr-adjust-freq' , type=int, default=10, help='How many epochs per LR adjustment (*=0.1)')
 
@@ -250,34 +355,27 @@ if __name__ == '__main__':
     w_img = wandb.Image(x0, caption=f'Input Image')
     wandb.log({'input_image': w_img})
 
-    model_wts, conv_lyrs = get_conv_part_of_models(args.arch)(x)
+    model_wts, conv_lyrs, conv_model = get_conv_part_of_models(args.arch)(x)
 
-    visualize_feat_maps(conv_lyrs, x0)
-    visualize_model_conv_filters(model_wts)
+    #visualize_feat_maps(conv_lyrs, x0)
+    #visualize_model_conv_filters(model_wts)
 
     # Attention
 
-    #z = get_conv_part_of_models(args.arch)(x)
-    #q = torch.reshape(z, (z.size(0), -1 , z.size(1)))# bsz, seqlen, feat
+    feat_output = conv_model(x)
+    feat_sz, temperature = feat_output.shape[1], feat_output.shape[2]*feat_output.shape[3]
+    if args.label=='gender':
+        n_classes = 2
+    else:
+        n_classes = 4
 
-    print(z.shape, q.shape, x.shape, y.shape)
+    att_model = NetAttention(feat_sz, conv_model, temperature)
 
-    query = torch.rand(128, 32, 1, 256)
-    key = value = torch.rand(128, 16, 1, 256)
-    query, key, value = query.transpose(1, 2), key.transpose(1, 2), value.transpose(1, 2)
-    multihead_attn = ScaledDotProductAttention(temperature=query.size(2))
-    attn_output, attn_weights = multihead_attn(query, key, value)
-    attn_output = attn_output.transpose(1, 2)
-    print(f'attn_output: {attn_output.size()}, attn_weights: {attn_weights.size()}')
+    print('Training')
+    train(att_model, train_loader, True)
 
-    for i, v in enumerate(joint_att1):
-        v = joint_att1[-1]
-        mask = v[0, 1:].reshape(grid_size1, grid_size1).detach().numpy()
-        mask = cv2.resize(mask / mask.max(), img1.size)[..., np.newaxis]
-        result = (mask * img1).astype("uint8")
+    print('Visualizing attention per layer for the model')
+    joint_att0, grid_size0 = get_attention_info(x0, att_model)
+    visualize_attention_maps(joint_att0, grid_size0, x0.squeeze().permute(1,2,0), args.image_size)
 
-        fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(16, 16))
-        ax1.set_title('Original')
-        ax2.set_title('Attention Map_%d Layer' % (i + 1))
-        _ = ax1.imshow(img1)
-        _ = ax2.imshow(result)
+
