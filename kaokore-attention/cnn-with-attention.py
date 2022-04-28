@@ -99,16 +99,19 @@ if __name__ == '__main__':
         # scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
 
         for epoch in range(args.epochs):
-            train_loss, train_acc = train_epoch(run, model, criterion, optimizer, train_loader, device, epoch, args.log_interval, writer)
-            val_loss, val_acc = val_epoch(run, model, criterion, test_loader, device, epoch, writer)
+            train_loss, train_acc, train_recall, train_prec, train_f1 = train_epoch(run, model, criterion, optimizer, train_loader, device, epoch, args.log_interval, writer)
+            val_loss, val_acc, val_recall, val_prec, val_f1 = val_epoch(run, model, criterion, test_loader, device, epoch, writer)
             # adjust learning rate
             # scheduler.step()
             if not args.no_save:
                 torch.save(model.state_dict(), os.path.join(args.save_path, "cnn_epoch{:03d}.pth".format(epoch+1)))
                 print("Saving Model of Epoch {}".format(epoch+1))
-        global_table = wandb.Table(columns=['experiment name', 'training loss', 'training accuracy', 'test loss', 'test accuracy'])
-        global_table.add_data(experiment_name, train_loss, train_acc, val_loss, val_acc)
-        run.log({'Training end table': global_table})
+        global_train_table = wandb.Table(columns=['experiment name', 'training loss', 'training accuracy', 'training recall', 'training precision', 'training f1'])
+        global_train_table.add_data(experiment_name, train_loss, train_acc, train_recall, train_prec, train_f1)
+        global_val_table = wandb.Table(
+            columns=['experiment name', 'test loss', 'test accuracy', 'test recall', 'test precision', 'test f1'])
+        global_val_table.add_data(experiment_name, val_loss, val_acc, val_recall, val_prec, val_f1)
+        run.log({'Training end table': global_train_table, 'Validation end table': global_val_table})
 
     # Visualize
     if args.visualize:

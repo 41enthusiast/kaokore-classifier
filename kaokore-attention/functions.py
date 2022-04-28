@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 import torchvision.utils as utils
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 import cv2
 
 def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log_interval, writer):
@@ -30,7 +30,9 @@ def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log
         prediction = torch.max(outputs, 1)[1]# bsz
         all_label.extend(labels.squeeze())
         all_pred.extend(prediction)
-        score = accuracy_score(labels.squeeze().cpu().data.squeeze().numpy(), prediction.cpu().data.squeeze().numpy())
+        score = accuracy_score(labels.squeeze().cpu().data.squeeze().numpy(),
+                                   prediction.cpu().data.squeeze().numpy())
+
 
         # backward & optimize
         loss.backward()
@@ -44,13 +46,17 @@ def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log
     all_label = torch.stack(all_label, dim=0)
     all_pred = torch.stack(all_pred, dim=0)
     training_acc = accuracy_score(all_label.squeeze().cpu().data.squeeze().numpy(), all_pred.cpu().data.squeeze().numpy())
+    training_recall = recall_score(all_label.squeeze().cpu().data.squeeze().numpy(),
+                                  all_pred.cpu().data.squeeze().numpy())
+    training_precision = precision_score(all_label.squeeze().cpu().data.squeeze().numpy(),
+                                  all_pred.cpu().data.squeeze().numpy())
+    training_f1 = f1_score(all_label.squeeze().cpu().data.squeeze().numpy(),
+                                  all_pred.cpu().data.squeeze().numpy())
     # Log
-    writer.add_scalars('Loss', {'train': training_loss}, epoch+1)
-    writer.add_scalars('Accuracy', {'train': training_acc}, epoch+1)
     run.log({'Train Loss': training_loss, 'Train Accuracy': training_acc})
     print("Average Training Loss of Epoch {}: {:.6f} | Acc: {:.2f}%".format(epoch+1, training_loss, training_acc*100))
 
-    return training_loss, training_acc
+    return training_loss, training_acc, training_recall, training_precision, training_f1
 
 
 def val_epoch(run, model, criterion, dataloader, device, epoch, writer):
@@ -80,13 +86,19 @@ def val_epoch(run, model, criterion, dataloader, device, epoch, writer):
     all_label = torch.stack(all_label, dim=0)
     all_pred = torch.stack(all_pred, dim=0)
     val_acc = accuracy_score(all_label.squeeze().cpu().data.squeeze().numpy(), all_pred.cpu().data.squeeze().numpy())
+    val_recall = recall_score(all_label.squeeze().cpu().data.squeeze().numpy(),
+                                   all_pred.cpu().data.squeeze().numpy())
+    val_precision = precision_score(all_label.squeeze().cpu().data.squeeze().numpy(),
+                                         all_pred.cpu().data.squeeze().numpy())
+    val_f1 = f1_score(all_label.squeeze().cpu().data.squeeze().numpy(),
+                           all_pred.cpu().data.squeeze().numpy())
     # Log
     writer.add_scalars('Loss', {'val': val_loss}, epoch+1)
     writer.add_scalars('Accuracy', {'val': val_acc}, epoch+1)
     run.log({'Validation Loss': val_loss, 'Validation Accuracy':val_acc})
     print("Average Validation Loss: {:.6f} | Acc: {:.2f}%".format(val_loss, val_acc*100))
 
-    return val_loss, val_acc
+    return val_loss, val_acc, val_recall, val_precision, val_f1
 
 
 def visualize_attn(I, c):
