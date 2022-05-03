@@ -20,4 +20,5 @@ source ../../mv_test1/bin/activate
 # Run the code
 
 #model attention code:
-python cnn-with-attention.py --arch vgg --train --epochs 20 --save_path experiments/attention_models --visualize --checkpoint experiments/attention_models/cnn_epoch020.pth --lr 1e-4 --batch_size 32
+nb_epochs=20
+python cnn-with-attention.py --experiment-name dummy --arch vgg --train --epochs $nb_epochs --save_path experiments/attention_models --visualize --checkpoint experiments/attention_models/cnn_epoch0$nb_epochs.pth --lr 1e-4 --batch_size 32 --dropout-type dropout --dropout-p 0.2 --regularizer-type l1

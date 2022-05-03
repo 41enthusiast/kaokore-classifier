@@ -4,7 +4,7 @@ import torchvision.utils as utils
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 import cv2
 
-def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log_interval, writer):
+def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log_interval, regularization_type, reg_lambda):
     model.train()
     losses = []
     all_label = []
@@ -23,7 +23,17 @@ def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log
             outputs = outputs[0]
 
         # compute the loss
-        loss = criterion(outputs, labels.squeeze())
+
+        #regularization - specifically l1
+        reg_loss = torch.tensor(0., requires_grad=True)
+        if regularization_type == 'L1':
+            for name, param in model.named_parameters():
+                if 'weight' in name:
+                    reg_loss = reg_loss + reg_lambda * torch.norm(param, 1)
+        else:
+            reg_loss
+
+        loss = criterion(outputs, labels.squeeze()) + reg_loss
         losses.append(loss.item())
 
         # compute the accuracy
@@ -47,11 +57,11 @@ def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log
     all_pred = torch.stack(all_pred, dim=0)
     training_acc = accuracy_score(all_label.squeeze().cpu().data.squeeze().numpy(), all_pred.cpu().data.squeeze().numpy())
     training_recall = recall_score(all_label.squeeze().cpu().data.squeeze().numpy(),
-                                  all_pred.cpu().data.squeeze().numpy())
+                                   all_pred.cpu().data.squeeze().numpy(), average='macro')
     training_precision = precision_score(all_label.squeeze().cpu().data.squeeze().numpy(),
-                                  all_pred.cpu().data.squeeze().numpy())
+                                         all_pred.cpu().data.squeeze().numpy(), average='macro')
     training_f1 = f1_score(all_label.squeeze().cpu().data.squeeze().numpy(),
-                                  all_pred.cpu().data.squeeze().numpy())
+                           all_pred.cpu().data.squeeze().numpy(), average='macro')
     # Log
     run.log({'Train Loss': training_loss, 'Train Accuracy': training_acc})
     print("Average Training Loss of Epoch {}: {:.6f} | Acc: {:.2f}%".format(epoch+1, training_loss, training_acc*100))
@@ -59,7 +69,7 @@ def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log
     return training_loss, training_acc, training_recall, training_precision, training_f1
 
 
-def val_epoch(run, model, criterion, dataloader, device, epoch, writer):
+def val_epoch(run, model, criterion, dataloader, device, epoch):
     model.eval()
     losses = []
     all_label = []
@@ -87,14 +97,12 @@ def val_epoch(run, model, criterion, dataloader, device, epoch, writer):
     all_pred = torch.stack(all_pred, dim=0)
     val_acc = accuracy_score(all_label.squeeze().cpu().data.squeeze().numpy(), all_pred.cpu().data.squeeze().numpy())
     val_recall = recall_score(all_label.squeeze().cpu().data.squeeze().numpy(),
-                                   all_pred.cpu().data.squeeze().numpy())
+                              all_pred.cpu().data.squeeze().numpy(), average='macro')
     val_precision = precision_score(all_label.squeeze().cpu().data.squeeze().numpy(),
-                                         all_pred.cpu().data.squeeze().numpy())
+                                    all_pred.cpu().data.squeeze().numpy(), average='macro')
     val_f1 = f1_score(all_label.squeeze().cpu().data.squeeze().numpy(),
-                           all_pred.cpu().data.squeeze().numpy())
+                      all_pred.cpu().data.squeeze().numpy(), average='macro')
     # Log
-    writer.add_scalars('Loss', {'val': val_loss}, epoch+1)
-    writer.add_scalars('Accuracy', {'val': val_acc}, epoch+1)
     run.log({'Validation Loss': val_loss, 'Validation Accuracy':val_acc})
     print("Average Validation Loss: {:.6f} | Acc: {:.2f}%".format(val_loss, val_acc*100))
 

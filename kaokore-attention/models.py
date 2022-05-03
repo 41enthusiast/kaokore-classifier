@@ -6,17 +6,19 @@ from torchvision import models
 from collections import OrderedDict
 import math
 
+from utils import drop_connect
+
 """
 VGG-16 with attention
 """
 class AttnVGG(nn.Module): #the vgg n densnet versions
-    def __init__(self, num_classes, output_layers, attention=True, normalize_attn=True):
+    def __init__(self, num_classes, output_layers, dropout_mode, p, attention=True, normalize_attn=True):
         super(AttnVGG, self).__init__()
         # conv blocks
         self.pretrained = models.vgg16(True).features
         self.fhooks = []
         self.selected_out = OrderedDict()
-        self.dense = nn.AdaptiveAvgPool2d((1,1))
+        self.dense = nn.AdaptiveAvgPool2d((1, 1))
         #self.dense = nn.Conv2d(in_channels=512, out_channels=512, kernel_size=int(sample_size / 32), padding=0,
         #                       bias=True)
 
@@ -34,6 +36,14 @@ class AttnVGG(nn.Module): #the vgg n densnet versions
             self.attn1 = SpatialAttn(in_features=512, normalize_attn=normalize_attn)
             self.attn2 = SpatialAttn(in_features=512, normalize_attn=normalize_attn)
             self.attn3 = SpatialAttn(in_features=512, normalize_attn=normalize_attn)
+
+        #dropout selection for type of regularization
+        self.dropout_mode, self.p = dropout_mode, p
+
+        if self.dropout_mode == 'dropout':
+            self.dropout = nn.Dropout(self.p)
+        elif self.dropout_mode == 'dropconnect':
+            self.dropout = drop_connect
 
         # final classification layer
         if self.attention:
@@ -58,11 +68,23 @@ class AttnVGG(nn.Module): #the vgg n densnet versions
             c2, g2 = self.attn2(l2, g)
             c3, g3 = self.attn3(l3, g)
             g = torch.cat((g0, g1,g2,g3), dim=1) # batch_sizex3C
+
             # classification layer
-            out = self.classify(g) # batch_sizexnum_classes
+            out = torch.relu(self.classify(g)) # batch_sizexnum_classes
+
+            if self.dropout_mode == 'dropout':
+                out = self.dropout(out)
+            elif self.dropout_mode == 'dropconnect':
+                out = self.dropout(out, self.p, self.training)
+
         else:
             c0, c1, c2, c3 = None, None, None
             out = self.classify(torch.squeeze(g))
+
+            if self.dropout_mode == 'dropout':
+                out = self.dropout(out)
+            elif self.dropout_mode == 'dropconnect':
+                out = self.dropout(out, self.p, self.training)
         return [out, c0, c1, c2, c3]
 
 
@@ -121,7 +143,7 @@ class AttnResnet(nn.Module): #the vgg n densnet versions
         out = self.pretrained(x)
         l0, l1, l2, l3, out = self.selected_out.values()
         g =self.dense(out) # batch_sizex512x1x1
-        print(g.shape, l0.shape, l1.shape, l2.shape, l3.shape)
+        #print(g.shape, l0.shape, l1.shape, l2.shape, l3.shape)
         # attention
         if self.attention:
             c0, g0 = self.attn0(self.projector0(l0), g)
@@ -137,17 +159,15 @@ class AttnResnet(nn.Module): #the vgg n densnet versions
         return [out, c0, c1, c2, c3]
 
 
-output_layers = ['0', '4.1.4', '6.2.2', '7.1.2']
-
 
 # Test
 if __name__ == '__main__':
-    #model = AttnVGG(num_classes=10, output_layers=[0, 7, 21, 28])
-    #x = torch.randn(16,3,256,256)
-    #out, c0, c1, c2, c3 = model(x)
-    #print(out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
+    model = AttnVGG(num_classes=10, output_layers=[0, 7, 21, 28], dropout_mode='dropout', p=0.2)
+    x = torch.randn(16,3,256,256)
+    out, c0, c1, c2, c3 = model(x)
+    print('VGG', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
 
     model = AttnResnet(num_classes=10, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'])
     x = torch.randn(16, 3, 256, 256)
     out, c0, c1, c2, c3 = model(x)
-    print(out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
+    print('Resnet', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
