@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
     # Load data
     transform_train = transforms.Compose([
-        transforms.RandomCrop(32, padding=4),
+        #transforms.RandomCrop(32, padding=4),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
@@ -89,11 +89,9 @@ if __name__ == '__main__':
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         ])
 
-    train_set = Kaokore('../../kaokore-classifier/kaokore', 'train', label, transform=transform_train)
-    test_set = Kaokore('../../kaokore-classifier/kaokore', 'test', label, transform=transform_test)
-    #train_set = torchvision.datasets.CIFAR100(root='./data', train=True, download=True, transform=transform_train)
+    train_set = Kaokore('../../kaokore', 'train', label, transform=transform_train)
+    test_set = Kaokore('../../kaokore', 'test', label, transform=transform_test)
     train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=16)
-    #test_set = torchvision.datasets.CIFAR100(root='./data', train=False, download=True, transform=transform_test)
     test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=True, num_workers=16)
     # Create model
     if args.arch == 'vgg':
@@ -125,6 +123,10 @@ if __name__ == '__main__':
             if not args.no_save:
                 torch.save(model.state_dict(), os.path.join(args.save_path, args.arch+"_cnn_epoch{:03d}.pth".format(epoch+1)))
                 print("Saving Model of Epoch {}".format(epoch+1))
+            if not args.no_save and epoch == args.epochs-1:
+                torch.save(model.state_dict(),
+                           os.path.join(args.save_path, args.experiment_name +'_'+args.arch + "_cnn_epoch{:03d}.pth".format(epoch + 1)))
+                print("Saving Model to visualize")
         global_train_table = wandb.Table(columns=['experiment name', 'training loss', 'training accuracy', 'training recall', 'training precision', 'training f1'])
         global_train_table.add_data(experiment_name, train_loss, train_acc, train_recall, train_prec, train_f1)
         global_val_table = wandb.Table(
@@ -136,7 +138,7 @@ if __name__ == '__main__':
     if args.visualize:
         # Load model
         ckpt_path, ckpt_name = args.checkpoint.split('cnn')
-        ckpt_name = args.arch + '_cnn' + ckpt_name
+        ckpt_name = args.experiment_name +'_'+args.arch + '_cnn' + ckpt_name
         model.load_state_dict(torch.load('/'.join([ckpt_path, ckpt_name])))
         model.eval()
 

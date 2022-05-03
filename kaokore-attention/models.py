@@ -47,9 +47,11 @@ class AttnVGG(nn.Module): #the vgg n densnet versions
 
         # final classification layer
         if self.attention:
-            self.classify = nn.Linear(in_features=512*4, out_features=num_classes, bias=True)
-        else:
+            self.fc1 = nn.Linear(in_features=512*4, out_features=512, bias=True)
             self.classify = nn.Linear(in_features=512, out_features=num_classes, bias=True)
+        else:
+            self.fc1 = nn.Linear(in_features=512, out_features=256, bias=True)
+            self.classify = nn.Linear(in_features=256, out_features=num_classes, bias=True)
 
     def forward_hook(self, layer_name):
         def hook(module, input, output):
@@ -70,7 +72,7 @@ class AttnVGG(nn.Module): #the vgg n densnet versions
             g = torch.cat((g0, g1,g2,g3), dim=1) # batch_sizex3C
 
             # classification layer
-            out = torch.relu(self.classify(g)) # batch_sizexnum_classes
+            out = torch.relu(self.fc1(g)) # batch_sizexnum_classes
 
             if self.dropout_mode == 'dropout':
                 out = self.dropout(out)
@@ -79,12 +81,14 @@ class AttnVGG(nn.Module): #the vgg n densnet versions
 
         else:
             c0, c1, c2, c3 = None, None, None
-            out = self.classify(torch.squeeze(g))
+            out = self.fc1(torch.squeeze(g))
 
             if self.dropout_mode == 'dropout':
                 out = self.dropout(out)
             elif self.dropout_mode == 'dropconnect':
                 out = self.dropout(out, self.p, self.training)
+
+        out = self.classify(out)
         return [out, c0, c1, c2, c3]
 
 

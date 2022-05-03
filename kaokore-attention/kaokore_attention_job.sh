@@ -21,4 +21,4 @@ source ../../mv_test1/bin/activate
 
 #model attention code:
 nb_epochs=20
-python cnn-with-attention.py --experiment-name dummy --arch vgg --train --epochs $nb_epochs --save_path experiments/attention_models --visualize --checkpoint experiments/attention_models/cnn_epoch0$nb_epochs.pth --lr 1e-4 --batch_size 32 --dropout-type dropout --dropout-p 0.2 --regularizer-type l1
+python cnn-with-attention.py --experiment-name kaokore_attn_v2_2 --arch vgg --train --epochs $nb_epochs --save_path experiments/attention_models --visualize --checkpoint experiments/attention_models/cnn_epoch0$nb_epochs.pth --lr 1e-4 --batch_size 8 --dropout-type drop --dropout-p 0.2 --weight-decay 0.1 --regularizer-type l1
