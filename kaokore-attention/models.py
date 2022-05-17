@@ -107,8 +107,8 @@ class AttnResnet(nn.Module): #the vgg n densnet versions
         self.pretrained = models.resnet50(True)
 
         # Freeze Parameters
-        for param in self.pretrained.parameters():
-            param.requires_grad = False
+        #for param in self.pretrained.parameters():
+        #    param.requires_grad = False
 
         self.fhooks = []
         self.selected_out = OrderedDict()
