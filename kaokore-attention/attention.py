@@ -26,11 +26,12 @@ class SpatialAttn(nn.Module):
     def forward(self, l, g):
         N, C, H, W = l.size()
         c = self.op(l+g) # (batch_size,1,H,W)
+        # compute the attention map
         if self.normalize_attn:
             a = F.softmax(c.view(N,1,-1), dim=2).view(N,1,H,W)#softmax sum to 1 in the feature dim(hxw)
         else:
             a = torch.sigmoid(c)
-        g = torch.mul(a.expand_as(l), l)
+        g = torch.mul(a.expand_as(l), l)#reweight the local features
         if self.normalize_attn:
             g = g.view(N,C,-1).sum(dim=2) # (batch_size,C)
         else:

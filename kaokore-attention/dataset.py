@@ -50,11 +50,14 @@ class Kaokore(Dataset):
 
         self.gen_to_cls = {'male': 0, 'female': 1} if label == 'gender' else {'noble': 0, 'warrior': 1,
                                                                                    'incarnation': 2, 'commoner': 3}
+        self.gen_to_cls = {'male': 0, 'female': 1} if label == 'gender' else {'noble': 2, 'warrior': 3,
+                                                                              'incarnation': 1, 'commoner': 0}
         self.cls_to_gen = {v: k for k, v in self.gen_to_cls.items()}
 
         labels = load_labels(os.path.join(root, 'labels.csv'))
+        change_class_index = {0: 2, 1: 3, 2: 1, 3: 0}
         self.entries = [
-            (label_entry['image'], int(label_entry[category]))
+            (label_entry['image'], change_class_index[int(label_entry[category])])
             for label_entry in labels
             if label_entry['set'] == split and os.path.exists(
                 os.path.join(self.root, 'images_256', label_entry['image']))

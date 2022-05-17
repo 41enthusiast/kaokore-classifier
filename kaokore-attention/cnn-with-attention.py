@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 import torchvision
 import torchvision.transforms as transforms
 import torchvision.utils as utils
+from torchvision.datasets import ImageFolder
 from tensorboardX import SummaryWriter
 import os
 import argparse
@@ -16,10 +17,11 @@ from models import AttnVGG, AttnResnet
 from functions import train_epoch, val_epoch, visualize_attn
 
 from dataset import Kaokore
+from utils import focal_loss, make_confusion_matrix, plot_confusion_matrix, get_most_and_least_confident_predictions
 
 model_choices = ['vgg', 'resnet', 'densenet']
 regularizer_choices = ['l1', 'l2']
-dropout_choices = ['dropout', 'dropconnect']
+dropout_choices = ['dropout', 'dropconnect', 'NaN']
 
 # Parameters manager
 parser = argparse.ArgumentParser(description='CNN with Attention')
@@ -45,11 +47,13 @@ parser.add_argument('--dropout-p', default=0.2, type=float,
     help='Dropout probability value (default: 0.2)')
 parser.add_argument('--epochs', default=300, type=int,
     help='Epochs for training')
+parser.add_argument('--num-workers', default=16, type=int,
+    help='Number of workers (default: 16)')
 parser.add_argument('--batch_size', default=32, type=int,
     help='Batch size for training or testing')
 parser.add_argument('--lr', default=1e-4, type=float,
     help='Learning rate for training')
-parser.add_argument('--weight_decay', default=1e-4, type=float,
+parser.add_argument('--weight-decay', default=1e-4, type=float,
     help='Weight decay for training')
 #parser.add_argument('--device', default='0', type=str,
 #    help='Cuda device to use')
@@ -78,26 +82,47 @@ if __name__ == '__main__':
 
     # Load data
     transform_train = transforms.Compose([
+
+        #geometric transformation
         #transforms.RandomCrop(32, padding=4),
-        transforms.RandomHorizontalFlip(),
+        transforms.RandomHorizontalFlip(p=0.5),
+
+        #kernel filters
+        transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5)),
+        transforms.RandomAdjustSharpness(sharpness_factor=2, p=0.5),
+
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         ])
     transform_test = transforms.Compose([
-        transforms.Resize((32,32)),
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
         ])
 
-    train_set = Kaokore('../../kaokore', 'train', label, transform=transform_train)
+    transform_viz = transforms.Compose([
+        #transforms.Resize((32, 32)),
+        transforms.ToTensor(),
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
+    ])
+
+    #train_set = Kaokore('../../kaokore', 'train', label, transform=transform_train)
+    train_set = ImageFolder('../../kaokore-style-transfer-aug-ds', transform=transform_train)
     test_set = Kaokore('../../kaokore', 'test', label, transform=transform_test)
-    train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=16)
-    test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=True, num_workers=16)
+    viz_set = Kaokore('../../kaokore', 'test', label, transform=transform_viz)
+    train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers)
+    test_loader = DataLoader(test_set, batch_size=8, shuffle=True, num_workers=args.num_workers)
+    viz_loader = DataLoader(viz_set, batch_size=8, shuffle=True, num_workers=args.num_workers)
+
+    #n_classes = len(train_set.cls_to_gen)
+    #class_names = list(train_set.cls_to_gen.values())
+    n_classes = len(train_set.classes)
+    class_names = list(train_set.classes)
+
     # Create model
     if args.arch == 'vgg':
-        model = AttnVGG(num_classes=len(train_set.cls_to_gen), output_layers=[0, 7, 21, 28], dropout_mode=args.dropout_type, p=args.dropout_p).to(device)
+        model = AttnVGG(num_classes= n_classes, output_layers=[0, 7, 21, 28], dropout_mode=args.dropout_type, p=args.dropout_p).to(device)
     elif args.arch == 'resnet':
-        model = AttnResnet(num_classes=len(train_set.cls_to_gen), output_layers=['0', '4.1.4', '6.2.2', '7.1.2']).to(device)
+        model = AttnResnet(num_classes=n_classes, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'], dropout_mode=args.dropout_type, p=args.dropout_p).to(device)
     # Run the model parallelly
     if torch.cuda.device_count() > 1:
         print("Using {} GPUs".format(torch.cuda.device_count()))
@@ -105,21 +130,22 @@ if __name__ == '__main__':
 
     # Train
     if args.train:
-        # Create loss criterion & optimizer
-        criterion = nn.CrossEntropyLoss()
+        # Create loss criterion & optimize
+        criterion = focal_loss(n_classes, 2, 2)
+        #criterion = nn.CrossEntropyLoss()
         if args.regularizer_type == 'l2':
             optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
         else:
             optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
-        # lr_lambda = lambda epoch : np.power(0.5, int(epoch/25))
-        # scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
+        lr_lambda = lambda epoch : np.power(0.5, int(epoch/25))
+        scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
 
         for epoch in range(args.epochs):
             train_loss, train_acc, train_recall, train_prec, train_f1 = train_epoch(run, model, criterion, optimizer, train_loader, device, epoch, args.log_interval, args.regularizer_type, args.weight_decay)
             val_loss, val_acc, val_recall, val_prec, val_f1 = val_epoch(run, model, criterion, test_loader, device, epoch)
             # adjust learning rate
-            # scheduler.step()
+            scheduler.step()
             if not args.no_save:
                 torch.save(model.state_dict(), os.path.join(args.save_path, args.arch+"_cnn_epoch{:03d}.pth".format(epoch+1)))
                 print("Saving Model of Epoch {}".format(epoch+1))
@@ -143,7 +169,7 @@ if __name__ == '__main__':
         model.eval()
 
         with torch.no_grad():
-            for batch_idx, (inputs, labels) in enumerate(test_loader):
+            for batch_idx, (inputs, labels) in enumerate(viz_loader):
                 # get images
                 inputs = inputs.to(device)
                 if batch_idx == 0:
@@ -168,3 +194,16 @@ if __name__ == '__main__':
                     viz_table.add_data(w_img, w_attn0, w_attn1, w_attn2, w_attn3)
                     run.log({'visualization': viz_table})
                     break
+            # confusion matrix
+            cm = make_confusion_matrix(model, n_classes, test_loader, device)
+            cm_img = plot_confusion_matrix(cm, class_names)
+            w_cm = wandb.Image(cm_img)
+
+            # log most and least confident images
+            (lc_scores, lc_imgs), (mc_scores, mc_imgs) = get_most_and_least_confident_predictions(model,
+                                                                                                  test_loader,
+                                                                                                  device)
+            w_lc = wandb.Image(utils.make_grid(lc_imgs, nrow=4, normalize=True, scale_each=True))
+            w_mc = wandb.Image(utils.make_grid(mc_imgs, nrow=4, normalize=True, scale_each=True))
+
+            run.log({'Confusion Matrix': w_cm, 'Least Confident Images': w_lc, 'Most Confident Images': w_mc})

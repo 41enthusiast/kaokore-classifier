@@ -33,7 +33,7 @@ def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log
         else:
             reg_loss
 
-        loss = criterion(outputs, labels.squeeze()) + reg_loss
+        loss = criterion(labels.squeeze(), outputs) + reg_loss
         losses.append(loss.item())
 
         # compute the accuracy
@@ -84,7 +84,7 @@ def val_epoch(run, model, criterion, dataloader, device, epoch):
             if isinstance(outputs, list):
                 outputs = outputs[0]
             # compute the loss
-            loss = criterion(outputs, labels.squeeze())
+            loss = criterion(labels.squeeze(), outputs)
             losses.append(loss.item())
             # collect labels & prediction
             prediction = torch.max(outputs, 1)[1]
@@ -109,14 +109,17 @@ def val_epoch(run, model, criterion, dataloader, device, epoch):
     return val_loss, val_acc, val_recall, val_precision, val_f1
 
 
-def visualize_attn(I, c):
+def visualize_attn(I, c, h = 256):
     # Image
     img = I.permute((1,2,0)).cpu().numpy()
     # Heatmap
     N, C, H, W = c.size()
-    a = F.softmax(c.view(N,C,-1), dim=2).view(N,C,H,W)
-    up_factor = 32/H
-    # print(up_factor, I.size(), c.size())
+    a = F.softmax(c.view(N,C,-1), dim=2).view(N, C, H, W)
+    up_factor = I.shape[1]/H, I.shape[2]/W
+    up_factor = h/H
+    #print(up_factor, I.size(), c.size())
+    #if up_factor[0] > 1 or up_factor[1] > 1:
+    #    a = F.interpolate(a, scale_factor=up_factor, mode='bilinear', align_corners=False)
     if up_factor > 1:
         a = F.interpolate(a, scale_factor=up_factor, mode='bilinear', align_corners=False)
     attn = utils.make_grid(a, nrow=4, normalize=True, scale_each=True)

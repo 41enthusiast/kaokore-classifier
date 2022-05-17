@@ -1,0 +1,2 @@
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+
