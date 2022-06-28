@@ -4,6 +4,9 @@ import torchvision.utils as utils
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score
 import cv2
 
+import wandb
+
+
 def train_epoch(run, model, criterion, optimizer, dataloader, device, epoch, log_interval, regularization_type, reg_lambda):
     model.train()
     losses = []

@@ -1,11 +1,428 @@
+wandb: Starting wandb agent 🕵️
+2022-06-28 08:28:16,070 - wandb.wandb_agent - INFO - Running runs: []
+2022-06-28 08:28:16,429 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 08:28:16,429 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-cb-10pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 08:28:16,440 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-cb-10pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+2022-06-28 08:28:21,453 - wandb.wandb_agent - INFO - Running runs: ['mrbiv4v9']
 wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
-2022-05-17 10:59:02.626816: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/lib:/usr/local/lib
-2022-05-17 10:59:02.626853: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-wandb: wandb version 0.12.16 is available!  To upgrade, please run:
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.12.11
-wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220517_105851-2hhqtfdz
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_082830-mrbiv4v9
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run freeze_noreg_fl_v0_2_resnet_status_0.0001_20_l2_NaN_0.2
-wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-model-attention-vproto
-wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-model-attention-vproto/runs/2hhqtfdz
+wandb: Syncing run iconic-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/mrbiv4v9
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.915 MB of 2.915 MB uploaded (0.000 MB deduped)wandb: \ 2.915 MB of 2.915 MB uploaded (0.000 MB deduped)wandb: | 2.915 MB of 2.915 MB uploaded (0.000 MB deduped)wandb: / 2.915 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: - 2.915 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: \ 2.915 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: | 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: / 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: - 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: \ 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: | 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: / 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb: - 2.924 MB of 2.924 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▆▇▇█▇▇███████▇███▇
+wandb:          Train Loss █▄▂▂▁▁▁▂▁▁▁▁▁▁▁▂▁▁▁▂
+wandb: Validation Accuracy ▁▂▅▅▆▆▇▅▅█▆▅▇▅▅▄▆█▇▇
+wandb:     Validation Loss ▂▁▂▂▃▃▃▆▆▅▆█▇▆█▅▄▄▅▄
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 0.96191
+wandb:          Train Loss 0.09814
+wandb: Validation Accuracy 0.86509
+wandb:     Validation Loss 0.57057
+wandb: 
+wandb: Synced iconic-sweep-1: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/mrbiv4v9
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_082830-mrbiv4v9/logs
+2022-06-28 08:38:22,398 - wandb.wandb_agent - INFO - Cleaning up finished run: mrbiv4v9
+2022-06-28 08:38:22,668 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 08:38:22,668 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-2-cb-10pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 08:38:22,677 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-2-cb-10pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 08:38:27,684 - wandb.wandb_agent - INFO - Running runs: ['ffg8ysqp']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_083826-ffg8ysqp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fiery-sweep-2
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/ffg8ysqp
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.769 MB of 2.769 MB uploaded (0.000 MB deduped)wandb: \ 2.769 MB of 2.769 MB uploaded (0.000 MB deduped)wandb: | 2.769 MB of 2.769 MB uploaded (0.000 MB deduped)wandb: / 2.769 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: - 2.769 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: \ 2.772 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: | 2.778 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: / 2.778 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: - 2.778 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: \ 2.778 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: | 2.778 MB of 2.778 MB uploaded (0.000 MB deduped)wandb: / 2.778 MB of 2.778 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▆▇▇█▇▇██▇█████████
+wandb:          Train Loss █▄▂▂▂▁▃▂▁▁▂▁▁▁▁▁▁▁▁▁
+wandb: Validation Accuracy ▂▂▆▃▁▂▅▄▅▁▃▆▆▆▇█▆▇▇▇
+wandb:     Validation Loss ▂▁▁▃▄▄▃▄▄█▅▃▄▄▅▅▆▄▃▄
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 0.99637
+wandb:          Train Loss 0.00913
+wandb: Validation Accuracy 0.85562
+wandb:     Validation Loss 0.57547
+wandb: 
+wandb: Synced fiery-sweep-2: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/ffg8ysqp
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_083826-ffg8ysqp/logs
+2022-06-28 08:47:59,806 - wandb.wandb_agent - INFO - Cleaning up finished run: ffg8ysqp
+2022-06-28 08:48:00,075 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 08:48:00,075 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-cb-25pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 08:48:00,085 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-cb-25pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 08:48:05,097 - wandb.wandb_agent - INFO - Running runs: ['zfoq4r2b']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_084803-zfoq4r2b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stellar-sweep-3
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/zfoq4r2b
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.713 MB of 2.713 MB uploaded (0.000 MB deduped)wandb: \ 2.713 MB of 2.713 MB uploaded (0.000 MB deduped)wandb: | 2.713 MB of 2.713 MB uploaded (0.000 MB deduped)wandb: / 2.713 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: - 2.713 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: \ 2.713 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: | 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: / 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: - 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: \ 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: | 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: / 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: - 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb: \ 2.722 MB of 2.722 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▆▇▇███████████████
+wandb:          Train Loss █▄▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Validation Accuracy ▁▂▂▂▆▆▅▅▅▅▄▇▅▅▇▅█▇██
+wandb:     Validation Loss ▂▁▁▆▅▅▅▅▇█▆▆█▄▃▆▆▇▆▇
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 1.0
+wandb:          Train Loss 0.0001
+wandb: Validation Accuracy 0.86982
+wandb:     Validation Loss 0.65389
+wandb: 
+wandb: Synced stellar-sweep-3: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/zfoq4r2b
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_084803-zfoq4r2b/logs
+2022-06-28 08:58:47,375 - wandb.wandb_agent - INFO - Cleaning up finished run: zfoq4r2b
+2022-06-28 08:58:47,723 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 08:58:47,723 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-2-cb-25pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 08:58:47,731 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-2-cb-25pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 08:58:52,741 - wandb.wandb_agent - INFO - Running runs: ['7ezos2zu']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_085851-7ezos2zu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run peach-sweep-4
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/7ezos2zu
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.960 MB of 2.960 MB uploaded (0.000 MB deduped)wandb: \ 2.960 MB of 2.960 MB uploaded (0.000 MB deduped)wandb: | 2.960 MB of 2.960 MB uploaded (0.000 MB deduped)wandb: / 2.960 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: - 2.960 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: \ 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: | 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: / 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: - 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: \ 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: | 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: / 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb: - 2.969 MB of 2.969 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▆▇████████████████
+wandb:          Train Loss █▄▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Validation Accuracy ▁▅▇▇▇▇▇▆▇▇▆▆█▇█▇▇▇▆█
+wandb:     Validation Loss ▄▁▁▂▃▂▅▅▅▅▆▅▃▇▇█▅▆▇█
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 0.9987
+wandb:          Train Loss 0.00289
+wandb: Validation Accuracy 0.86627
+wandb:     Validation Loss 0.75615
+wandb: 
+wandb: Synced peach-sweep-4: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/7ezos2zu
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_085851-7ezos2zu/logs
+2022-06-28 09:09:24,577 - wandb.wandb_agent - INFO - Cleaning up finished run: 7ezos2zu
+2022-06-28 09:09:24,892 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 09:09:24,892 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-cb-50pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 09:09:24,902 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-cb-50pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 09:09:29,914 - wandb.wandb_agent - INFO - Running runs: ['wwkrjc14']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_090928-wwkrjc14
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rose-sweep-5
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/wwkrjc14
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.782 MB of 2.782 MB uploaded (0.000 MB deduped)wandb: \ 2.782 MB of 2.782 MB uploaded (0.000 MB deduped)wandb: | 2.782 MB of 2.782 MB uploaded (0.000 MB deduped)wandb: / 2.782 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: - 2.782 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: \ 2.786 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: | 2.790 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: / 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: - 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: \ 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: | 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: / 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: - 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb: \ 2.792 MB of 2.792 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▇▇▇███████████████
+wandb:          Train Loss █▄▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Validation Accuracy ▅▁▆▆▅█▇█▇▆███▇▇▇▇▇▆▆
+wandb:     Validation Loss ▁▄▂▃▆▁▅▄▃▄▃▆▇▃▄▅▇▄█▄
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 0.98609
+wandb:          Train Loss 0.02589
+wandb: Validation Accuracy 0.84379
+wandb:     Validation Loss 0.58322
+wandb: 
+wandb: Synced rose-sweep-5: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/wwkrjc14
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_090928-wwkrjc14/logs
+2022-06-28 09:21:52,154 - wandb.wandb_agent - INFO - Cleaning up finished run: wwkrjc14
+2022-06-28 09:21:52,455 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 09:21:52,455 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-2-cb-50pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 09:21:52,718 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-2-cb-50pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 09:21:57,732 - wandb.wandb_agent - INFO - Running runs: ['vutal610']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_092156-vutal610
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run twilight-sweep-6
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/vutal610
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.938 MB of 2.938 MB uploaded (0.000 MB deduped)wandb: \ 2.938 MB of 2.938 MB uploaded (0.000 MB deduped)wandb: | 2.938 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: / 2.938 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: - 2.938 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: \ 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: | 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: / 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: - 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: \ 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: | 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb: / 2.948 MB of 2.948 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▇▇████████████████
+wandb:          Train Loss █▄▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Validation Accuracy ▁▆▂▆▇▇▇▇▇▆▇▇▆██▇▇▇▅▇
+wandb:     Validation Loss ▅▁▃▂▃▃▄▄▆▆▄▆▅▃▄▆▆▆█▂
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 0.98855
+wandb:          Train Loss 0.02525
+wandb: Validation Accuracy 0.85444
+wandb:     Validation Loss 0.49072
+wandb: 
+wandb: Synced twilight-sweep-6: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/vutal610
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_092156-vutal610/logs
+2022-06-28 09:34:23,676 - wandb.wandb_agent - INFO - Cleaning up finished run: vutal610
+2022-06-28 09:34:23,974 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 09:34:23,975 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-cb-100pct
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 09:34:23,984 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 --dataset_path=../../fst-kaokore-cb-100pct --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 09:34:28,993 - wandb.wandb_agent - INFO - Running runs: ['c7mx7ska']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_093427-c7mx7ska
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run absurd-sweep-7
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/c7mx7ska
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 2.846 MB of 2.846 MB uploaded (0.000 MB deduped)wandb: \ 2.846 MB of 2.846 MB uploaded (0.000 MB deduped)wandb: | 2.846 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: / 2.846 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: - 2.853 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: \ 2.854 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: | 2.854 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: / 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: - 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: \ 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: | 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: / 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: - 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb: \ 2.856 MB of 2.856 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:      Train Accuracy ▁▅▇▇▇███████████████
+wandb:          Train Loss █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: Validation Accuracy ▂▄▃▁▄▇▆▇█▇▅█▇█▆▆▄▅█▇
+wandb:     Validation Loss ▁▂▁▇▆▃▂▅▂▄█▆▅▃▇▇▅▅▇▄
+wandb: 
+wandb: Run summary:
+wandb:      Train Accuracy 0.99249
+wandb:          Train Loss 0.01432
+wandb: Validation Accuracy 0.85089
+wandb:     Validation Loss 0.59139
+wandb: 
+wandb: Synced absurd-sweep-7: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/c7mx7ska
+wandb: Synced 5 W&B file(s), 6 media file(s), 8 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_093427-c7mx7ska/logs
+2022-06-28 09:50:13,782 - wandb.wandb_agent - INFO - Cleaning up finished run: c7mx7ska
+2022-06-28 09:50:14,076 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 09:50:14,076 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: resnet
+	batch_size: 64
+	dataset_path: ../../fst-kaokore-2-cb-100pct ../../kaokore_imagenet_style/status/train
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 09:50:14,083 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=resnet --batch_size=64 "--dataset_path=../../fst-kaokore-2-cb-100pct ../../kaokore_imagenet_style/status/train" --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+2022-06-28 09:50:19,095 - wandb.wandb_agent - INFO - Running runs: ['gvcx7mb2']
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.11
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_095017-gvcx7mb2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Resuming run glorious-sweep-8
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/xh7yhn7p
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/gvcx7mb2
+Traceback (most recent call last):
+  File "cnn-with-attention-train.py", line 194, in <module>
+    train()
+  File "cnn-with-attention-train.py", line 78, in train
+    train_set = ImageFolder(config.dataset_path, transform=transform_train)
+  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 310, in __init__
+    super(ImageFolder, self).__init__(root, loader, IMG_EXTENSIONS if is_valid_file is None else None,
+  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 145, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 221, in find_classes
+    return find_classes(directory)
+  File "/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torchvision/datasets/folder.py", line 40, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: '../../fst-kaokore-2-cb-100pct ../../kaokore_imagenet_style/status/train'
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.000 MB of 0.000 MB uploaded (0.000 MB deduped)wandb: \ 0.000 MB of 0.000 MB uploaded (0.000 MB deduped)wandb: | 0.000 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.000 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: - 0.000 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced glorious-sweep-8: https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/gvcx7mb2
+wandb: Synced 3 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220628_095017-gvcx7mb2/logs
+2022-06-28 09:50:29,421 - wandb.wandb_agent - INFO - Cleaning up finished run: gvcx7mb2
+2022-06-28 09:50:33,265 - wandb.wandb_agent - INFO - Agent received command: exit
+2022-06-28 09:50:33,265 - wandb.wandb_agent - INFO - Received exit command. Killing runs and quitting.
+wandb: Terminating and syncing runs. Press ctrl-c to kill.

@@ -213,7 +213,7 @@ if __name__ == '__main__':
     out, c0, c1, c2, c3 = model(x)
     print('VGG', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
 
-    model = AttnResnet(num_classes=10, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'], dropout_mode='dropconnect', p=0.2)
+    model = AttnResnet(num_classes=10, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'], dropout_mode='dropout', p=0.2)
     x = torch.randn(16, 3, 256, 256)
     out, c0, c1, c2, c3 = model(x)
     print('Resnet', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)

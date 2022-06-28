@@ -1,0 +1,51 @@
+program: cnn-with-attention-train.py
+method: grid
+metric:
+    goal: minimize
+    name: Validation Loss
+parameters:
+  dataset_path:
+    values: [   ../../fst-kaokore-cb-10pct,
+                ../../fst-kaokore-2-cb-10pct,
+                ../../fst-kaokore-cb-25pct,
+                ../../fst-kaokore-2-cb-25pct,
+                ../../fst-kaokore-cb-50pct,
+                ../../fst-kaokore-2-cb-50pct,
+                ../../fst-kaokore-cb-100pct,
+                ../../fst-kaokore-2-cb-100pct,
+                ../../kaokore_imagenet_style/status/train ]
+  weight_decay:
+    values: [ 1e-3 ]
+  dropout_p:
+    values: [0.3]
+  dropout_type:
+    values: [dropout]
+  regularizer_type:
+    values: [l1]
+  lr:
+    values: [ 0.0001]
+  alpha:
+    values: [ 2]
+  gamma:
+    values: [ 2]
+  epochs:
+    value: 20
+  no_save:
+    value: False
+  arch:
+    value: vgg
+  save_path:
+    value: experiments/attention_models
+  visualize:
+    value: True
+  batch_size:
+    value: 64
+  type:
+    value: status
+  num_workers:
+    value: 4
+  log_interval:
+    value: 100
+early_terminate:
+  type: hyperband
+  min_iter: 3

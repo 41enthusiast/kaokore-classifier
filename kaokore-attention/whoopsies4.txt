@@ -1,16 +1,44 @@
+wandb: Starting wandb agent 🕵️
+2022-06-28 10:53:55,238 - wandb.wandb_agent - INFO - Running runs: []
+2022-06-28 10:53:55,537 - wandb.wandb_agent - INFO - Agent received command: run
+2022-06-28 10:53:55,537 - wandb.wandb_agent - INFO - Agent starting run with config:
+	alpha: 2
+	arch: vgg
+	batch_size: 64
+	dataset_path: ../../kaokore_imagenet_style/status/train
+	dropout_p: 0.3
+	dropout_type: dropout
+	epochs: 20
+	gamma: 2
+	log_interval: 100
+	lr: 0.0001
+	no_save: False
+	num_workers: 4
+	regularizer_type: l1
+	save_path: experiments/attention_models
+	type: status
+	visualize: True
+	weight_decay: 0.001
+2022-06-28 10:53:55,666 - wandb.wandb_agent - INFO - About to run command: /usr/bin/env python cnn-with-attention-train.py --alpha=2 --arch=vgg --batch_size=64 --dataset_path=../../kaokore_imagenet_style/status/train --dropout_p=0.3 --dropout_type=dropout --epochs=20 --gamma=2 --log_interval=100 --lr=0.0001 --no_save=False --num_workers=4 --regularizer_type=l1 --save_path=experiments/attention_models --type=status --visualize=True --weight_decay=0.001
+2022-06-28 10:54:00,680 - wandb.wandb_agent - INFO - Running runs: ['99zxr7ut']
 wandb: Currently logged in as: mridulav (use `wandb login --relogin` to force relogin)
-2022-05-17 09:01:58.219190: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/lib:/usr/local/lib
-2022-05-17 09:01:58.219224: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-wandb: wandb version 0.12.16 is available!  To upgrade, please run:
+wandb: WARNING Ignored wandb.init() arg project when running a sweep.
+wandb: wandb version 0.12.19 is available!  To upgrade, please run:
 wandb:  $ pip install wandb --upgrade
 wandb: Tracking run with wandb version 0.12.11
-wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220517_090151-27clfbhw
+wandb: Run data is saved locally in /home2/txlx81/new_repos/kaokore-classifier/kaokore-attention/wandb/run-20220628_105410-99zxr7ut
 wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run testsamesize_da1_frozen_dropconnect_kaokore_attn_focal_loss_v0_2_vgg_status_0.0001_20_l1_dropconnect_0.2
-wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-model-attention-vproto
-wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-model-attention-vproto/runs/27clfbhw
-wandb: Waiting for W&B process to finish... (success).
-wandb: - 2.786 MB of 2.786 MB uploaded (0.000 MB deduped)wandb: \ 2.786 MB of 2.786 MB uploaded (0.000 MB deduped)wandb: | 2.786 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.786 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.786 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.789 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: | 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: / 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: - 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb: \ 2.790 MB of 2.790 MB uploaded (0.000 MB deduped)wandb:                                                                                
-wandb: Synced testsamesize_da1_frozen_dropconnect_kaokore_attn_focal_loss_v0_2_vgg_status_0.0001_20_l1_dropconnect_0.2: https://wandb.ai/mridulav/kaokore-model-attention-vproto/runs/27clfbhw
-wandb: Synced 5 W&B file(s), 4 media file(s), 6 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20220517_090151-27clfbhw/logs
+wandb: Resuming run jolly-sweep-1
+wandb: ⭐️ View project at https://wandb.ai/mridulav/kaokore-attention-sweeps
+wandb: 🧹 View sweep at https://wandb.ai/mridulav/kaokore-attention-sweeps/sweeps/d3r85zj4
+wandb: 🚀 View run at https://wandb.ai/mridulav/kaokore-attention-sweeps/runs/99zxr7ut
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+/home2/txlx81/new_repos/mv_test1/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1318: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+2022-06-28 10:57:19,825 - wandb.wandb_agent - INFO - Agent received command: stop
+2022-06-28 10:57:19,826 - wandb.wandb_agent - INFO - Stop: 99zxr7ut
+2022-06-28 10:57:24,831 - wandb.wandb_agent - INFO - Cleaning up finished run: 99zxr7ut
+2022-06-28 10:57:25,130 - wandb.wandb_agent - INFO - Agent received command: exit
+2022-06-28 10:57:25,130 - wandb.wandb_agent - INFO - Received exit command. Killing runs and quitting.
+wandb: Terminating and syncing runs. Press ctrl-c to kill.

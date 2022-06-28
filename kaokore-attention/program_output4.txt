@@ -1,2 +1,20 @@
-torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
-
+cuda
+Starting training
+../../kaokore_imagenet_style/status/train
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4
+epoch   1 | iteration   100 | Loss 0.859902 | Acc 64.06%
+Average Training Loss of Epoch 1: 1.033302 | Acc: 58.64%
+Average Validation Loss: 0.788134 | Acc: 68.99%
+epoch   2 | iteration   100 | Loss 0.678045 | Acc 71.88%
+Average Training Loss of Epoch 2: 0.766986 | Acc: 69.18%
+Average Validation Loss: 0.656923 | Acc: 74.91%
+epoch   3 | iteration   100 | Loss 0.681275 | Acc 75.00%
+Average Training Loss of Epoch 3: 0.660512 | Acc: 73.48%
+Average Validation Loss: 0.587435 | Acc: 77.75%
+epoch   4 | iteration   100 | Loss 0.640506 | Acc 68.75%
+Average Training Loss of Epoch 4: 0.608872 | Acc: 75.40%
+Average Validation Loss: 0.568086 | Acc: 78.11%
+epoch   5 | iteration   100 | Loss 0.494580 | Acc 81.25%
+Average Training Loss of Epoch 5: 0.560250 | Acc: 76.98%
+Average Validation Loss: 0.516742 | Acc: 79.17%

@@ -5,3 +5,5 @@ wandb/
 finetuning-classifier-on-kaokore/
 kaokore-attention/experiments/
 kaokore-attention/wandb/
+kaokore-attention/stylegan-test/
+fst-kaokore/
