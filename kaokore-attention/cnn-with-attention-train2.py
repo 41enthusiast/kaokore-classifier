@@ -75,27 +75,43 @@ def train():
     print(config.dataset_path)
 
     # train_set = Kaokore('../../kaokore', 'train', label, transform=transform_train)
-    train_set = ImageFolder(config.dataset_path, transform=transform_train)
-    test_set = ImageFolder('../../kaokore_imagenet_style/'+config.type+'/dev', transform=transform_test)
+    #train_set = ImageFolder(config.dataset_path, transform=transform_train)
+
+    ds_names = ['fst-kaokore-2-cb-100pct', 'fst-kaokore-cb-100pct']
+    root_path = '../../'
+    dataset1 = ImageFolder(root_path+ds_names[0], transform=transform_train)
+    dataset2 = ImageFolder(root_path+ds_names[1], transform=transform_train)
+
+    ds1_sz = len(dataset1)
+    ds2_sz = len(dataset2)
+
+    train_set = torch.utils.data.ConcatDataset([dataset1, dataset2])
+    #print(len(concat_dataset), ds1_sz, ds2_sz)
+    weighted_sampler = torch.utils.data.WeightedRandomSampler([config.dataset_probs,]*ds1_sz+[1-config.dataset_probs,]*ds2_sz, ds1_sz)
+    train_loader = torch.utils.data.DataLoader(train_set, batch_size= config.batch_size, sampler = weighted_sampler)
+
     #test_set = Kaokore('../kaokore', 'dev', label, transform=transform_test)
     #viz_set = Kaokore('../../kaokore', 'test', label, transform=transform_test)
+
+    test_set = ImageFolder('../../kaokore_imagenet_style/'+config.type+'/dev', transform=transform_test)
+
     viz_set = ImageFolder('../../kaokore_imagenet_style/' + config.type + '/test', transform=transform_test)
-    train_loader = DataLoader(train_set, batch_size=config.batch_size, shuffle=True,
-                              num_workers=config.num_workers)
+    #train_loader = DataLoader(train_set, batch_size=config.batch_size, shuffle=True,
+    #                          num_workers=config.num_workers)
     test_loader = DataLoader(test_set, batch_size=8, shuffle=True, num_workers=config.num_workers)
     viz_loader = DataLoader(viz_set, batch_size=8, shuffle=True, num_workers=config.num_workers)
 
     # n_classes = len(train_set.cls_to_gen)
     # class_names = list(train_set.cls_to_gen.values())
-    n_classes = len(train_set.classes)
-    class_names = list(train_set.classes)
+    n_classes = len(dataset1.classes)
+    class_names = list(dataset1.classes)
     print('Loaded data')
-    print(class_names, n_classes, config.model_subtypes)
+    print(class_names, n_classes)
 
     # Create model
     if config.arch == 'vgg':
-        model = AttnVGG(num_classes=n_classes, output_layers=config.model_subtypes[1], dropout_mode=config.dropout_type,
-                        p=config.dropout_p, model_subtype = config.model_subtypes[0]).to(device)
+        model = AttnVGG(num_classes=n_classes, output_layers=[0, 7, 21, 28], dropout_mode=config.dropout_type,
+                        p=config.dropout_p).to(device)
     elif config.arch == 'resnet':
         model = AttnResnet(num_classes=n_classes, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'],
                            dropout_mode=config.dropout_type, p=config.dropout_p).to(device)

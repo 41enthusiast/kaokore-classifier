@@ -1,19 +1,11 @@
-program: cnn-with-attention-train.py
+program: cnn-with-attention-train2.py
 method: grid
 metric:
     goal: minimize
     name: Validation Loss
 parameters:
-  dataset_path:
-    values: [   ../../fst-kaokore-cb-10pct,
-                ../../fst-kaokore-2-cb-10pct,
-                ../../fst-kaokore-cb-25pct,
-                ../../fst-kaokore-2-cb-25pct,
-                ../../fst-kaokore-cb-50pct,
-                ../../fst-kaokore-2-cb-50pct,
-                ../../fst-kaokore-cb-100pct,
-                ../../fst-kaokore-2-cb-100pct,
-                ../../kaokore_imagenet_style/status/train ]
+  dataset_probs:
+    values: [0.1, 0.2, 0.5, 0.8, 0.9]
   weight_decay:
     values: [ 1e-3 ]
   dropout_p:

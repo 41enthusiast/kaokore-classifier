@@ -2,67 +2,209 @@ cuda
 Starting training
 ../../fst-kaokore-cb-10pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 0.676229 | Acc 76.56%
-Average Training Loss of Epoch 1: 1.007795 | Acc: 58.74%
-Average Validation Loss: 0.730815 | Acc: 71.12%
-epoch   2 | iteration   100 | Loss 0.845846 | Acc 62.50%
-Average Training Loss of Epoch 2: 0.738219 | Acc: 70.87%
-Average Validation Loss: 0.614792 | Acc: 74.91%
-epoch   3 | iteration   100 | Loss 0.623630 | Acc 75.00%
-Average Training Loss of Epoch 3: 0.645304 | Acc: 73.47%
-Average Validation Loss: 0.572685 | Acc: 78.70%
-epoch   4 | iteration   100 | Loss 0.717661 | Acc 73.44%
-Average Training Loss of Epoch 4: 0.588836 | Acc: 76.00%
-Average Validation Loss: 0.529470 | Acc: 78.82%
-epoch   5 | iteration   100 | Loss 0.464234 | Acc 79.69%
-Average Training Loss of Epoch 5: 0.539620 | Acc: 77.16%
-Average Validation Loss: 0.496200 | Acc: 80.00%
-epoch   6 | iteration   100 | Loss 0.555838 | Acc 76.56%
-Average Training Loss of Epoch 6: 0.504293 | Acc: 78.11%
-Average Validation Loss: 0.479382 | Acc: 81.54%
-epoch   7 | iteration   100 | Loss 0.459115 | Acc 84.38%
-Average Training Loss of Epoch 7: 0.474513 | Acc: 79.01%
-Average Validation Loss: 0.484162 | Acc: 81.07%
-epoch   8 | iteration   100 | Loss 0.639687 | Acc 76.56%
-Average Training Loss of Epoch 8: 0.450860 | Acc: 80.33%
-Average Validation Loss: 0.447427 | Acc: 81.30%
-epoch   9 | iteration   100 | Loss 0.398007 | Acc 81.25%
-Average Training Loss of Epoch 9: 0.418553 | Acc: 81.30%
-Average Validation Loss: 0.441668 | Acc: 81.78%
-epoch  10 | iteration   100 | Loss 0.451725 | Acc 79.69%
-Average Training Loss of Epoch 10: 0.402254 | Acc: 82.03%
-Average Validation Loss: 0.446960 | Acc: 82.01%
-epoch  11 | iteration   100 | Loss 0.313222 | Acc 92.19%
-Average Training Loss of Epoch 11: 0.380042 | Acc: 83.07%
-Average Validation Loss: 0.424861 | Acc: 83.08%
-epoch  12 | iteration   100 | Loss 0.351780 | Acc 82.81%
-Average Training Loss of Epoch 12: 0.358429 | Acc: 83.47%
-Average Validation Loss: 0.417562 | Acc: 82.72%
-epoch  13 | iteration   100 | Loss 0.253405 | Acc 89.06%
-Average Training Loss of Epoch 13: 0.358393 | Acc: 83.90%
-Average Validation Loss: 0.445395 | Acc: 80.24%
-epoch  14 | iteration   100 | Loss 0.357363 | Acc 85.94%
-Average Training Loss of Epoch 14: 0.333943 | Acc: 84.88%
-Average Validation Loss: 0.408214 | Acc: 83.43%
-epoch  15 | iteration   100 | Loss 0.276222 | Acc 89.06%
-Average Training Loss of Epoch 15: 0.307831 | Acc: 85.97%
-Average Validation Loss: 0.414184 | Acc: 83.31%
-epoch  16 | iteration   100 | Loss 0.267175 | Acc 85.94%
-Average Training Loss of Epoch 16: 0.292684 | Acc: 86.66%
-Average Validation Loss: 0.401150 | Acc: 83.79%
-epoch  17 | iteration   100 | Loss 0.259269 | Acc 93.75%
-Average Training Loss of Epoch 17: 0.277041 | Acc: 86.78%
-Average Validation Loss: 0.414515 | Acc: 82.72%
-epoch  18 | iteration   100 | Loss 0.224875 | Acc 89.06%
-Average Training Loss of Epoch 18: 0.263078 | Acc: 87.56%
-Average Validation Loss: 0.402108 | Acc: 84.26%
-epoch  19 | iteration   100 | Loss 0.222327 | Acc 90.62%
-Average Training Loss of Epoch 19: 0.248255 | Acc: 87.99%
-Average Validation Loss: 0.397256 | Acc: 82.96%
-epoch  20 | iteration   100 | Loss 0.205505 | Acc 92.19%
-Average Training Loss of Epoch 20: 0.236251 | Acc: 88.80%
-Average Validation Loss: 0.405129 | Acc: 82.84%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 17.19%
+Average Training Loss of Epoch 1: nan | Acc: 9.57%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 2: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 3: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 4: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 5: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 6: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 7: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 8: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 17.19%
+Average Training Loss of Epoch 9: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 10: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 11: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 12: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 13: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 3.12%
+Average Training Loss of Epoch 14: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 15: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 17.19%
+Average Training Loss of Epoch 16: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 17: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 18: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 19: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 20: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-10pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 1.113832 | Acc 60.94%
+Average Training Loss of Epoch 1: 1.009173 | Acc: 58.14%
+Average Validation Loss: 0.748545 | Acc: 69.82%
+epoch   2 | iteration   100 | Loss 0.685829 | Acc 67.19%
+Average Training Loss of Epoch 2: 0.772973 | Acc: 68.02%
+Average Validation Loss: 0.659786 | Acc: 74.44%
+epoch   3 | iteration   100 | Loss 0.925166 | Acc 67.19%
+Average Training Loss of Epoch 3: 0.664571 | Acc: 72.54%
+Average Validation Loss: 0.617389 | Acc: 75.74%
+epoch   4 | iteration   100 | Loss 0.577871 | Acc 73.44%
+Average Training Loss of Epoch 4: 0.609092 | Acc: 74.33%
+Average Validation Loss: 0.580434 | Acc: 75.86%
+epoch   5 | iteration   100 | Loss 0.433478 | Acc 82.81%
+Average Training Loss of Epoch 5: 0.560806 | Acc: 75.93%
+Average Validation Loss: 0.567739 | Acc: 76.69%
+epoch   6 | iteration   100 | Loss 0.564651 | Acc 71.88%
+Average Training Loss of Epoch 6: 0.521837 | Acc: 77.67%
+Average Validation Loss: 0.541965 | Acc: 76.80%
+epoch   7 | iteration   100 | Loss 0.498818 | Acc 82.81%
+Average Training Loss of Epoch 7: 0.494009 | Acc: 78.27%
+Average Validation Loss: 0.513270 | Acc: 78.82%
+epoch   8 | iteration   100 | Loss 0.383031 | Acc 82.81%
+Average Training Loss of Epoch 8: 0.463388 | Acc: 79.19%
+Average Validation Loss: 0.488244 | Acc: 79.41%
+epoch   9 | iteration   100 | Loss 0.483549 | Acc 78.12%
+Average Training Loss of Epoch 9: 0.437723 | Acc: 80.82%
+Average Validation Loss: 0.480310 | Acc: 80.12%
+epoch  10 | iteration   100 | Loss 0.333688 | Acc 85.94%
+Average Training Loss of Epoch 10: 0.416607 | Acc: 81.60%
+Average Validation Loss: 0.474897 | Acc: 80.36%
+epoch  11 | iteration   100 | Loss 0.309052 | Acc 84.38%
+Average Training Loss of Epoch 11: 0.389924 | Acc: 82.60%
+Average Validation Loss: 0.481105 | Acc: 80.71%
+epoch  12 | iteration   100 | Loss 0.412136 | Acc 78.12%
+Average Training Loss of Epoch 12: 0.366621 | Acc: 82.99%
+Average Validation Loss: 0.474074 | Acc: 81.30%
+epoch  13 | iteration   100 | Loss 0.374114 | Acc 79.69%
+Average Training Loss of Epoch 13: 0.350473 | Acc: 83.03%
+Average Validation Loss: 0.463632 | Acc: 80.24%
+epoch  14 | iteration   100 | Loss 0.285747 | Acc 92.19%
+Average Training Loss of Epoch 14: 0.332206 | Acc: 84.74%
+Average Validation Loss: 0.464252 | Acc: 80.95%
+epoch  15 | iteration   100 | Loss 0.559572 | Acc 75.00%
+Average Training Loss of Epoch 15: 0.314612 | Acc: 85.38%
+Average Validation Loss: 0.463132 | Acc: 81.54%
+epoch  16 | iteration   100 | Loss 0.254963 | Acc 89.06%
+Average Training Loss of Epoch 16: 0.293300 | Acc: 85.96%
+Average Validation Loss: 0.466529 | Acc: 81.30%
+epoch  17 | iteration   100 | Loss 0.258072 | Acc 85.94%
+Average Training Loss of Epoch 17: 0.289749 | Acc: 86.43%
+Average Validation Loss: 0.482685 | Acc: 81.30%
+epoch  18 | iteration   100 | Loss 0.285883 | Acc 85.94%
+Average Training Loss of Epoch 18: 0.271742 | Acc: 87.21%
+Average Validation Loss: 0.501118 | Acc: 80.24%
+epoch  19 | iteration   100 | Loss 0.208940 | Acc 89.06%
+Average Training Loss of Epoch 19: 0.259164 | Acc: 87.90%
+Average Validation Loss: 0.479625 | Acc: 81.78%
+epoch  20 | iteration   100 | Loss 0.438863 | Acc 81.25%
+Average Training Loss of Epoch 20: 0.252156 | Acc: 88.11%
+Average Validation Loss: 0.464363 | Acc: 82.72%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-10pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.664916 | Acc 70.31%
+Average Training Loss of Epoch 1: 1.031682 | Acc: 56.91%
+Average Validation Loss: 0.753631 | Acc: 70.06%
+epoch   2 | iteration   100 | Loss 0.731300 | Acc 64.06%
+Average Training Loss of Epoch 2: 0.759527 | Acc: 67.90%
+Average Validation Loss: 0.639096 | Acc: 74.79%
+epoch   3 | iteration   100 | Loss 0.667930 | Acc 81.25%
+Average Training Loss of Epoch 3: 0.641732 | Acc: 72.82%
+Average Validation Loss: 0.585970 | Acc: 75.74%
+epoch   4 | iteration   100 | Loss 0.559776 | Acc 78.12%
+Average Training Loss of Epoch 4: 0.578535 | Acc: 75.38%
+Average Validation Loss: 0.550912 | Acc: 77.51%
+epoch   5 | iteration   100 | Loss 0.627392 | Acc 70.31%
+Average Training Loss of Epoch 5: 0.542923 | Acc: 76.66%
+Average Validation Loss: 0.534348 | Acc: 77.40%
+epoch   6 | iteration   100 | Loss 0.585142 | Acc 70.31%
+Average Training Loss of Epoch 6: 0.495236 | Acc: 78.62%
+Average Validation Loss: 0.501233 | Acc: 80.24%
+epoch   7 | iteration   100 | Loss 0.464279 | Acc 79.69%
+Average Training Loss of Epoch 7: 0.465354 | Acc: 80.06%
+Average Validation Loss: 0.492546 | Acc: 80.36%
+epoch   8 | iteration   100 | Loss 0.447722 | Acc 75.00%
+Average Training Loss of Epoch 8: 0.434760 | Acc: 80.71%
+Average Validation Loss: 0.453735 | Acc: 80.95%
+epoch   9 | iteration   100 | Loss 0.354162 | Acc 87.50%
+Average Training Loss of Epoch 9: 0.408464 | Acc: 81.91%
+Average Validation Loss: 0.452584 | Acc: 80.83%
+epoch  10 | iteration   100 | Loss 0.418154 | Acc 85.94%
+Average Training Loss of Epoch 10: 0.382119 | Acc: 82.74%
+Average Validation Loss: 0.455139 | Acc: 79.41%
+epoch  11 | iteration   100 | Loss 0.487313 | Acc 79.69%
+Average Training Loss of Epoch 11: 0.368292 | Acc: 83.17%
+Average Validation Loss: 0.455553 | Acc: 80.59%
+epoch  12 | iteration   100 | Loss 0.419351 | Acc 82.81%
+Average Training Loss of Epoch 12: 0.341670 | Acc: 84.44%
+Average Validation Loss: 0.452954 | Acc: 81.18%
+epoch  13 | iteration   100 | Loss 0.349182 | Acc 85.94%
+Average Training Loss of Epoch 13: 0.327919 | Acc: 85.18%
+Average Validation Loss: 0.438482 | Acc: 80.59%
+epoch  14 | iteration   100 | Loss 0.543989 | Acc 75.00%
+Average Training Loss of Epoch 14: 0.316861 | Acc: 85.64%
+Average Validation Loss: 0.452335 | Acc: 82.13%
+epoch  15 | iteration   100 | Loss 0.373774 | Acc 85.94%
+Average Training Loss of Epoch 15: 0.297005 | Acc: 85.79%
+Average Validation Loss: 0.430410 | Acc: 82.01%
+epoch  16 | iteration   100 | Loss 0.171845 | Acc 90.62%
+Average Training Loss of Epoch 16: 0.270536 | Acc: 86.81%
+Average Validation Loss: 0.471155 | Acc: 81.89%
+epoch  17 | iteration   100 | Loss 0.216328 | Acc 89.06%
+Average Training Loss of Epoch 17: 0.256869 | Acc: 88.22%
+Average Validation Loss: 0.448921 | Acc: 82.49%
+epoch  18 | iteration   100 | Loss 0.367076 | Acc 81.25%
+Average Training Loss of Epoch 18: 0.245102 | Acc: 88.28%
+Average Validation Loss: 0.437920 | Acc: 83.43%
+epoch  19 | iteration   100 | Loss 0.338771 | Acc 90.62%
+Average Training Loss of Epoch 19: 0.231334 | Acc: 89.08%
+Average Validation Loss: 0.460774 | Acc: 81.42%
+epoch  20 | iteration   100 | Loss 0.192141 | Acc 90.62%
+Average Training Loss of Epoch 20: 0.217140 | Acc: 89.78%
+Average Validation Loss: 0.490373 | Acc: 81.42%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -73,67 +215,209 @@ cuda
 Starting training
 ../../fst-kaokore-2-cb-10pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 0.808351 | Acc 60.94%
-Average Training Loss of Epoch 1: 1.011550 | Acc: 59.36%
-Average Validation Loss: 0.796319 | Acc: 74.91%
-epoch   2 | iteration   100 | Loss 0.753109 | Acc 68.75%
-Average Training Loss of Epoch 2: 0.733163 | Acc: 70.33%
-Average Validation Loss: 0.656745 | Acc: 72.78%
-epoch   3 | iteration   100 | Loss 0.667021 | Acc 71.88%
-Average Training Loss of Epoch 3: 0.636500 | Acc: 74.11%
-Average Validation Loss: 0.586018 | Acc: 78.34%
-epoch   4 | iteration   100 | Loss 0.534341 | Acc 82.81%
-Average Training Loss of Epoch 4: 0.585033 | Acc: 76.36%
-Average Validation Loss: 0.571547 | Acc: 79.17%
-epoch   5 | iteration   100 | Loss 0.522487 | Acc 75.00%
-Average Training Loss of Epoch 5: 0.541366 | Acc: 77.55%
-Average Validation Loss: 0.543533 | Acc: 78.82%
-epoch   6 | iteration   100 | Loss 0.408513 | Acc 85.94%
-Average Training Loss of Epoch 6: 0.505096 | Acc: 78.79%
-Average Validation Loss: 0.574412 | Acc: 77.40%
-epoch   7 | iteration   100 | Loss 0.373629 | Acc 82.81%
-Average Training Loss of Epoch 7: 0.476488 | Acc: 80.00%
-Average Validation Loss: 0.513093 | Acc: 78.70%
-epoch   8 | iteration   100 | Loss 0.521168 | Acc 84.38%
-Average Training Loss of Epoch 8: 0.456373 | Acc: 80.37%
-Average Validation Loss: 0.481924 | Acc: 81.07%
-epoch   9 | iteration   100 | Loss 0.377364 | Acc 79.69%
-Average Training Loss of Epoch 9: 0.416392 | Acc: 81.48%
-Average Validation Loss: 0.488658 | Acc: 80.59%
-epoch  10 | iteration   100 | Loss 0.493950 | Acc 79.69%
-Average Training Loss of Epoch 10: 0.394428 | Acc: 82.54%
-Average Validation Loss: 0.480743 | Acc: 80.47%
-epoch  11 | iteration   100 | Loss 0.272753 | Acc 87.50%
-Average Training Loss of Epoch 11: 0.385652 | Acc: 83.00%
-Average Validation Loss: 0.482758 | Acc: 81.07%
-epoch  12 | iteration   100 | Loss 0.353731 | Acc 82.81%
-Average Training Loss of Epoch 12: 0.355556 | Acc: 84.41%
-Average Validation Loss: 0.467211 | Acc: 81.54%
-epoch  13 | iteration   100 | Loss 0.261531 | Acc 92.19%
-Average Training Loss of Epoch 13: 0.342797 | Acc: 85.07%
-Average Validation Loss: 0.508654 | Acc: 78.82%
-epoch  14 | iteration   100 | Loss 0.349402 | Acc 82.81%
-Average Training Loss of Epoch 14: 0.329847 | Acc: 84.94%
-Average Validation Loss: 0.465957 | Acc: 81.42%
-epoch  15 | iteration   100 | Loss 0.264203 | Acc 84.38%
-Average Training Loss of Epoch 15: 0.299728 | Acc: 86.28%
-Average Validation Loss: 0.473267 | Acc: 81.07%
-epoch  16 | iteration   100 | Loss 0.242725 | Acc 90.62%
-Average Training Loss of Epoch 16: 0.287509 | Acc: 86.59%
-Average Validation Loss: 0.470277 | Acc: 80.71%
-epoch  17 | iteration   100 | Loss 0.293347 | Acc 84.38%
-Average Training Loss of Epoch 17: 0.270190 | Acc: 87.67%
-Average Validation Loss: 0.476013 | Acc: 80.95%
-epoch  18 | iteration   100 | Loss 0.413896 | Acc 82.81%
-Average Training Loss of Epoch 18: 0.255365 | Acc: 88.10%
-Average Validation Loss: 0.484406 | Acc: 80.83%
-epoch  19 | iteration   100 | Loss 0.273397 | Acc 90.62%
-Average Training Loss of Epoch 19: 0.248692 | Acc: 88.25%
-Average Validation Loss: 0.485022 | Acc: 79.64%
-epoch  20 | iteration   100 | Loss 0.306436 | Acc 81.25%
-Average Training Loss of Epoch 20: 0.235094 | Acc: 89.51%
-Average Validation Loss: 0.509389 | Acc: 80.00%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 1: nan | Acc: 9.71%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 2: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 3: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 3.12%
+Average Training Loss of Epoch 4: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 5: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 6: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 7: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 17.19%
+Average Training Loss of Epoch 8: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 9: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 10: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 11: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 12: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 13: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 14: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 15: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 16: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 17: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 18: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 19: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 20: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-10pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.816203 | Acc 62.50%
+Average Training Loss of Epoch 1: 1.005364 | Acc: 57.94%
+Average Validation Loss: 0.807295 | Acc: 67.22%
+epoch   2 | iteration   100 | Loss 0.951593 | Acc 67.19%
+Average Training Loss of Epoch 2: 0.776744 | Acc: 67.98%
+Average Validation Loss: 0.658118 | Acc: 73.37%
+epoch   3 | iteration   100 | Loss 0.565118 | Acc 75.00%
+Average Training Loss of Epoch 3: 0.678289 | Acc: 71.85%
+Average Validation Loss: 0.580590 | Acc: 76.69%
+epoch   4 | iteration   100 | Loss 0.684050 | Acc 70.31%
+Average Training Loss of Epoch 4: 0.608469 | Acc: 74.32%
+Average Validation Loss: 0.583393 | Acc: 75.50%
+epoch   5 | iteration   100 | Loss 0.443339 | Acc 78.12%
+Average Training Loss of Epoch 5: 0.558718 | Acc: 76.55%
+Average Validation Loss: 0.529056 | Acc: 77.99%
+epoch   6 | iteration   100 | Loss 0.430485 | Acc 79.69%
+Average Training Loss of Epoch 6: 0.518510 | Acc: 77.53%
+Average Validation Loss: 0.507339 | Acc: 78.82%
+epoch   7 | iteration   100 | Loss 0.534533 | Acc 78.12%
+Average Training Loss of Epoch 7: 0.489279 | Acc: 78.64%
+Average Validation Loss: 0.473595 | Acc: 79.88%
+epoch   8 | iteration   100 | Loss 0.380997 | Acc 85.94%
+Average Training Loss of Epoch 8: 0.451140 | Acc: 80.13%
+Average Validation Loss: 0.484028 | Acc: 79.53%
+epoch   9 | iteration   100 | Loss 0.273442 | Acc 89.06%
+Average Training Loss of Epoch 9: 0.427636 | Acc: 80.80%
+Average Validation Loss: 0.457135 | Acc: 80.71%
+epoch  10 | iteration   100 | Loss 0.369784 | Acc 78.12%
+Average Training Loss of Epoch 10: 0.408506 | Acc: 82.08%
+Average Validation Loss: 0.440865 | Acc: 81.42%
+epoch  11 | iteration   100 | Loss 0.409564 | Acc 85.94%
+Average Training Loss of Epoch 11: 0.383642 | Acc: 82.93%
+Average Validation Loss: 0.476192 | Acc: 80.83%
+epoch  12 | iteration   100 | Loss 0.507059 | Acc 78.12%
+Average Training Loss of Epoch 12: 0.359750 | Acc: 83.91%
+Average Validation Loss: 0.453771 | Acc: 80.47%
+epoch  13 | iteration   100 | Loss 0.287050 | Acc 85.94%
+Average Training Loss of Epoch 13: 0.345660 | Acc: 84.24%
+Average Validation Loss: 0.453970 | Acc: 80.83%
+epoch  14 | iteration   100 | Loss 0.279564 | Acc 87.50%
+Average Training Loss of Epoch 14: 0.330612 | Acc: 85.11%
+Average Validation Loss: 0.470576 | Acc: 79.29%
+epoch  15 | iteration   100 | Loss 0.301819 | Acc 84.38%
+Average Training Loss of Epoch 15: 0.305356 | Acc: 85.93%
+Average Validation Loss: 0.420046 | Acc: 81.78%
+epoch  16 | iteration   100 | Loss 0.197203 | Acc 90.62%
+Average Training Loss of Epoch 16: 0.291678 | Acc: 86.71%
+Average Validation Loss: 0.435860 | Acc: 80.71%
+epoch  17 | iteration   100 | Loss 0.346949 | Acc 87.50%
+Average Training Loss of Epoch 17: 0.275578 | Acc: 87.54%
+Average Validation Loss: 0.440501 | Acc: 80.95%
+epoch  18 | iteration   100 | Loss 0.262642 | Acc 87.50%
+Average Training Loss of Epoch 18: 0.261813 | Acc: 87.94%
+Average Validation Loss: 0.419403 | Acc: 82.72%
+epoch  19 | iteration   100 | Loss 0.305747 | Acc 89.06%
+Average Training Loss of Epoch 19: 0.247237 | Acc: 88.64%
+Average Validation Loss: 0.424375 | Acc: 82.37%
+epoch  20 | iteration   100 | Loss 0.294384 | Acc 87.50%
+Average Training Loss of Epoch 20: 0.234074 | Acc: 89.06%
+Average Validation Loss: 0.433356 | Acc: 81.07%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-10pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.794586 | Acc 67.19%
+Average Training Loss of Epoch 1: 0.948018 | Acc: 60.69%
+Average Validation Loss: 0.688037 | Acc: 72.43%
+epoch   2 | iteration   100 | Loss 0.793029 | Acc 64.06%
+Average Training Loss of Epoch 2: 0.697762 | Acc: 71.69%
+Average Validation Loss: 0.605455 | Acc: 76.69%
+epoch   3 | iteration   100 | Loss 0.660719 | Acc 76.56%
+Average Training Loss of Epoch 3: 0.603270 | Acc: 75.41%
+Average Validation Loss: 0.538156 | Acc: 78.70%
+epoch   4 | iteration   100 | Loss 0.463723 | Acc 78.12%
+Average Training Loss of Epoch 4: 0.547998 | Acc: 77.47%
+Average Validation Loss: 0.509538 | Acc: 78.93%
+epoch   5 | iteration   100 | Loss 0.453814 | Acc 78.12%
+Average Training Loss of Epoch 5: 0.514257 | Acc: 78.87%
+Average Validation Loss: 0.496801 | Acc: 78.93%
+epoch   6 | iteration   100 | Loss 0.487457 | Acc 76.56%
+Average Training Loss of Epoch 6: 0.461829 | Acc: 80.37%
+Average Validation Loss: 0.473714 | Acc: 80.00%
+epoch   7 | iteration   100 | Loss 0.545855 | Acc 81.25%
+Average Training Loss of Epoch 7: 0.442482 | Acc: 80.45%
+Average Validation Loss: 0.469381 | Acc: 80.47%
+epoch   8 | iteration   100 | Loss 0.512192 | Acc 75.00%
+Average Training Loss of Epoch 8: 0.406978 | Acc: 82.14%
+Average Validation Loss: 0.468623 | Acc: 79.76%
+epoch   9 | iteration   100 | Loss 0.427135 | Acc 85.94%
+Average Training Loss of Epoch 9: 0.383002 | Acc: 82.72%
+Average Validation Loss: 0.463458 | Acc: 80.36%
+epoch  10 | iteration   100 | Loss 0.234635 | Acc 89.06%
+Average Training Loss of Epoch 10: 0.358410 | Acc: 83.74%
+Average Validation Loss: 0.488128 | Acc: 78.46%
+epoch  11 | iteration   100 | Loss 0.253284 | Acc 89.06%
+Average Training Loss of Epoch 11: 0.335289 | Acc: 84.43%
+Average Validation Loss: 0.462802 | Acc: 81.07%
+epoch  12 | iteration   100 | Loss 0.357002 | Acc 82.81%
+Average Training Loss of Epoch 12: 0.317617 | Acc: 85.66%
+Average Validation Loss: 0.462523 | Acc: 80.24%
+epoch  13 | iteration   100 | Loss 0.305193 | Acc 87.50%
+Average Training Loss of Epoch 13: 0.295861 | Acc: 85.97%
+Average Validation Loss: 0.473711 | Acc: 80.36%
+epoch  14 | iteration   100 | Loss 0.248662 | Acc 87.50%
+Average Training Loss of Epoch 14: 0.274823 | Acc: 87.09%
+Average Validation Loss: 0.473669 | Acc: 81.30%
+epoch  15 | iteration   100 | Loss 0.372323 | Acc 81.25%
+Average Training Loss of Epoch 15: 0.257666 | Acc: 87.74%
+Average Validation Loss: 0.486309 | Acc: 80.12%
+epoch  16 | iteration   100 | Loss 0.384809 | Acc 82.81%
+Average Training Loss of Epoch 16: 0.245350 | Acc: 88.36%
+Average Validation Loss: 0.503671 | Acc: 80.36%
+epoch  17 | iteration   100 | Loss 0.326743 | Acc 84.38%
+Average Training Loss of Epoch 17: 0.227293 | Acc: 89.33%
+Average Validation Loss: 0.485840 | Acc: 81.07%
+epoch  18 | iteration   100 | Loss 0.151673 | Acc 92.19%
+Average Training Loss of Epoch 18: 0.206751 | Acc: 90.24%
+Average Validation Loss: 0.503185 | Acc: 80.71%
+epoch  19 | iteration   100 | Loss 0.093833 | Acc 96.88%
+Average Training Loss of Epoch 19: 0.188787 | Acc: 91.34%
+Average Validation Loss: 0.514632 | Acc: 80.83%
+epoch  20 | iteration   100 | Loss 0.153275 | Acc 93.75%
+Average Training Loss of Epoch 20: 0.183548 | Acc: 91.06%
+Average Validation Loss: 0.529488 | Acc: 80.59%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -144,67 +428,209 @@ cuda
 Starting training
 ../../fst-kaokore-cb-25pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 0.679850 | Acc 78.12%
-Average Training Loss of Epoch 1: 0.985672 | Acc: 59.50%
-Average Validation Loss: 0.724630 | Acc: 71.95%
-epoch   2 | iteration   100 | Loss 0.662033 | Acc 67.19%
-Average Training Loss of Epoch 2: 0.726310 | Acc: 70.16%
-Average Validation Loss: 0.623405 | Acc: 74.67%
-epoch   3 | iteration   100 | Loss 0.497201 | Acc 81.25%
-Average Training Loss of Epoch 3: 0.619696 | Acc: 74.67%
-Average Validation Loss: 0.570911 | Acc: 78.34%
-epoch   4 | iteration   100 | Loss 0.547887 | Acc 70.31%
-Average Training Loss of Epoch 4: 0.556103 | Acc: 76.81%
-Average Validation Loss: 0.534956 | Acc: 79.05%
-epoch   5 | iteration   100 | Loss 0.586364 | Acc 75.00%
-Average Training Loss of Epoch 5: 0.513886 | Acc: 78.75%
-Average Validation Loss: 0.521979 | Acc: 77.87%
-epoch   6 | iteration   100 | Loss 0.495280 | Acc 73.44%
-Average Training Loss of Epoch 6: 0.477963 | Acc: 79.57%
-Average Validation Loss: 0.498897 | Acc: 79.41%
-epoch   7 | iteration   100 | Loss 0.448472 | Acc 76.56%
-Average Training Loss of Epoch 7: 0.444963 | Acc: 80.28%
-Average Validation Loss: 0.468011 | Acc: 80.71%
-epoch   8 | iteration   100 | Loss 0.536221 | Acc 73.44%
-Average Training Loss of Epoch 8: 0.415057 | Acc: 81.77%
-Average Validation Loss: 0.464036 | Acc: 81.18%
-epoch   9 | iteration   100 | Loss 0.375904 | Acc 78.12%
-Average Training Loss of Epoch 9: 0.391757 | Acc: 82.65%
-Average Validation Loss: 0.482296 | Acc: 80.00%
-epoch  10 | iteration   100 | Loss 0.320812 | Acc 85.94%
-Average Training Loss of Epoch 10: 0.366791 | Acc: 83.88%
-Average Validation Loss: 0.454243 | Acc: 79.64%
-epoch  11 | iteration   100 | Loss 0.274091 | Acc 87.50%
-Average Training Loss of Epoch 11: 0.356018 | Acc: 83.80%
-Average Validation Loss: 0.476222 | Acc: 79.05%
-epoch  12 | iteration   100 | Loss 0.243160 | Acc 87.50%
-Average Training Loss of Epoch 12: 0.330862 | Acc: 85.09%
-Average Validation Loss: 0.432419 | Acc: 81.42%
-epoch  13 | iteration   100 | Loss 0.231914 | Acc 89.06%
-Average Training Loss of Epoch 13: 0.314542 | Acc: 85.35%
-Average Validation Loss: 0.426481 | Acc: 83.31%
-epoch  14 | iteration   100 | Loss 0.227928 | Acc 87.50%
-Average Training Loss of Epoch 14: 0.296464 | Acc: 86.36%
-Average Validation Loss: 0.433846 | Acc: 82.01%
-epoch  15 | iteration   100 | Loss 0.325727 | Acc 82.81%
-Average Training Loss of Epoch 15: 0.289254 | Acc: 86.70%
-Average Validation Loss: 0.444300 | Acc: 81.18%
-epoch  16 | iteration   100 | Loss 0.318792 | Acc 81.25%
-Average Training Loss of Epoch 16: 0.267495 | Acc: 87.74%
-Average Validation Loss: 0.418844 | Acc: 82.25%
-epoch  17 | iteration   100 | Loss 0.249551 | Acc 89.06%
-Average Training Loss of Epoch 17: 0.254976 | Acc: 88.23%
-Average Validation Loss: 0.419389 | Acc: 83.79%
-epoch  18 | iteration   100 | Loss 0.223528 | Acc 90.62%
-Average Training Loss of Epoch 18: 0.246841 | Acc: 88.16%
-Average Validation Loss: 0.445661 | Acc: 81.42%
-epoch  19 | iteration   100 | Loss 0.207197 | Acc 90.62%
-Average Training Loss of Epoch 19: 0.230142 | Acc: 89.01%
-Average Validation Loss: 0.431329 | Acc: 82.96%
-epoch  20 | iteration   100 | Loss 0.194555 | Acc 92.19%
-Average Training Loss of Epoch 20: 0.216960 | Acc: 89.81%
-Average Validation Loss: 0.438916 | Acc: 82.84%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 1: nan | Acc: 9.62%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 2: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 3: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 3.12%
+Average Training Loss of Epoch 4: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 5: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 6: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 7: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 3.12%
+Average Training Loss of Epoch 8: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 9: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 10: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 11: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 12: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 13: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 14: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 15: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 16: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 17: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 18: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 19: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 1.56%
+Average Training Loss of Epoch 20: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-25pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.963028 | Acc 68.75%
+Average Training Loss of Epoch 1: 0.990638 | Acc: 58.31%
+Average Validation Loss: 0.760413 | Acc: 70.65%
+epoch   2 | iteration   100 | Loss 0.616089 | Acc 75.00%
+Average Training Loss of Epoch 2: 0.740855 | Acc: 69.95%
+Average Validation Loss: 0.646979 | Acc: 74.20%
+epoch   3 | iteration   100 | Loss 0.735377 | Acc 70.31%
+Average Training Loss of Epoch 3: 0.636288 | Acc: 73.85%
+Average Validation Loss: 0.582352 | Acc: 76.09%
+epoch   4 | iteration   100 | Loss 0.529701 | Acc 79.69%
+Average Training Loss of Epoch 4: 0.570626 | Acc: 76.38%
+Average Validation Loss: 0.547769 | Acc: 77.40%
+epoch   5 | iteration   100 | Loss 0.547595 | Acc 79.69%
+Average Training Loss of Epoch 5: 0.514190 | Acc: 78.68%
+Average Validation Loss: 0.528142 | Acc: 78.11%
+epoch   6 | iteration   100 | Loss 0.445629 | Acc 79.69%
+Average Training Loss of Epoch 6: 0.482591 | Acc: 79.39%
+Average Validation Loss: 0.482256 | Acc: 80.12%
+epoch   7 | iteration   100 | Loss 0.403515 | Acc 84.38%
+Average Training Loss of Epoch 7: 0.446697 | Acc: 80.74%
+Average Validation Loss: 0.492106 | Acc: 79.29%
+epoch   8 | iteration   100 | Loss 0.497122 | Acc 70.31%
+Average Training Loss of Epoch 8: 0.424955 | Acc: 81.16%
+Average Validation Loss: 0.456509 | Acc: 81.66%
+epoch   9 | iteration   100 | Loss 0.341388 | Acc 82.81%
+Average Training Loss of Epoch 9: 0.390586 | Acc: 83.37%
+Average Validation Loss: 0.458688 | Acc: 80.59%
+epoch  10 | iteration   100 | Loss 0.331801 | Acc 87.50%
+Average Training Loss of Epoch 10: 0.370326 | Acc: 83.61%
+Average Validation Loss: 0.471291 | Acc: 78.82%
+epoch  11 | iteration   100 | Loss 0.395748 | Acc 84.38%
+Average Training Loss of Epoch 11: 0.348581 | Acc: 84.28%
+Average Validation Loss: 0.496221 | Acc: 76.09%
+epoch  12 | iteration   100 | Loss 0.340857 | Acc 84.38%
+Average Training Loss of Epoch 12: 0.329398 | Acc: 84.64%
+Average Validation Loss: 0.456036 | Acc: 79.64%
+epoch  13 | iteration   100 | Loss 0.523120 | Acc 75.00%
+Average Training Loss of Epoch 13: 0.313907 | Acc: 84.99%
+Average Validation Loss: 0.455242 | Acc: 81.07%
+epoch  14 | iteration   100 | Loss 0.268649 | Acc 89.06%
+Average Training Loss of Epoch 14: 0.299867 | Acc: 85.76%
+Average Validation Loss: 0.453983 | Acc: 79.64%
+epoch  15 | iteration   100 | Loss 0.445222 | Acc 76.56%
+Average Training Loss of Epoch 15: 0.283130 | Acc: 86.75%
+Average Validation Loss: 0.476319 | Acc: 79.29%
+epoch  16 | iteration   100 | Loss 0.304744 | Acc 87.50%
+Average Training Loss of Epoch 16: 0.257547 | Acc: 87.77%
+Average Validation Loss: 0.482604 | Acc: 78.46%
+epoch  17 | iteration   100 | Loss 0.209991 | Acc 90.62%
+Average Training Loss of Epoch 17: 0.252580 | Acc: 87.58%
+Average Validation Loss: 0.491709 | Acc: 77.40%
+epoch  18 | iteration   100 | Loss 0.217913 | Acc 90.62%
+Average Training Loss of Epoch 18: 0.236214 | Acc: 89.02%
+Average Validation Loss: 0.489465 | Acc: 79.41%
+epoch  19 | iteration   100 | Loss 0.130148 | Acc 93.75%
+Average Training Loss of Epoch 19: 0.219498 | Acc: 89.61%
+Average Validation Loss: 0.466064 | Acc: 81.30%
+epoch  20 | iteration   100 | Loss 0.228565 | Acc 87.50%
+Average Training Loss of Epoch 20: 0.212135 | Acc: 89.81%
+Average Validation Loss: 0.476207 | Acc: 80.59%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-25pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.746375 | Acc 76.56%
+Average Training Loss of Epoch 1: 0.990252 | Acc: 57.72%
+Average Validation Loss: 0.712070 | Acc: 71.48%
+epoch   2 | iteration   100 | Loss 0.791898 | Acc 70.31%
+Average Training Loss of Epoch 2: 0.721825 | Acc: 69.66%
+Average Validation Loss: 0.600977 | Acc: 74.91%
+epoch   3 | iteration   100 | Loss 0.903334 | Acc 57.81%
+Average Training Loss of Epoch 3: 0.617532 | Acc: 74.61%
+Average Validation Loss: 0.534330 | Acc: 78.22%
+epoch   4 | iteration   100 | Loss 0.510602 | Acc 73.44%
+Average Training Loss of Epoch 4: 0.548731 | Acc: 76.96%
+Average Validation Loss: 0.513251 | Acc: 78.22%
+epoch   5 | iteration   100 | Loss 0.677719 | Acc 70.31%
+Average Training Loss of Epoch 5: 0.502470 | Acc: 78.83%
+Average Validation Loss: 0.484926 | Acc: 79.29%
+epoch   6 | iteration   100 | Loss 0.552841 | Acc 75.00%
+Average Training Loss of Epoch 6: 0.464480 | Acc: 79.40%
+Average Validation Loss: 0.458925 | Acc: 80.36%
+epoch   7 | iteration   100 | Loss 0.415627 | Acc 85.94%
+Average Training Loss of Epoch 7: 0.422735 | Acc: 81.29%
+Average Validation Loss: 0.452110 | Acc: 80.71%
+epoch   8 | iteration   100 | Loss 0.477403 | Acc 78.12%
+Average Training Loss of Epoch 8: 0.396453 | Acc: 82.44%
+Average Validation Loss: 0.452167 | Acc: 80.12%
+epoch   9 | iteration   100 | Loss 0.413301 | Acc 81.25%
+Average Training Loss of Epoch 9: 0.367234 | Acc: 83.30%
+Average Validation Loss: 0.450806 | Acc: 80.47%
+epoch  10 | iteration   100 | Loss 0.521106 | Acc 76.56%
+Average Training Loss of Epoch 10: 0.339951 | Acc: 84.54%
+Average Validation Loss: 0.425210 | Acc: 80.95%
+epoch  11 | iteration   100 | Loss 0.329634 | Acc 81.25%
+Average Training Loss of Epoch 11: 0.322813 | Acc: 85.08%
+Average Validation Loss: 0.420972 | Acc: 81.42%
+epoch  12 | iteration   100 | Loss 0.372394 | Acc 78.12%
+Average Training Loss of Epoch 12: 0.301254 | Acc: 86.28%
+Average Validation Loss: 0.430953 | Acc: 80.71%
+epoch  13 | iteration   100 | Loss 0.312828 | Acc 82.81%
+Average Training Loss of Epoch 13: 0.279833 | Acc: 87.13%
+Average Validation Loss: 0.441415 | Acc: 80.36%
+epoch  14 | iteration   100 | Loss 0.298642 | Acc 87.50%
+Average Training Loss of Epoch 14: 0.264337 | Acc: 87.36%
+Average Validation Loss: 0.501773 | Acc: 80.00%
+epoch  15 | iteration   100 | Loss 0.159273 | Acc 95.31%
+Average Training Loss of Epoch 15: 0.248006 | Acc: 88.27%
+Average Validation Loss: 0.420467 | Acc: 82.37%
+epoch  16 | iteration   100 | Loss 0.180015 | Acc 89.06%
+Average Training Loss of Epoch 16: 0.232444 | Acc: 89.62%
+Average Validation Loss: 0.435060 | Acc: 81.42%
+epoch  17 | iteration   100 | Loss 0.197576 | Acc 90.62%
+Average Training Loss of Epoch 17: 0.218835 | Acc: 89.71%
+Average Validation Loss: 0.442527 | Acc: 81.42%
+epoch  18 | iteration   100 | Loss 0.247147 | Acc 89.06%
+Average Training Loss of Epoch 18: 0.200495 | Acc: 90.68%
+Average Validation Loss: 0.469802 | Acc: 80.47%
+epoch  19 | iteration   100 | Loss 0.106605 | Acc 92.19%
+Average Training Loss of Epoch 19: 0.191196 | Acc: 91.25%
+Average Validation Loss: 0.443641 | Acc: 81.54%
+epoch  20 | iteration   100 | Loss 0.161039 | Acc 92.19%
+Average Training Loss of Epoch 20: 0.175170 | Acc: 91.91%
+Average Validation Loss: 0.451407 | Acc: 81.18%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -215,67 +641,209 @@ cuda
 Starting training
 ../../fst-kaokore-2-cb-25pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 0.993986 | Acc 59.38%
-Average Training Loss of Epoch 1: 0.965209 | Acc: 60.71%
-Average Validation Loss: 0.699374 | Acc: 72.78%
-epoch   2 | iteration   100 | Loss 0.737538 | Acc 73.44%
-Average Training Loss of Epoch 2: 0.697353 | Acc: 71.91%
-Average Validation Loss: 0.620045 | Acc: 75.62%
-epoch   3 | iteration   100 | Loss 0.483520 | Acc 81.25%
-Average Training Loss of Epoch 3: 0.603126 | Acc: 75.79%
-Average Validation Loss: 0.564684 | Acc: 77.99%
-epoch   4 | iteration   100 | Loss 0.517950 | Acc 79.69%
-Average Training Loss of Epoch 4: 0.539654 | Acc: 77.83%
-Average Validation Loss: 0.531057 | Acc: 78.46%
-epoch   5 | iteration   100 | Loss 0.577790 | Acc 75.00%
-Average Training Loss of Epoch 5: 0.489984 | Acc: 79.71%
-Average Validation Loss: 0.520256 | Acc: 78.93%
-epoch   6 | iteration   100 | Loss 0.540355 | Acc 76.56%
-Average Training Loss of Epoch 6: 0.459033 | Acc: 80.54%
-Average Validation Loss: 0.503665 | Acc: 79.53%
-epoch   7 | iteration   100 | Loss 0.302540 | Acc 82.81%
-Average Training Loss of Epoch 7: 0.423687 | Acc: 82.06%
-Average Validation Loss: 0.508315 | Acc: 79.53%
-epoch   8 | iteration   100 | Loss 0.434390 | Acc 87.50%
-Average Training Loss of Epoch 8: 0.402950 | Acc: 82.90%
-Average Validation Loss: 0.504600 | Acc: 79.17%
-epoch   9 | iteration   100 | Loss 0.387015 | Acc 76.56%
-Average Training Loss of Epoch 9: 0.378945 | Acc: 83.38%
-Average Validation Loss: 0.475334 | Acc: 80.24%
-epoch  10 | iteration   100 | Loss 0.395314 | Acc 84.38%
-Average Training Loss of Epoch 10: 0.358420 | Acc: 84.11%
-Average Validation Loss: 0.476117 | Acc: 79.64%
-epoch  11 | iteration   100 | Loss 0.336285 | Acc 81.25%
-Average Training Loss of Epoch 11: 0.330574 | Acc: 84.99%
-Average Validation Loss: 0.468062 | Acc: 81.07%
-epoch  12 | iteration   100 | Loss 0.303913 | Acc 85.94%
-Average Training Loss of Epoch 12: 0.313993 | Acc: 86.01%
-Average Validation Loss: 0.471491 | Acc: 80.47%
-epoch  13 | iteration   100 | Loss 0.173875 | Acc 92.19%
-Average Training Loss of Epoch 13: 0.301841 | Acc: 86.68%
-Average Validation Loss: 0.487108 | Acc: 78.22%
-epoch  14 | iteration   100 | Loss 0.263199 | Acc 81.25%
-Average Training Loss of Epoch 14: 0.279350 | Acc: 87.43%
-Average Validation Loss: 0.484546 | Acc: 81.30%
-epoch  15 | iteration   100 | Loss 0.263307 | Acc 87.50%
-Average Training Loss of Epoch 15: 0.267784 | Acc: 87.97%
-Average Validation Loss: 0.472736 | Acc: 80.47%
-epoch  16 | iteration   100 | Loss 0.293113 | Acc 87.50%
-Average Training Loss of Epoch 16: 0.252596 | Acc: 88.46%
-Average Validation Loss: 0.461881 | Acc: 81.78%
-epoch  17 | iteration   100 | Loss 0.263052 | Acc 84.38%
-Average Training Loss of Epoch 17: 0.239684 | Acc: 89.02%
-Average Validation Loss: 0.475664 | Acc: 81.78%
-epoch  18 | iteration   100 | Loss 0.238113 | Acc 85.94%
-Average Training Loss of Epoch 18: 0.229553 | Acc: 89.23%
-Average Validation Loss: 0.469571 | Acc: 80.47%
-epoch  19 | iteration   100 | Loss 0.283983 | Acc 85.94%
-Average Training Loss of Epoch 19: 0.216234 | Acc: 90.11%
-Average Validation Loss: 0.474967 | Acc: 82.13%
-epoch  20 | iteration   100 | Loss 0.174045 | Acc 90.62%
-Average Training Loss of Epoch 20: 0.207574 | Acc: 90.56%
-Average Validation Loss: 0.486304 | Acc: 80.83%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 1: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 2: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 3: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 4: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 5: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 6: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 7: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 8: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 9: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 10: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 11: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 12: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 13: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 14: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 15: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 16: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 17: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 18: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 19: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 20: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-25pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.980042 | Acc 54.69%
+Average Training Loss of Epoch 1: 0.974912 | Acc: 59.85%
+Average Validation Loss: 0.761761 | Acc: 69.59%
+epoch   2 | iteration   100 | Loss 0.543820 | Acc 75.00%
+Average Training Loss of Epoch 2: 0.715903 | Acc: 71.20%
+Average Validation Loss: 0.639784 | Acc: 74.44%
+epoch   3 | iteration   100 | Loss 0.501904 | Acc 79.69%
+Average Training Loss of Epoch 3: 0.613157 | Acc: 75.36%
+Average Validation Loss: 0.621259 | Acc: 74.20%
+epoch   4 | iteration   100 | Loss 0.684290 | Acc 78.12%
+Average Training Loss of Epoch 4: 0.546991 | Acc: 78.24%
+Average Validation Loss: 0.555844 | Acc: 78.11%
+epoch   5 | iteration   100 | Loss 0.669692 | Acc 68.75%
+Average Training Loss of Epoch 5: 0.505646 | Acc: 78.99%
+Average Validation Loss: 0.533216 | Acc: 78.11%
+epoch   6 | iteration   100 | Loss 0.394966 | Acc 75.00%
+Average Training Loss of Epoch 6: 0.469958 | Acc: 80.46%
+Average Validation Loss: 0.526311 | Acc: 77.87%
+epoch   7 | iteration   100 | Loss 0.515871 | Acc 78.12%
+Average Training Loss of Epoch 7: 0.442428 | Acc: 81.48%
+Average Validation Loss: 0.517489 | Acc: 78.58%
+epoch   8 | iteration   100 | Loss 0.280899 | Acc 93.75%
+Average Training Loss of Epoch 8: 0.404417 | Acc: 83.32%
+Average Validation Loss: 0.483108 | Acc: 79.64%
+epoch   9 | iteration   100 | Loss 0.471876 | Acc 82.81%
+Average Training Loss of Epoch 9: 0.387908 | Acc: 83.49%
+Average Validation Loss: 0.469544 | Acc: 79.76%
+epoch  10 | iteration   100 | Loss 0.383456 | Acc 85.94%
+Average Training Loss of Epoch 10: 0.359019 | Acc: 84.71%
+Average Validation Loss: 0.465483 | Acc: 79.76%
+epoch  11 | iteration   100 | Loss 0.427917 | Acc 85.94%
+Average Training Loss of Epoch 11: 0.341460 | Acc: 84.99%
+Average Validation Loss: 0.472674 | Acc: 78.82%
+epoch  12 | iteration   100 | Loss 0.273495 | Acc 82.81%
+Average Training Loss of Epoch 12: 0.320374 | Acc: 86.00%
+Average Validation Loss: 0.455254 | Acc: 80.24%
+epoch  13 | iteration   100 | Loss 0.180723 | Acc 93.75%
+Average Training Loss of Epoch 13: 0.300656 | Acc: 86.65%
+Average Validation Loss: 0.450300 | Acc: 81.18%
+epoch  14 | iteration   100 | Loss 0.296456 | Acc 84.38%
+Average Training Loss of Epoch 14: 0.284205 | Acc: 87.30%
+Average Validation Loss: 0.492719 | Acc: 79.05%
+epoch  15 | iteration   100 | Loss 0.302157 | Acc 87.50%
+Average Training Loss of Epoch 15: 0.266857 | Acc: 88.01%
+Average Validation Loss: 0.438053 | Acc: 80.59%
+epoch  16 | iteration   100 | Loss 0.330068 | Acc 87.50%
+Average Training Loss of Epoch 16: 0.253889 | Acc: 88.31%
+Average Validation Loss: 0.438506 | Acc: 80.47%
+epoch  17 | iteration   100 | Loss 0.198514 | Acc 89.06%
+Average Training Loss of Epoch 17: 0.238930 | Acc: 89.16%
+Average Validation Loss: 0.442991 | Acc: 80.59%
+epoch  18 | iteration   100 | Loss 0.366377 | Acc 90.62%
+Average Training Loss of Epoch 18: 0.224483 | Acc: 89.77%
+Average Validation Loss: 0.451289 | Acc: 80.47%
+epoch  19 | iteration   100 | Loss 0.185713 | Acc 90.62%
+Average Training Loss of Epoch 19: 0.212373 | Acc: 90.43%
+Average Validation Loss: 0.453087 | Acc: 80.59%
+epoch  20 | iteration   100 | Loss 0.229939 | Acc 87.50%
+Average Training Loss of Epoch 20: 0.204157 | Acc: 90.79%
+Average Validation Loss: 0.441463 | Acc: 81.07%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-25pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.955879 | Acc 59.38%
+Average Training Loss of Epoch 1: 0.942381 | Acc: 60.89%
+Average Validation Loss: 0.725425 | Acc: 70.41%
+epoch   2 | iteration   100 | Loss 0.665346 | Acc 73.44%
+Average Training Loss of Epoch 2: 0.679172 | Acc: 72.34%
+Average Validation Loss: 0.578487 | Acc: 75.62%
+epoch   3 | iteration   100 | Loss 0.574995 | Acc 70.31%
+Average Training Loss of Epoch 3: 0.583670 | Acc: 76.13%
+Average Validation Loss: 0.519088 | Acc: 78.93%
+epoch   4 | iteration   100 | Loss 0.508500 | Acc 78.12%
+Average Training Loss of Epoch 4: 0.517013 | Acc: 79.02%
+Average Validation Loss: 0.483751 | Acc: 79.76%
+epoch   5 | iteration   100 | Loss 0.439717 | Acc 79.69%
+Average Training Loss of Epoch 5: 0.467638 | Acc: 80.61%
+Average Validation Loss: 0.473140 | Acc: 79.05%
+epoch   6 | iteration   100 | Loss 0.378066 | Acc 82.81%
+Average Training Loss of Epoch 6: 0.436870 | Acc: 81.78%
+Average Validation Loss: 0.461939 | Acc: 79.64%
+epoch   7 | iteration   100 | Loss 0.386530 | Acc 84.38%
+Average Training Loss of Epoch 7: 0.400877 | Acc: 82.93%
+Average Validation Loss: 0.490753 | Acc: 78.46%
+epoch   8 | iteration   100 | Loss 0.249450 | Acc 89.06%
+Average Training Loss of Epoch 8: 0.378669 | Acc: 83.95%
+Average Validation Loss: 0.438172 | Acc: 80.71%
+epoch   9 | iteration   100 | Loss 0.493670 | Acc 79.69%
+Average Training Loss of Epoch 9: 0.350763 | Acc: 84.77%
+Average Validation Loss: 0.431365 | Acc: 81.18%
+epoch  10 | iteration   100 | Loss 0.332811 | Acc 87.50%
+Average Training Loss of Epoch 10: 0.330496 | Acc: 85.68%
+Average Validation Loss: 0.441663 | Acc: 81.07%
+epoch  11 | iteration   100 | Loss 0.337638 | Acc 82.81%
+Average Training Loss of Epoch 11: 0.300852 | Acc: 86.70%
+Average Validation Loss: 0.450334 | Acc: 80.47%
+epoch  12 | iteration   100 | Loss 0.472712 | Acc 81.25%
+Average Training Loss of Epoch 12: 0.279441 | Acc: 87.60%
+Average Validation Loss: 0.420332 | Acc: 82.13%
+epoch  13 | iteration   100 | Loss 0.214661 | Acc 85.94%
+Average Training Loss of Epoch 13: 0.257575 | Acc: 88.43%
+Average Validation Loss: 0.431191 | Acc: 82.49%
+epoch  14 | iteration   100 | Loss 0.256234 | Acc 90.62%
+Average Training Loss of Epoch 14: 0.241636 | Acc: 89.23%
+Average Validation Loss: 0.425281 | Acc: 82.96%
+epoch  15 | iteration   100 | Loss 0.162624 | Acc 89.06%
+Average Training Loss of Epoch 15: 0.228604 | Acc: 89.62%
+Average Validation Loss: 0.439228 | Acc: 82.49%
+epoch  16 | iteration   100 | Loss 0.199413 | Acc 90.62%
+Average Training Loss of Epoch 16: 0.212038 | Acc: 90.37%
+Average Validation Loss: 0.454863 | Acc: 82.60%
+epoch  17 | iteration   100 | Loss 0.216893 | Acc 89.06%
+Average Training Loss of Epoch 17: 0.191985 | Acc: 91.38%
+Average Validation Loss: 0.453136 | Acc: 82.60%
+epoch  18 | iteration   100 | Loss 0.236301 | Acc 89.06%
+Average Training Loss of Epoch 18: 0.186589 | Acc: 91.39%
+Average Validation Loss: 0.459082 | Acc: 82.84%
+epoch  19 | iteration   100 | Loss 0.164592 | Acc 92.19%
+Average Training Loss of Epoch 19: 0.164304 | Acc: 92.43%
+Average Validation Loss: 0.478068 | Acc: 82.49%
+epoch  20 | iteration   100 | Loss 0.203988 | Acc 92.19%
+Average Training Loss of Epoch 20: 0.153169 | Acc: 92.89%
+Average Validation Loss: 0.492991 | Acc: 83.20%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -286,67 +854,209 @@ cuda
 Starting training
 ../../fst-kaokore-cb-50pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 1.020493 | Acc 54.69%
-Average Training Loss of Epoch 1: 0.967653 | Acc: 60.88%
-Average Validation Loss: 0.695630 | Acc: 73.02%
-epoch   2 | iteration   100 | Loss 0.412167 | Acc 87.50%
-Average Training Loss of Epoch 2: 0.671622 | Acc: 73.54%
-Average Validation Loss: 0.607955 | Acc: 75.98%
-epoch   3 | iteration   100 | Loss 0.499784 | Acc 81.25%
-Average Training Loss of Epoch 3: 0.562041 | Acc: 77.76%
-Average Validation Loss: 0.559960 | Acc: 78.70%
-epoch   4 | iteration   100 | Loss 0.441495 | Acc 76.56%
-Average Training Loss of Epoch 4: 0.506002 | Acc: 79.43%
-Average Validation Loss: 0.528868 | Acc: 78.93%
-epoch   5 | iteration   100 | Loss 0.571586 | Acc 76.56%
-Average Training Loss of Epoch 5: 0.452068 | Acc: 81.04%
-Average Validation Loss: 0.543012 | Acc: 77.87%
-epoch   6 | iteration   100 | Loss 0.443618 | Acc 79.69%
-Average Training Loss of Epoch 6: 0.417256 | Acc: 82.41%
-Average Validation Loss: 0.495501 | Acc: 79.64%
-epoch   7 | iteration   100 | Loss 0.217281 | Acc 87.50%
-Average Training Loss of Epoch 7: 0.386587 | Acc: 83.40%
-Average Validation Loss: 0.484913 | Acc: 78.70%
-epoch   8 | iteration   100 | Loss 0.322790 | Acc 82.81%
-Average Training Loss of Epoch 8: 0.360693 | Acc: 84.50%
-Average Validation Loss: 0.474731 | Acc: 79.29%
-epoch   9 | iteration   100 | Loss 0.444477 | Acc 81.25%
-Average Training Loss of Epoch 9: 0.335824 | Acc: 85.20%
-Average Validation Loss: 0.462343 | Acc: 79.88%
-epoch  10 | iteration   100 | Loss 0.325769 | Acc 87.50%
-Average Training Loss of Epoch 10: 0.314013 | Acc: 86.12%
-Average Validation Loss: 0.468753 | Acc: 80.36%
-epoch  11 | iteration   100 | Loss 0.308126 | Acc 82.81%
-Average Training Loss of Epoch 11: 0.293850 | Acc: 86.82%
-Average Validation Loss: 0.463617 | Acc: 79.64%
-epoch  12 | iteration   100 | Loss 0.396834 | Acc 85.94%
-Average Training Loss of Epoch 12: 0.275631 | Acc: 87.73%
-Average Validation Loss: 0.511438 | Acc: 77.99%
-epoch  13 | iteration   100 | Loss 0.287619 | Acc 89.06%
-Average Training Loss of Epoch 13: 0.258209 | Acc: 88.41%
-Average Validation Loss: 0.460291 | Acc: 80.59%
-epoch  14 | iteration   100 | Loss 0.156588 | Acc 96.88%
-Average Training Loss of Epoch 14: 0.240129 | Acc: 89.10%
-Average Validation Loss: 0.462212 | Acc: 81.42%
-epoch  15 | iteration   100 | Loss 0.144056 | Acc 90.62%
-Average Training Loss of Epoch 15: 0.224321 | Acc: 89.85%
-Average Validation Loss: 0.469581 | Acc: 80.83%
-epoch  16 | iteration   100 | Loss 0.226382 | Acc 89.06%
-Average Training Loss of Epoch 16: 0.214441 | Acc: 90.10%
-Average Validation Loss: 0.476744 | Acc: 81.30%
-epoch  17 | iteration   100 | Loss 0.245092 | Acc 92.19%
-Average Training Loss of Epoch 17: 0.197148 | Acc: 91.09%
-Average Validation Loss: 0.495637 | Acc: 81.18%
-epoch  18 | iteration   100 | Loss 0.190362 | Acc 90.62%
-Average Training Loss of Epoch 18: 0.186275 | Acc: 91.37%
-Average Validation Loss: 0.466537 | Acc: 81.18%
-epoch  19 | iteration   100 | Loss 0.129148 | Acc 90.62%
-Average Training Loss of Epoch 19: 0.175752 | Acc: 92.09%
-Average Validation Loss: 0.491605 | Acc: 81.30%
-epoch  20 | iteration   100 | Loss 0.190639 | Acc 92.19%
-Average Training Loss of Epoch 20: 0.165377 | Acc: 92.15%
-Average Validation Loss: 0.500509 | Acc: 82.13%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 1: nan | Acc: 9.49%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 2: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 3: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 4: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 17.19%
+Average Training Loss of Epoch 5: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 6: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 7: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 8: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 9: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 10: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 11: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 12: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 13: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 14: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 15: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 16: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 17: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 18: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 19: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 20: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-50pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 1.024490 | Acc 53.12%
+Average Training Loss of Epoch 1: 0.943421 | Acc: 61.69%
+Average Validation Loss: 0.687463 | Acc: 72.90%
+epoch   2 | iteration   100 | Loss 0.674908 | Acc 79.69%
+Average Training Loss of Epoch 2: 0.662127 | Acc: 73.64%
+Average Validation Loss: 0.604500 | Acc: 75.03%
+epoch   3 | iteration   100 | Loss 0.462520 | Acc 85.94%
+Average Training Loss of Epoch 3: 0.569149 | Acc: 77.22%
+Average Validation Loss: 0.539707 | Acc: 78.22%
+epoch   4 | iteration   100 | Loss 0.481205 | Acc 81.25%
+Average Training Loss of Epoch 4: 0.510940 | Acc: 78.92%
+Average Validation Loss: 0.515347 | Acc: 79.17%
+epoch   5 | iteration   100 | Loss 0.509653 | Acc 79.69%
+Average Training Loss of Epoch 5: 0.463901 | Acc: 80.50%
+Average Validation Loss: 0.494609 | Acc: 80.59%
+epoch   6 | iteration   100 | Loss 0.638849 | Acc 78.12%
+Average Training Loss of Epoch 6: 0.430317 | Acc: 81.43%
+Average Validation Loss: 0.475899 | Acc: 79.41%
+epoch   7 | iteration   100 | Loss 0.396739 | Acc 79.69%
+Average Training Loss of Epoch 7: 0.399685 | Acc: 82.56%
+Average Validation Loss: 0.461872 | Acc: 80.24%
+epoch   8 | iteration   100 | Loss 0.286357 | Acc 84.38%
+Average Training Loss of Epoch 8: 0.376954 | Acc: 83.34%
+Average Validation Loss: 0.452652 | Acc: 81.66%
+epoch   9 | iteration   100 | Loss 0.432577 | Acc 84.38%
+Average Training Loss of Epoch 9: 0.351640 | Acc: 84.67%
+Average Validation Loss: 0.458086 | Acc: 79.17%
+epoch  10 | iteration   100 | Loss 0.280811 | Acc 85.94%
+Average Training Loss of Epoch 10: 0.331525 | Acc: 85.32%
+Average Validation Loss: 0.503295 | Acc: 75.74%
+epoch  11 | iteration   100 | Loss 0.374423 | Acc 81.25%
+Average Training Loss of Epoch 11: 0.320227 | Acc: 85.27%
+Average Validation Loss: 0.441911 | Acc: 79.05%
+epoch  12 | iteration   100 | Loss 0.541713 | Acc 79.69%
+Average Training Loss of Epoch 12: 0.294299 | Acc: 86.60%
+Average Validation Loss: 0.426859 | Acc: 80.36%
+epoch  13 | iteration   100 | Loss 0.192804 | Acc 90.62%
+Average Training Loss of Epoch 13: 0.276113 | Acc: 87.52%
+Average Validation Loss: 0.433204 | Acc: 80.24%
+epoch  14 | iteration   100 | Loss 0.235281 | Acc 89.06%
+Average Training Loss of Epoch 14: 0.260565 | Acc: 87.80%
+Average Validation Loss: 0.414255 | Acc: 81.89%
+epoch  15 | iteration   100 | Loss 0.154110 | Acc 93.75%
+Average Training Loss of Epoch 15: 0.248747 | Acc: 88.39%
+Average Validation Loss: 0.442488 | Acc: 80.47%
+epoch  16 | iteration   100 | Loss 0.270524 | Acc 89.06%
+Average Training Loss of Epoch 16: 0.234813 | Acc: 89.03%
+Average Validation Loss: 0.421068 | Acc: 80.47%
+epoch  17 | iteration   100 | Loss 0.225163 | Acc 84.38%
+Average Training Loss of Epoch 17: 0.220449 | Acc: 89.66%
+Average Validation Loss: 0.426181 | Acc: 81.89%
+epoch  18 | iteration   100 | Loss 0.138902 | Acc 96.88%
+Average Training Loss of Epoch 18: 0.210606 | Acc: 89.90%
+Average Validation Loss: 0.455631 | Acc: 79.53%
+epoch  19 | iteration   100 | Loss 0.269177 | Acc 89.06%
+Average Training Loss of Epoch 19: 0.199367 | Acc: 90.75%
+Average Validation Loss: 0.427383 | Acc: 81.66%
+epoch  20 | iteration   100 | Loss 0.174020 | Acc 89.06%
+Average Training Loss of Epoch 20: 0.187743 | Acc: 91.23%
+Average Validation Loss: 0.448956 | Acc: 80.36%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-50pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.842900 | Acc 65.62%
+Average Training Loss of Epoch 1: 0.944169 | Acc: 60.25%
+Average Validation Loss: 0.702410 | Acc: 71.72%
+epoch   2 | iteration   100 | Loss 0.657021 | Acc 71.88%
+Average Training Loss of Epoch 2: 0.672675 | Acc: 72.18%
+Average Validation Loss: 0.620148 | Acc: 75.03%
+epoch   3 | iteration   100 | Loss 0.342053 | Acc 87.50%
+Average Training Loss of Epoch 3: 0.571276 | Acc: 76.69%
+Average Validation Loss: 0.553103 | Acc: 77.51%
+epoch   4 | iteration   100 | Loss 0.511950 | Acc 71.88%
+Average Training Loss of Epoch 4: 0.508578 | Acc: 79.02%
+Average Validation Loss: 0.526409 | Acc: 78.58%
+epoch   5 | iteration   100 | Loss 0.516414 | Acc 84.38%
+Average Training Loss of Epoch 5: 0.465496 | Acc: 80.55%
+Average Validation Loss: 0.494963 | Acc: 80.00%
+epoch   6 | iteration   100 | Loss 0.456245 | Acc 85.94%
+Average Training Loss of Epoch 6: 0.423569 | Acc: 82.05%
+Average Validation Loss: 0.480375 | Acc: 79.29%
+epoch   7 | iteration   100 | Loss 0.575218 | Acc 73.44%
+Average Training Loss of Epoch 7: 0.388468 | Acc: 82.88%
+Average Validation Loss: 0.458998 | Acc: 80.47%
+epoch   8 | iteration   100 | Loss 0.457704 | Acc 81.25%
+Average Training Loss of Epoch 8: 0.356056 | Acc: 84.59%
+Average Validation Loss: 0.492491 | Acc: 78.70%
+epoch   9 | iteration   100 | Loss 0.362837 | Acc 81.25%
+Average Training Loss of Epoch 9: 0.339924 | Acc: 84.88%
+Average Validation Loss: 0.497361 | Acc: 79.29%
+epoch  10 | iteration   100 | Loss 0.467377 | Acc 87.50%
+Average Training Loss of Epoch 10: 0.313296 | Acc: 85.96%
+Average Validation Loss: 0.442416 | Acc: 80.59%
+epoch  11 | iteration   100 | Loss 0.242265 | Acc 85.94%
+Average Training Loss of Epoch 11: 0.284008 | Acc: 87.45%
+Average Validation Loss: 0.467508 | Acc: 79.17%
+epoch  12 | iteration   100 | Loss 0.173785 | Acc 92.19%
+Average Training Loss of Epoch 12: 0.269953 | Acc: 87.91%
+Average Validation Loss: 0.449516 | Acc: 80.71%
+epoch  13 | iteration   100 | Loss 0.255579 | Acc 87.50%
+Average Training Loss of Epoch 13: 0.251257 | Acc: 88.50%
+Average Validation Loss: 0.452295 | Acc: 80.59%
+epoch  14 | iteration   100 | Loss 0.290398 | Acc 87.50%
+Average Training Loss of Epoch 14: 0.235533 | Acc: 88.69%
+Average Validation Loss: 0.433175 | Acc: 81.42%
+epoch  15 | iteration   100 | Loss 0.170913 | Acc 93.75%
+Average Training Loss of Epoch 15: 0.216639 | Acc: 89.91%
+Average Validation Loss: 0.466641 | Acc: 81.42%
+epoch  16 | iteration   100 | Loss 0.155350 | Acc 92.19%
+Average Training Loss of Epoch 16: 0.205767 | Acc: 90.37%
+Average Validation Loss: 0.482244 | Acc: 81.54%
+epoch  17 | iteration   100 | Loss 0.121076 | Acc 95.31%
+Average Training Loss of Epoch 17: 0.193255 | Acc: 91.04%
+Average Validation Loss: 0.471557 | Acc: 80.83%
+epoch  18 | iteration   100 | Loss 0.142479 | Acc 89.06%
+Average Training Loss of Epoch 18: 0.179690 | Acc: 91.41%
+Average Validation Loss: 0.464863 | Acc: 82.72%
+epoch  19 | iteration   100 | Loss 0.318834 | Acc 84.38%
+Average Training Loss of Epoch 19: 0.166255 | Acc: 92.13%
+Average Validation Loss: 0.480126 | Acc: 80.47%
+epoch  20 | iteration   100 | Loss 0.077416 | Acc 95.31%
+Average Training Loss of Epoch 20: 0.159034 | Acc: 92.44%
+Average Validation Loss: 0.488608 | Acc: 82.25%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -357,67 +1067,209 @@ cuda
 Starting training
 ../../fst-kaokore-2-cb-50pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 0.849759 | Acc 70.31%
-Average Training Loss of Epoch 1: 0.938330 | Acc: 62.46%
-Average Validation Loss: 0.756801 | Acc: 68.17%
-epoch   2 | iteration   100 | Loss 0.664130 | Acc 76.56%
-Average Training Loss of Epoch 2: 0.637648 | Acc: 75.44%
-Average Validation Loss: 0.647905 | Acc: 73.37%
-epoch   3 | iteration   100 | Loss 0.554456 | Acc 76.56%
-Average Training Loss of Epoch 3: 0.535229 | Acc: 78.98%
-Average Validation Loss: 0.572540 | Acc: 76.57%
-epoch   4 | iteration   100 | Loss 0.416037 | Acc 85.94%
-Average Training Loss of Epoch 4: 0.482991 | Acc: 80.71%
-Average Validation Loss: 0.545310 | Acc: 78.22%
-epoch   5 | iteration   100 | Loss 0.424591 | Acc 81.25%
-Average Training Loss of Epoch 5: 0.438716 | Acc: 81.96%
-Average Validation Loss: 0.520459 | Acc: 78.22%
-epoch   6 | iteration   100 | Loss 0.311708 | Acc 87.50%
-Average Training Loss of Epoch 6: 0.398284 | Acc: 83.46%
-Average Validation Loss: 0.502290 | Acc: 77.63%
-epoch   7 | iteration   100 | Loss 0.304425 | Acc 87.50%
-Average Training Loss of Epoch 7: 0.370384 | Acc: 84.65%
-Average Validation Loss: 0.482808 | Acc: 79.88%
-epoch   8 | iteration   100 | Loss 0.350118 | Acc 79.69%
-Average Training Loss of Epoch 8: 0.349448 | Acc: 84.84%
-Average Validation Loss: 0.479470 | Acc: 79.88%
-epoch   9 | iteration   100 | Loss 0.433259 | Acc 84.38%
-Average Training Loss of Epoch 9: 0.321716 | Acc: 86.37%
-Average Validation Loss: 0.458554 | Acc: 81.89%
-epoch  10 | iteration   100 | Loss 0.286400 | Acc 87.50%
-Average Training Loss of Epoch 10: 0.301062 | Acc: 86.58%
-Average Validation Loss: 0.446523 | Acc: 82.01%
-epoch  11 | iteration   100 | Loss 0.158825 | Acc 92.19%
-Average Training Loss of Epoch 11: 0.282558 | Acc: 87.50%
-Average Validation Loss: 0.453782 | Acc: 80.95%
-epoch  12 | iteration   100 | Loss 0.252797 | Acc 82.81%
-Average Training Loss of Epoch 12: 0.264708 | Acc: 88.35%
-Average Validation Loss: 0.447664 | Acc: 82.01%
-epoch  13 | iteration   100 | Loss 0.255233 | Acc 87.50%
-Average Training Loss of Epoch 13: 0.251327 | Acc: 88.58%
-Average Validation Loss: 0.451544 | Acc: 80.59%
-epoch  14 | iteration   100 | Loss 0.203661 | Acc 89.06%
-Average Training Loss of Epoch 14: 0.235784 | Acc: 89.11%
-Average Validation Loss: 0.429109 | Acc: 82.72%
-epoch  15 | iteration   100 | Loss 0.208831 | Acc 87.50%
-Average Training Loss of Epoch 15: 0.220174 | Acc: 89.95%
-Average Validation Loss: 0.433306 | Acc: 83.20%
-epoch  16 | iteration   100 | Loss 0.226375 | Acc 89.06%
-Average Training Loss of Epoch 16: 0.202110 | Acc: 90.70%
-Average Validation Loss: 0.429558 | Acc: 82.13%
-epoch  17 | iteration   100 | Loss 0.200605 | Acc 90.62%
-Average Training Loss of Epoch 17: 0.193463 | Acc: 91.00%
-Average Validation Loss: 0.447855 | Acc: 82.37%
-epoch  18 | iteration   100 | Loss 0.239432 | Acc 92.19%
-Average Training Loss of Epoch 18: 0.183652 | Acc: 91.39%
-Average Validation Loss: 0.421872 | Acc: 83.31%
-epoch  19 | iteration   100 | Loss 0.126726 | Acc 96.88%
-Average Training Loss of Epoch 19: 0.171752 | Acc: 92.20%
-Average Validation Loss: 0.468132 | Acc: 83.43%
-epoch  20 | iteration   100 | Loss 0.207153 | Acc 89.06%
-Average Training Loss of Epoch 20: 0.160781 | Acc: 92.47%
-Average Validation Loss: 0.461024 | Acc: 82.72%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 1: nan | Acc: 9.68%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 2: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 3: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 4: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 5: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 6: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 7: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 8: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 9: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 10: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 11: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 12: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 13: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 14: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 15: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 16: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 17: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 18: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 19: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 20: nan | Acc: 9.45%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-50pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.800921 | Acc 64.06%
+Average Training Loss of Epoch 1: 0.901375 | Acc: 63.49%
+Average Validation Loss: 0.726195 | Acc: 69.70%
+epoch   2 | iteration   100 | Loss 0.648619 | Acc 70.31%
+Average Training Loss of Epoch 2: 0.631805 | Acc: 74.94%
+Average Validation Loss: 0.644386 | Acc: 74.08%
+epoch   3 | iteration   100 | Loss 0.453148 | Acc 81.25%
+Average Training Loss of Epoch 3: 0.537898 | Acc: 78.55%
+Average Validation Loss: 0.625065 | Acc: 74.56%
+epoch   4 | iteration   100 | Loss 0.375062 | Acc 82.81%
+Average Training Loss of Epoch 4: 0.482410 | Acc: 80.64%
+Average Validation Loss: 0.571561 | Acc: 75.50%
+epoch   5 | iteration   100 | Loss 0.454710 | Acc 82.81%
+Average Training Loss of Epoch 5: 0.438181 | Acc: 82.12%
+Average Validation Loss: 0.546061 | Acc: 77.04%
+epoch   6 | iteration   100 | Loss 0.486911 | Acc 84.38%
+Average Training Loss of Epoch 6: 0.403950 | Acc: 83.13%
+Average Validation Loss: 0.495248 | Acc: 80.71%
+epoch   7 | iteration   100 | Loss 0.277205 | Acc 82.81%
+Average Training Loss of Epoch 7: 0.373564 | Acc: 84.50%
+Average Validation Loss: 0.471707 | Acc: 81.30%
+epoch   8 | iteration   100 | Loss 0.343464 | Acc 85.94%
+Average Training Loss of Epoch 8: 0.350197 | Acc: 85.00%
+Average Validation Loss: 0.466990 | Acc: 81.18%
+epoch   9 | iteration   100 | Loss 0.536985 | Acc 78.12%
+Average Training Loss of Epoch 9: 0.327463 | Acc: 85.90%
+Average Validation Loss: 0.460552 | Acc: 82.13%
+epoch  10 | iteration   100 | Loss 0.322581 | Acc 90.62%
+Average Training Loss of Epoch 10: 0.312048 | Acc: 86.67%
+Average Validation Loss: 0.435609 | Acc: 81.78%
+epoch  11 | iteration   100 | Loss 0.289183 | Acc 89.06%
+Average Training Loss of Epoch 11: 0.287443 | Acc: 87.44%
+Average Validation Loss: 0.443560 | Acc: 81.18%
+epoch  12 | iteration   100 | Loss 0.149597 | Acc 93.75%
+Average Training Loss of Epoch 12: 0.277679 | Acc: 87.73%
+Average Validation Loss: 0.430132 | Acc: 82.01%
+epoch  13 | iteration   100 | Loss 0.266155 | Acc 87.50%
+Average Training Loss of Epoch 13: 0.257443 | Acc: 88.63%
+Average Validation Loss: 0.430173 | Acc: 82.25%
+epoch  14 | iteration   100 | Loss 0.232559 | Acc 89.06%
+Average Training Loss of Epoch 14: 0.247854 | Acc: 89.16%
+Average Validation Loss: 0.430817 | Acc: 82.13%
+epoch  15 | iteration   100 | Loss 0.203711 | Acc 87.50%
+Average Training Loss of Epoch 15: 0.233915 | Acc: 89.71%
+Average Validation Loss: 0.427498 | Acc: 82.37%
+epoch  16 | iteration   100 | Loss 0.158475 | Acc 93.75%
+Average Training Loss of Epoch 16: 0.222406 | Acc: 89.59%
+Average Validation Loss: 0.430294 | Acc: 81.66%
+epoch  17 | iteration   100 | Loss 0.273259 | Acc 89.06%
+Average Training Loss of Epoch 17: 0.204105 | Acc: 90.58%
+Average Validation Loss: 0.436607 | Acc: 82.13%
+epoch  18 | iteration   100 | Loss 0.184512 | Acc 89.06%
+Average Training Loss of Epoch 18: 0.193487 | Acc: 90.95%
+Average Validation Loss: 0.421463 | Acc: 82.13%
+epoch  19 | iteration   100 | Loss 0.164334 | Acc 90.62%
+Average Training Loss of Epoch 19: 0.184483 | Acc: 91.42%
+Average Validation Loss: 0.432864 | Acc: 82.25%
+epoch  20 | iteration   100 | Loss 0.127511 | Acc 96.88%
+Average Training Loss of Epoch 20: 0.170778 | Acc: 92.01%
+Average Validation Loss: 0.419146 | Acc: 83.08%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-50pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.850341 | Acc 59.38%
+Average Training Loss of Epoch 1: 0.891364 | Acc: 63.21%
+Average Validation Loss: 0.695475 | Acc: 73.25%
+epoch   2 | iteration   100 | Loss 0.572335 | Acc 78.12%
+Average Training Loss of Epoch 2: 0.621552 | Acc: 74.93%
+Average Validation Loss: 0.599958 | Acc: 75.86%
+epoch   3 | iteration   100 | Loss 0.442434 | Acc 82.81%
+Average Training Loss of Epoch 3: 0.515552 | Acc: 79.09%
+Average Validation Loss: 0.546363 | Acc: 78.11%
+epoch   4 | iteration   100 | Loss 0.399052 | Acc 81.25%
+Average Training Loss of Epoch 4: 0.464995 | Acc: 81.24%
+Average Validation Loss: 0.515514 | Acc: 79.17%
+epoch   5 | iteration   100 | Loss 0.395699 | Acc 81.25%
+Average Training Loss of Epoch 5: 0.411606 | Acc: 83.08%
+Average Validation Loss: 0.510593 | Acc: 80.24%
+epoch   6 | iteration   100 | Loss 0.251688 | Acc 84.38%
+Average Training Loss of Epoch 6: 0.373449 | Acc: 84.57%
+Average Validation Loss: 0.486166 | Acc: 79.76%
+epoch   7 | iteration   100 | Loss 0.261166 | Acc 85.94%
+Average Training Loss of Epoch 7: 0.340823 | Acc: 85.51%
+Average Validation Loss: 0.470941 | Acc: 80.71%
+epoch   8 | iteration   100 | Loss 0.317941 | Acc 85.94%
+Average Training Loss of Epoch 8: 0.318168 | Acc: 86.39%
+Average Validation Loss: 0.489298 | Acc: 80.12%
+epoch   9 | iteration   100 | Loss 0.315007 | Acc 90.62%
+Average Training Loss of Epoch 9: 0.293468 | Acc: 87.28%
+Average Validation Loss: 0.490730 | Acc: 79.88%
+epoch  10 | iteration   100 | Loss 0.330963 | Acc 82.81%
+Average Training Loss of Epoch 10: 0.266399 | Acc: 88.05%
+Average Validation Loss: 0.445674 | Acc: 81.54%
+epoch  11 | iteration   100 | Loss 0.246790 | Acc 89.06%
+Average Training Loss of Epoch 11: 0.254042 | Acc: 88.70%
+Average Validation Loss: 0.452978 | Acc: 81.66%
+epoch  12 | iteration   100 | Loss 0.324746 | Acc 87.50%
+Average Training Loss of Epoch 12: 0.231354 | Acc: 89.72%
+Average Validation Loss: 0.450374 | Acc: 81.66%
+epoch  13 | iteration   100 | Loss 0.183327 | Acc 90.62%
+Average Training Loss of Epoch 13: 0.210848 | Acc: 90.28%
+Average Validation Loss: 0.452240 | Acc: 82.01%
+epoch  14 | iteration   100 | Loss 0.158581 | Acc 92.19%
+Average Training Loss of Epoch 14: 0.193055 | Acc: 91.05%
+Average Validation Loss: 0.460496 | Acc: 82.84%
+epoch  15 | iteration   100 | Loss 0.123017 | Acc 93.75%
+Average Training Loss of Epoch 15: 0.176082 | Acc: 91.80%
+Average Validation Loss: 0.471963 | Acc: 81.89%
+epoch  16 | iteration   100 | Loss 0.218181 | Acc 92.19%
+Average Training Loss of Epoch 16: 0.161722 | Acc: 92.62%
+Average Validation Loss: 0.478534 | Acc: 82.37%
+epoch  17 | iteration   100 | Loss 0.118881 | Acc 93.75%
+Average Training Loss of Epoch 17: 0.148737 | Acc: 93.35%
+Average Validation Loss: 0.464537 | Acc: 83.08%
+epoch  18 | iteration   100 | Loss 0.196217 | Acc 89.06%
+Average Training Loss of Epoch 18: 0.142173 | Acc: 93.40%
+Average Validation Loss: 0.487222 | Acc: 82.60%
+epoch  19 | iteration   100 | Loss 0.096100 | Acc 93.75%
+Average Training Loss of Epoch 19: 0.127574 | Acc: 94.05%
+Average Validation Loss: 0.488319 | Acc: 82.72%
+epoch  20 | iteration   100 | Loss 0.124687 | Acc 95.31%
+Average Training Loss of Epoch 20: 0.112793 | Acc: 95.07%
+Average Validation Loss: 0.486305 | Acc: 82.96%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -428,87 +1280,87 @@ cuda
 Starting training
 ../../fst-kaokore-cb-100pct
 Loaded data
-['commoner', 'incarnation', 'noble', 'warrior'] 4
-epoch   1 | iteration   100 | Loss 0.855144 | Acc 70.31%
-epoch   1 | iteration   200 | Loss 0.846978 | Acc 60.94%
-Average Training Loss of Epoch 1: 0.888121 | Acc: 63.79%
-Average Validation Loss: 0.687555 | Acc: 72.78%
-epoch   2 | iteration   100 | Loss 0.541435 | Acc 81.25%
-epoch   2 | iteration   200 | Loss 0.492446 | Acc 75.00%
-Average Training Loss of Epoch 2: 0.571306 | Acc: 78.04%
-Average Validation Loss: 0.598930 | Acc: 77.04%
-epoch   3 | iteration   100 | Loss 0.634375 | Acc 76.56%
-epoch   3 | iteration   200 | Loss 0.625419 | Acc 79.69%
-Average Training Loss of Epoch 3: 0.470203 | Acc: 81.41%
-Average Validation Loss: 0.557255 | Acc: 76.57%
-epoch   4 | iteration   100 | Loss 0.312581 | Acc 84.38%
-epoch   4 | iteration   200 | Loss 0.410299 | Acc 84.38%
-Average Training Loss of Epoch 4: 0.406446 | Acc: 83.49%
-Average Validation Loss: 0.555070 | Acc: 78.82%
-epoch   5 | iteration   100 | Loss 0.373481 | Acc 78.12%
-epoch   5 | iteration   200 | Loss 0.334954 | Acc 85.94%
-Average Training Loss of Epoch 5: 0.365221 | Acc: 84.88%
-Average Validation Loss: 0.503987 | Acc: 79.41%
-epoch   6 | iteration   100 | Loss 0.370365 | Acc 82.81%
-epoch   6 | iteration   200 | Loss 0.311609 | Acc 79.69%
-Average Training Loss of Epoch 6: 0.324771 | Acc: 86.45%
-Average Validation Loss: 0.517369 | Acc: 79.17%
-epoch   7 | iteration   100 | Loss 0.403183 | Acc 84.38%
-epoch   7 | iteration   200 | Loss 0.196683 | Acc 87.50%
-Average Training Loss of Epoch 7: 0.296462 | Acc: 87.37%
-Average Validation Loss: 0.480095 | Acc: 81.18%
-epoch   8 | iteration   100 | Loss 0.274932 | Acc 85.94%
-epoch   8 | iteration   200 | Loss 0.259607 | Acc 89.06%
-Average Training Loss of Epoch 8: 0.273624 | Acc: 88.15%
-Average Validation Loss: 0.457880 | Acc: 81.30%
-epoch   9 | iteration   100 | Loss 0.281398 | Acc 85.94%
-epoch   9 | iteration   200 | Loss 0.190981 | Acc 95.31%
-Average Training Loss of Epoch 9: 0.254808 | Acc: 88.65%
-Average Validation Loss: 0.503430 | Acc: 79.88%
-epoch  10 | iteration   100 | Loss 0.272914 | Acc 81.25%
-epoch  10 | iteration   200 | Loss 0.271732 | Acc 89.06%
-Average Training Loss of Epoch 10: 0.236504 | Acc: 89.43%
-Average Validation Loss: 0.441605 | Acc: 81.89%
-epoch  11 | iteration   100 | Loss 0.332617 | Acc 76.56%
-epoch  11 | iteration   200 | Loss 0.288708 | Acc 87.50%
-Average Training Loss of Epoch 11: 0.220354 | Acc: 89.99%
-Average Validation Loss: 0.443078 | Acc: 82.37%
-epoch  12 | iteration   100 | Loss 0.197757 | Acc 90.62%
-epoch  12 | iteration   200 | Loss 0.085728 | Acc 100.00%
-Average Training Loss of Epoch 12: 0.203435 | Acc: 90.70%
-Average Validation Loss: 0.455069 | Acc: 82.84%
-epoch  13 | iteration   100 | Loss 0.125371 | Acc 96.88%
-epoch  13 | iteration   200 | Loss 0.160261 | Acc 92.19%
-Average Training Loss of Epoch 13: 0.187926 | Acc: 91.19%
-Average Validation Loss: 0.452200 | Acc: 80.95%
-epoch  14 | iteration   100 | Loss 0.162657 | Acc 92.19%
-epoch  14 | iteration   200 | Loss 0.111561 | Acc 95.31%
-Average Training Loss of Epoch 14: 0.178552 | Acc: 91.72%
-Average Validation Loss: 0.409389 | Acc: 83.08%
-epoch  15 | iteration   100 | Loss 0.077440 | Acc 96.88%
-epoch  15 | iteration   200 | Loss 0.219663 | Acc 90.62%
-Average Training Loss of Epoch 15: 0.164555 | Acc: 92.20%
-Average Validation Loss: 0.444736 | Acc: 82.60%
-epoch  16 | iteration   100 | Loss 0.158437 | Acc 90.62%
-epoch  16 | iteration   200 | Loss 0.223470 | Acc 90.62%
-Average Training Loss of Epoch 16: 0.155286 | Acc: 92.60%
-Average Validation Loss: 0.439373 | Acc: 82.49%
-epoch  17 | iteration   100 | Loss 0.115142 | Acc 92.19%
-epoch  17 | iteration   200 | Loss 0.130567 | Acc 92.19%
-Average Training Loss of Epoch 17: 0.144261 | Acc: 92.96%
-Average Validation Loss: 0.428713 | Acc: 83.67%
-epoch  18 | iteration   100 | Loss 0.130858 | Acc 95.31%
-epoch  18 | iteration   200 | Loss 0.068603 | Acc 95.31%
-Average Training Loss of Epoch 18: 0.135814 | Acc: 93.49%
-Average Validation Loss: 0.459393 | Acc: 82.01%
-epoch  19 | iteration   100 | Loss 0.170777 | Acc 90.62%
-epoch  19 | iteration   200 | Loss 0.108161 | Acc 92.19%
-Average Training Loss of Epoch 19: 0.125705 | Acc: 93.93%
-Average Validation Loss: 0.438457 | Acc: 83.79%
-epoch  20 | iteration   100 | Loss 0.069447 | Acc 96.88%
-epoch  20 | iteration   200 | Loss 0.162230 | Acc 89.06%
-Average Training Loss of Epoch 20: 0.117805 | Acc: 94.41%
-Average Validation Loss: 0.444007 | Acc: 82.25%
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 9.38%
+epoch   1 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 1: nan | Acc: 9.60%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 7.81%
+epoch   2 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 2: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 6.25%
+epoch   3 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 3: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 12.50%
+epoch   4 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 4: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 4.69%
+epoch   5 | iteration   200 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 5: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 10.94%
+epoch   6 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 6: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 7.81%
+epoch   7 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 7: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 12.50%
+epoch   8 | iteration   200 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 8: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 12.50%
+epoch   9 | iteration   200 | Loss nan | Acc 4.69%
+Average Training Loss of Epoch 9: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 9.38%
+epoch  10 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 10: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 6.25%
+epoch  11 | iteration   200 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 11: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 9.38%
+epoch  12 | iteration   200 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 12: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 12.50%
+epoch  13 | iteration   200 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 13: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 10.94%
+epoch  14 | iteration   200 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 14: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 14.06%
+epoch  15 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 15: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 10.94%
+epoch  16 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 16: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 1.56%
+epoch  17 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 17: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 7.81%
+epoch  18 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 18: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 3.12%
+epoch  19 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 19: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 9.38%
+epoch  20 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 20: nan | Acc: 9.50%
+Average Validation Loss: nan | Acc: 8.40%
 Saving Model to visualize
 torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
 Making the confusion matrix
@@ -517,5 +1369,669 @@ Evaluations logged
 
 cuda
 Starting training
-../../fst-kaokore-2-cb-100pct ../../kaokore_imagenet_style/status/train
+../../fst-kaokore-cb-100pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.844995 | Acc 71.88%
+epoch   1 | iteration   200 | Loss 0.666592 | Acc 76.56%
+Average Training Loss of Epoch 1: 0.867577 | Acc: 64.59%
+Average Validation Loss: 0.743283 | Acc: 67.57%
+epoch   2 | iteration   100 | Loss 0.591773 | Acc 81.25%
+epoch   2 | iteration   200 | Loss 0.577410 | Acc 73.44%
+Average Training Loss of Epoch 2: 0.582107 | Acc: 77.34%
+Average Validation Loss: 0.691745 | Acc: 70.41%
+epoch   3 | iteration   100 | Loss 0.521270 | Acc 79.69%
+epoch   3 | iteration   200 | Loss 0.745654 | Acc 67.19%
+Average Training Loss of Epoch 3: 0.477381 | Acc: 81.10%
+Average Validation Loss: 0.605981 | Acc: 74.20%
+epoch   4 | iteration   100 | Loss 0.508554 | Acc 85.94%
+epoch   4 | iteration   200 | Loss 0.300458 | Acc 87.50%
+Average Training Loss of Epoch 4: 0.419860 | Acc: 83.16%
+Average Validation Loss: 0.570637 | Acc: 75.50%
+epoch   5 | iteration   100 | Loss 0.322328 | Acc 89.06%
+epoch   5 | iteration   200 | Loss 0.474168 | Acc 81.25%
+Average Training Loss of Epoch 5: 0.377195 | Acc: 84.48%
+Average Validation Loss: 0.556987 | Acc: 75.62%
+epoch   6 | iteration   100 | Loss 0.511714 | Acc 82.81%
+epoch   6 | iteration   200 | Loss 0.225950 | Acc 89.06%
+Average Training Loss of Epoch 6: 0.345506 | Acc: 85.64%
+Average Validation Loss: 0.536415 | Acc: 77.87%
+epoch   7 | iteration   100 | Loss 0.361752 | Acc 87.50%
+epoch   7 | iteration   200 | Loss 0.304747 | Acc 85.94%
+Average Training Loss of Epoch 7: 0.314732 | Acc: 86.92%
+Average Validation Loss: 0.508372 | Acc: 78.11%
+epoch   8 | iteration   100 | Loss 0.369589 | Acc 79.69%
+epoch   8 | iteration   200 | Loss 0.280025 | Acc 87.50%
+Average Training Loss of Epoch 8: 0.292069 | Acc: 87.38%
+Average Validation Loss: 0.519654 | Acc: 78.11%
+epoch   9 | iteration   100 | Loss 0.240442 | Acc 89.06%
+epoch   9 | iteration   200 | Loss 0.342169 | Acc 85.94%
+Average Training Loss of Epoch 9: 0.273446 | Acc: 88.13%
+Average Validation Loss: 0.494170 | Acc: 78.82%
+epoch  10 | iteration   100 | Loss 0.267937 | Acc 87.50%
+epoch  10 | iteration   200 | Loss 0.435756 | Acc 75.00%
+Average Training Loss of Epoch 10: 0.257918 | Acc: 88.43%
+Average Validation Loss: 0.478622 | Acc: 79.29%
+epoch  11 | iteration   100 | Loss 0.330705 | Acc 89.06%
+epoch  11 | iteration   200 | Loss 0.388404 | Acc 84.38%
+Average Training Loss of Epoch 11: 0.240773 | Acc: 89.55%
+Average Validation Loss: 0.471871 | Acc: 78.34%
+epoch  12 | iteration   100 | Loss 0.197183 | Acc 87.50%
+epoch  12 | iteration   200 | Loss 0.405731 | Acc 84.38%
+Average Training Loss of Epoch 12: 0.221779 | Acc: 90.07%
+Average Validation Loss: 0.468401 | Acc: 78.93%
+epoch  13 | iteration   100 | Loss 0.143991 | Acc 92.19%
+epoch  13 | iteration   200 | Loss 0.127154 | Acc 96.88%
+Average Training Loss of Epoch 13: 0.209433 | Acc: 90.52%
+Average Validation Loss: 0.462631 | Acc: 80.47%
+epoch  14 | iteration   100 | Loss 0.198969 | Acc 87.50%
+epoch  14 | iteration   200 | Loss 0.200103 | Acc 92.19%
+Average Training Loss of Epoch 14: 0.196992 | Acc: 91.23%
+Average Validation Loss: 0.481755 | Acc: 77.99%
+epoch  15 | iteration   100 | Loss 0.101792 | Acc 95.31%
+epoch  15 | iteration   200 | Loss 0.244671 | Acc 89.06%
+Average Training Loss of Epoch 15: 0.186559 | Acc: 91.55%
+Average Validation Loss: 0.486746 | Acc: 78.82%
+epoch  16 | iteration   100 | Loss 0.197431 | Acc 89.06%
+epoch  16 | iteration   200 | Loss 0.104851 | Acc 96.88%
+Average Training Loss of Epoch 16: 0.172486 | Acc: 91.99%
+Average Validation Loss: 0.507544 | Acc: 78.46%
+epoch  17 | iteration   100 | Loss 0.109049 | Acc 95.31%
+epoch  17 | iteration   200 | Loss 0.100302 | Acc 93.75%
+Average Training Loss of Epoch 17: 0.163966 | Acc: 92.45%
+Average Validation Loss: 0.447513 | Acc: 80.24%
+epoch  18 | iteration   100 | Loss 0.237155 | Acc 85.94%
+epoch  18 | iteration   200 | Loss 0.080426 | Acc 96.88%
+Average Training Loss of Epoch 18: 0.155452 | Acc: 92.66%
+Average Validation Loss: 0.442273 | Acc: 80.71%
+epoch  19 | iteration   100 | Loss 0.172160 | Acc 92.19%
+epoch  19 | iteration   200 | Loss 0.142838 | Acc 93.75%
+Average Training Loss of Epoch 19: 0.142958 | Acc: 93.46%
+Average Validation Loss: 0.442368 | Acc: 81.78%
+epoch  20 | iteration   100 | Loss 0.079886 | Acc 96.88%
+epoch  20 | iteration   200 | Loss 0.170083 | Acc 92.19%
+Average Training Loss of Epoch 20: 0.133101 | Acc: 93.70%
+Average Validation Loss: 0.445958 | Acc: 81.42%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-cb-100pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.758114 | Acc 67.19%
+epoch   1 | iteration   200 | Loss 0.702286 | Acc 64.06%
+Average Training Loss of Epoch 1: 0.864548 | Acc: 64.33%
+Average Validation Loss: 0.674591 | Acc: 71.83%
+epoch   2 | iteration   100 | Loss 0.532032 | Acc 76.56%
+epoch   2 | iteration   200 | Loss 0.391261 | Acc 81.25%
+Average Training Loss of Epoch 2: 0.565767 | Acc: 77.87%
+Average Validation Loss: 0.564202 | Acc: 77.51%
+epoch   3 | iteration   100 | Loss 0.449363 | Acc 82.81%
+epoch   3 | iteration   200 | Loss 0.514329 | Acc 78.12%
+Average Training Loss of Epoch 3: 0.476010 | Acc: 80.72%
+Average Validation Loss: 0.531796 | Acc: 76.92%
+epoch   4 | iteration   100 | Loss 0.460150 | Acc 79.69%
+epoch   4 | iteration   200 | Loss 0.240392 | Acc 87.50%
+Average Training Loss of Epoch 4: 0.416369 | Acc: 82.97%
+Average Validation Loss: 0.510580 | Acc: 79.05%
+epoch   5 | iteration   100 | Loss 0.432210 | Acc 84.38%
+epoch   5 | iteration   200 | Loss 0.545298 | Acc 75.00%
+Average Training Loss of Epoch 5: 0.370532 | Acc: 84.52%
+Average Validation Loss: 0.498150 | Acc: 77.40%
+epoch   6 | iteration   100 | Loss 0.457197 | Acc 82.81%
+epoch   6 | iteration   200 | Loss 0.380852 | Acc 81.25%
+Average Training Loss of Epoch 6: 0.338478 | Acc: 85.45%
+Average Validation Loss: 0.475736 | Acc: 78.70%
+epoch   7 | iteration   100 | Loss 0.286044 | Acc 89.06%
+epoch   7 | iteration   200 | Loss 0.314503 | Acc 84.38%
+Average Training Loss of Epoch 7: 0.309138 | Acc: 86.89%
+Average Validation Loss: 0.474746 | Acc: 77.75%
+epoch   8 | iteration   100 | Loss 0.223831 | Acc 85.94%
+epoch   8 | iteration   200 | Loss 0.190248 | Acc 87.50%
+Average Training Loss of Epoch 8: 0.282853 | Acc: 87.58%
+Average Validation Loss: 0.472731 | Acc: 78.82%
+epoch   9 | iteration   100 | Loss 0.183556 | Acc 93.75%
+epoch   9 | iteration   200 | Loss 0.259695 | Acc 89.06%
+Average Training Loss of Epoch 9: 0.262285 | Acc: 88.60%
+Average Validation Loss: 0.473440 | Acc: 81.07%
+epoch  10 | iteration   100 | Loss 0.252884 | Acc 85.94%
+epoch  10 | iteration   200 | Loss 0.144705 | Acc 93.75%
+Average Training Loss of Epoch 10: 0.246482 | Acc: 89.01%
+Average Validation Loss: 0.461090 | Acc: 80.24%
+epoch  11 | iteration   100 | Loss 0.154542 | Acc 90.62%
+epoch  11 | iteration   200 | Loss 0.170825 | Acc 89.06%
+Average Training Loss of Epoch 11: 0.223534 | Acc: 89.84%
+Average Validation Loss: 0.452202 | Acc: 80.83%
+epoch  12 | iteration   100 | Loss 0.188422 | Acc 93.75%
+epoch  12 | iteration   200 | Loss 0.131647 | Acc 96.88%
+Average Training Loss of Epoch 12: 0.209442 | Acc: 90.14%
+Average Validation Loss: 0.454874 | Acc: 80.83%
+epoch  13 | iteration   100 | Loss 0.344728 | Acc 84.38%
+epoch  13 | iteration   200 | Loss 0.189679 | Acc 90.62%
+Average Training Loss of Epoch 13: 0.198074 | Acc: 90.81%
+Average Validation Loss: 0.437112 | Acc: 82.13%
+epoch  14 | iteration   100 | Loss 0.162124 | Acc 93.75%
+epoch  14 | iteration   200 | Loss 0.196358 | Acc 84.38%
+Average Training Loss of Epoch 14: 0.184887 | Acc: 91.17%
+Average Validation Loss: 0.469234 | Acc: 81.18%
+epoch  15 | iteration   100 | Loss 0.237779 | Acc 89.06%
+epoch  15 | iteration   200 | Loss 0.139106 | Acc 95.31%
+Average Training Loss of Epoch 15: 0.172228 | Acc: 92.05%
+Average Validation Loss: 0.442410 | Acc: 82.72%
+epoch  16 | iteration   100 | Loss 0.107396 | Acc 98.44%
+epoch  16 | iteration   200 | Loss 0.164016 | Acc 92.19%
+Average Training Loss of Epoch 16: 0.156257 | Acc: 92.59%
+Average Validation Loss: 0.487165 | Acc: 80.47%
+epoch  17 | iteration   100 | Loss 0.122942 | Acc 89.06%
+epoch  17 | iteration   200 | Loss 0.229631 | Acc 84.38%
+Average Training Loss of Epoch 17: 0.147245 | Acc: 93.09%
+Average Validation Loss: 0.475082 | Acc: 81.78%
+epoch  18 | iteration   100 | Loss 0.180984 | Acc 89.06%
+epoch  18 | iteration   200 | Loss 0.125756 | Acc 92.19%
+Average Training Loss of Epoch 18: 0.136380 | Acc: 93.58%
+Average Validation Loss: 0.485823 | Acc: 81.66%
+epoch  19 | iteration   100 | Loss 0.079292 | Acc 98.44%
+epoch  19 | iteration   200 | Loss 0.227851 | Acc 87.50%
+Average Training Loss of Epoch 19: 0.122798 | Acc: 94.19%
+Average Validation Loss: 0.506445 | Acc: 82.01%
+epoch  20 | iteration   100 | Loss 0.066159 | Acc 96.88%
+epoch  20 | iteration   200 | Loss 0.156960 | Acc 93.75%
+Average Training Loss of Epoch 20: 0.117014 | Acc: 94.57%
+Average Validation Loss: 0.494253 | Acc: 82.25%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-100pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 4.69%
+epoch   1 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 1: nan | Acc: 9.52%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 10.94%
+epoch   2 | iteration   200 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 2: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 15.62%
+epoch   3 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 3: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 9.38%
+epoch   4 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 4: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 4.69%
+epoch   5 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 5: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 9.38%
+epoch   6 | iteration   200 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 6: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 9.38%
+epoch   7 | iteration   200 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 7: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 7.81%
+epoch   8 | iteration   200 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 8: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 12.50%
+epoch   9 | iteration   200 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 9: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 7.81%
+epoch  10 | iteration   200 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 10: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 6.25%
+epoch  11 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 11: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 7.81%
+epoch  12 | iteration   200 | Loss nan | Acc 1.56%
+Average Training Loss of Epoch 12: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 10.94%
+epoch  13 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 13: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 6.25%
+epoch  14 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 14: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 10.94%
+epoch  15 | iteration   200 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 15: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 6.25%
+epoch  16 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 16: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 10.94%
+epoch  17 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 17: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 9.38%
+epoch  18 | iteration   200 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 18: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 10.94%
+epoch  19 | iteration   200 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 19: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 6.25%
+epoch  20 | iteration   200 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 20: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-100pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.829985 | Acc 71.88%
+epoch   1 | iteration   200 | Loss 0.672134 | Acc 71.88%
+Average Training Loss of Epoch 1: 0.842316 | Acc: 66.52%
+Average Validation Loss: 0.774241 | Acc: 69.23%
+epoch   2 | iteration   100 | Loss 0.332439 | Acc 82.81%
+epoch   2 | iteration   200 | Loss 0.629950 | Acc 78.12%
+Average Training Loss of Epoch 2: 0.532757 | Acc: 79.97%
+Average Validation Loss: 0.712395 | Acc: 69.47%
+epoch   3 | iteration   100 | Loss 0.595278 | Acc 75.00%
+epoch   3 | iteration   200 | Loss 0.452030 | Acc 82.81%
+Average Training Loss of Epoch 3: 0.438898 | Acc: 83.06%
+Average Validation Loss: 0.666604 | Acc: 72.31%
+epoch   4 | iteration   100 | Loss 0.496468 | Acc 79.69%
+epoch   4 | iteration   200 | Loss 0.349179 | Acc 85.94%
+Average Training Loss of Epoch 4: 0.378720 | Acc: 85.11%
+Average Validation Loss: 0.612171 | Acc: 74.67%
+epoch   5 | iteration   100 | Loss 0.325443 | Acc 85.94%
+epoch   5 | iteration   200 | Loss 0.249262 | Acc 89.06%
+Average Training Loss of Epoch 5: 0.333902 | Acc: 86.08%
+Average Validation Loss: 0.574186 | Acc: 75.86%
+epoch   6 | iteration   100 | Loss 0.329839 | Acc 87.50%
+epoch   6 | iteration   200 | Loss 0.244972 | Acc 89.06%
+Average Training Loss of Epoch 6: 0.312950 | Acc: 87.01%
+Average Validation Loss: 0.535186 | Acc: 79.17%
+epoch   7 | iteration   100 | Loss 0.421154 | Acc 82.81%
+epoch   7 | iteration   200 | Loss 0.256401 | Acc 93.75%
+Average Training Loss of Epoch 7: 0.283940 | Acc: 87.88%
+Average Validation Loss: 0.522207 | Acc: 78.58%
+epoch   8 | iteration   100 | Loss 0.353659 | Acc 85.94%
+epoch   8 | iteration   200 | Loss 0.243348 | Acc 85.94%
+Average Training Loss of Epoch 8: 0.262331 | Acc: 88.59%
+Average Validation Loss: 0.494958 | Acc: 80.59%
+epoch   9 | iteration   100 | Loss 0.257446 | Acc 93.75%
+epoch   9 | iteration   200 | Loss 0.194160 | Acc 93.75%
+Average Training Loss of Epoch 9: 0.244299 | Acc: 89.36%
+Average Validation Loss: 0.508332 | Acc: 80.36%
+epoch  10 | iteration   100 | Loss 0.227833 | Acc 93.75%
+epoch  10 | iteration   200 | Loss 0.222465 | Acc 85.94%
+Average Training Loss of Epoch 10: 0.227594 | Acc: 90.11%
+Average Validation Loss: 0.508954 | Acc: 77.99%
+epoch  11 | iteration   100 | Loss 0.257858 | Acc 87.50%
+epoch  11 | iteration   200 | Loss 0.155189 | Acc 95.31%
+Average Training Loss of Epoch 11: 0.208956 | Acc: 90.35%
+Average Validation Loss: 0.543165 | Acc: 78.11%
+epoch  12 | iteration   100 | Loss 0.274488 | Acc 93.75%
+epoch  12 | iteration   200 | Loss 0.102691 | Acc 96.88%
+Average Training Loss of Epoch 12: 0.201360 | Acc: 90.93%
+Average Validation Loss: 0.491517 | Acc: 80.59%
+epoch  13 | iteration   100 | Loss 0.329605 | Acc 84.38%
+epoch  13 | iteration   200 | Loss 0.181222 | Acc 89.06%
+Average Training Loss of Epoch 13: 0.184562 | Acc: 91.29%
+Average Validation Loss: 0.484626 | Acc: 79.76%
+epoch  14 | iteration   100 | Loss 0.192798 | Acc 89.06%
+epoch  14 | iteration   200 | Loss 0.217322 | Acc 92.19%
+Average Training Loss of Epoch 14: 0.176600 | Acc: 91.60%
+Average Validation Loss: 0.566273 | Acc: 77.75%
+epoch  15 | iteration   100 | Loss 0.167990 | Acc 93.75%
+epoch  15 | iteration   200 | Loss 0.112660 | Acc 92.19%
+Average Training Loss of Epoch 15: 0.162197 | Acc: 92.20%
+Average Validation Loss: 0.483600 | Acc: 80.12%
+epoch  16 | iteration   100 | Loss 0.219700 | Acc 89.06%
+epoch  16 | iteration   200 | Loss 0.185567 | Acc 90.62%
+Average Training Loss of Epoch 16: 0.151666 | Acc: 92.77%
+Average Validation Loss: 0.490354 | Acc: 80.83%
+epoch  17 | iteration   100 | Loss 0.110524 | Acc 96.88%
+epoch  17 | iteration   200 | Loss 0.130524 | Acc 95.31%
+Average Training Loss of Epoch 17: 0.140485 | Acc: 93.42%
+Average Validation Loss: 0.515101 | Acc: 79.88%
+epoch  18 | iteration   100 | Loss 0.185557 | Acc 90.62%
+epoch  18 | iteration   200 | Loss 0.093095 | Acc 95.31%
+Average Training Loss of Epoch 18: 0.130909 | Acc: 93.83%
+Average Validation Loss: 0.512837 | Acc: 79.53%
+epoch  19 | iteration   100 | Loss 0.106245 | Acc 95.31%
+epoch  19 | iteration   200 | Loss 0.143853 | Acc 95.31%
+Average Training Loss of Epoch 19: 0.127738 | Acc: 93.91%
+Average Validation Loss: 0.533613 | Acc: 80.95%
+epoch  20 | iteration   100 | Loss 0.151241 | Acc 92.19%
+epoch  20 | iteration   200 | Loss 0.071967 | Acc 95.31%
+Average Training Loss of Epoch 20: 0.112867 | Acc: 94.59%
+Average Validation Loss: 0.559907 | Acc: 78.93%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../fst-kaokore-2-cb-100pct
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.617676 | Acc 81.25%
+epoch   1 | iteration   200 | Loss 0.825719 | Acc 73.44%
+Average Training Loss of Epoch 1: 0.792601 | Acc: 68.49%
+Average Validation Loss: 0.712473 | Acc: 71.83%
+epoch   2 | iteration   100 | Loss 0.527076 | Acc 79.69%
+epoch   2 | iteration   200 | Loss 0.444374 | Acc 89.06%
+Average Training Loss of Epoch 2: 0.505979 | Acc: 80.74%
+Average Validation Loss: 0.617842 | Acc: 75.15%
+epoch   3 | iteration   100 | Loss 0.444953 | Acc 81.25%
+epoch   3 | iteration   200 | Loss 0.378954 | Acc 87.50%
+Average Training Loss of Epoch 3: 0.415553 | Acc: 83.59%
+Average Validation Loss: 0.581959 | Acc: 74.67%
+epoch   4 | iteration   100 | Loss 0.269135 | Acc 85.94%
+epoch   4 | iteration   200 | Loss 0.293198 | Acc 89.06%
+Average Training Loss of Epoch 4: 0.360974 | Acc: 85.42%
+Average Validation Loss: 0.551928 | Acc: 74.79%
+epoch   5 | iteration   100 | Loss 0.343803 | Acc 85.94%
+epoch   5 | iteration   200 | Loss 0.298569 | Acc 90.62%
+Average Training Loss of Epoch 5: 0.318587 | Acc: 86.92%
+Average Validation Loss: 0.488309 | Acc: 78.93%
+epoch   6 | iteration   100 | Loss 0.301737 | Acc 85.94%
+epoch   6 | iteration   200 | Loss 0.317040 | Acc 87.50%
+Average Training Loss of Epoch 6: 0.285490 | Acc: 87.89%
+Average Validation Loss: 0.489041 | Acc: 78.70%
+epoch   7 | iteration   100 | Loss 0.177440 | Acc 95.31%
+epoch   7 | iteration   200 | Loss 0.326627 | Acc 90.62%
+Average Training Loss of Epoch 7: 0.265265 | Acc: 88.74%
+Average Validation Loss: 0.480742 | Acc: 78.22%
+epoch   8 | iteration   100 | Loss 0.200072 | Acc 92.19%
+epoch   8 | iteration   200 | Loss 0.368553 | Acc 87.50%
+Average Training Loss of Epoch 8: 0.242033 | Acc: 89.42%
+Average Validation Loss: 0.484311 | Acc: 78.22%
+epoch   9 | iteration   100 | Loss 0.177079 | Acc 93.75%
+epoch   9 | iteration   200 | Loss 0.200078 | Acc 95.31%
+Average Training Loss of Epoch 9: 0.217614 | Acc: 90.38%
+Average Validation Loss: 0.512632 | Acc: 79.17%
+epoch  10 | iteration   100 | Loss 0.124956 | Acc 93.75%
+epoch  10 | iteration   200 | Loss 0.134236 | Acc 93.75%
+Average Training Loss of Epoch 10: 0.201218 | Acc: 90.88%
+Average Validation Loss: 0.481486 | Acc: 79.88%
+epoch  11 | iteration   100 | Loss 0.200365 | Acc 93.75%
+epoch  11 | iteration   200 | Loss 0.209678 | Acc 92.19%
+Average Training Loss of Epoch 11: 0.182910 | Acc: 91.86%
+Average Validation Loss: 0.510678 | Acc: 78.22%
+epoch  12 | iteration   100 | Loss 0.476337 | Acc 78.12%
+epoch  12 | iteration   200 | Loss 0.162644 | Acc 93.75%
+Average Training Loss of Epoch 12: 0.173442 | Acc: 91.92%
+Average Validation Loss: 0.526793 | Acc: 79.29%
+epoch  13 | iteration   100 | Loss 0.142201 | Acc 92.19%
+epoch  13 | iteration   200 | Loss 0.108960 | Acc 96.88%
+Average Training Loss of Epoch 13: 0.166249 | Acc: 92.52%
+Average Validation Loss: 0.504291 | Acc: 80.00%
+epoch  14 | iteration   100 | Loss 0.204857 | Acc 93.75%
+epoch  14 | iteration   200 | Loss 0.141223 | Acc 96.88%
+Average Training Loss of Epoch 14: 0.143039 | Acc: 93.26%
+Average Validation Loss: 0.487898 | Acc: 79.88%
+epoch  15 | iteration   100 | Loss 0.097193 | Acc 95.31%
+epoch  15 | iteration   200 | Loss 0.206783 | Acc 92.19%
+Average Training Loss of Epoch 15: 0.129719 | Acc: 93.99%
+Average Validation Loss: 0.525003 | Acc: 79.41%
+epoch  16 | iteration   100 | Loss 0.090764 | Acc 93.75%
+epoch  16 | iteration   200 | Loss 0.176292 | Acc 93.75%
+Average Training Loss of Epoch 16: 0.125447 | Acc: 93.84%
+Average Validation Loss: 0.534895 | Acc: 79.29%
+epoch  17 | iteration   100 | Loss 0.212713 | Acc 89.06%
+epoch  17 | iteration   200 | Loss 0.076304 | Acc 98.44%
+Average Training Loss of Epoch 17: 0.116882 | Acc: 94.46%
+Average Validation Loss: 0.554530 | Acc: 79.17%
+epoch  18 | iteration   100 | Loss 0.164378 | Acc 92.19%
+epoch  18 | iteration   200 | Loss 0.101435 | Acc 92.19%
+Average Training Loss of Epoch 18: 0.102971 | Acc: 95.00%
+Average Validation Loss: 0.573781 | Acc: 79.17%
+epoch  19 | iteration   100 | Loss 0.083842 | Acc 93.75%
+epoch  19 | iteration   200 | Loss 0.079508 | Acc 93.75%
+Average Training Loss of Epoch 19: 0.098008 | Acc: 95.41%
+Average Validation Loss: 0.604019 | Acc: 79.64%
+epoch  20 | iteration   100 | Loss 0.088351 | Acc 95.31%
+epoch  20 | iteration   200 | Loss 0.059473 | Acc 98.44%
+Average Training Loss of Epoch 20: 0.111825 | Acc: 94.60%
+Average Validation Loss: 0.609749 | Acc: 79.41%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../kaokore_imagenet_style/status/train
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg11', [0, 3, 11, 18]]
+epoch   1 | iteration   100 | Loss nan | Acc 3.12%
+Average Training Loss of Epoch 1: nan | Acc: 9.59%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   2 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 2: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   3 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 3: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   4 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 4: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   5 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 5: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   6 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 6: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   7 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 7: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   8 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 8: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch   9 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 9: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  10 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 10: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  11 | iteration   100 | Loss nan | Acc 9.38%
+Average Training Loss of Epoch 11: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  12 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 12: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  13 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 13: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  14 | iteration   100 | Loss nan | Acc 14.06%
+Average Training Loss of Epoch 14: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  15 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 15: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  16 | iteration   100 | Loss nan | Acc 6.25%
+Average Training Loss of Epoch 16: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  17 | iteration   100 | Loss nan | Acc 7.81%
+Average Training Loss of Epoch 17: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  18 | iteration   100 | Loss nan | Acc 15.62%
+Average Training Loss of Epoch 18: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  19 | iteration   100 | Loss nan | Acc 10.94%
+Average Training Loss of Epoch 19: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+epoch  20 | iteration   100 | Loss nan | Acc 12.50%
+Average Training Loss of Epoch 20: nan | Acc: 9.46%
+Average Validation Loss: nan | Acc: 8.40%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../kaokore_imagenet_style/status/train
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg13', [0, 7, 15, 22]]
+epoch   1 | iteration   100 | Loss 0.892761 | Acc 67.19%
+Average Training Loss of Epoch 1: 1.016483 | Acc: 57.73%
+Average Validation Loss: 0.781894 | Acc: 68.99%
+epoch   2 | iteration   100 | Loss 0.623767 | Acc 70.31%
+Average Training Loss of Epoch 2: 0.768095 | Acc: 68.43%
+Average Validation Loss: 0.668387 | Acc: 73.25%
+epoch   3 | iteration   100 | Loss 0.467774 | Acc 79.69%
+Average Training Loss of Epoch 3: 0.662519 | Acc: 71.95%
+Average Validation Loss: 0.598335 | Acc: 75.98%
+epoch   4 | iteration   100 | Loss 0.904101 | Acc 67.19%
+Average Training Loss of Epoch 4: 0.601080 | Acc: 74.67%
+Average Validation Loss: 0.549215 | Acc: 77.16%
+epoch   5 | iteration   100 | Loss 0.624561 | Acc 79.69%
+Average Training Loss of Epoch 5: 0.557367 | Acc: 76.42%
+Average Validation Loss: 0.531304 | Acc: 78.58%
+epoch   6 | iteration   100 | Loss 0.320827 | Acc 89.06%
+Average Training Loss of Epoch 6: 0.523064 | Acc: 77.77%
+Average Validation Loss: 0.490272 | Acc: 78.82%
+epoch   7 | iteration   100 | Loss 0.448087 | Acc 82.81%
+Average Training Loss of Epoch 7: 0.481893 | Acc: 79.25%
+Average Validation Loss: 0.474334 | Acc: 79.17%
+epoch   8 | iteration   100 | Loss 0.519664 | Acc 79.69%
+Average Training Loss of Epoch 8: 0.459824 | Acc: 80.17%
+Average Validation Loss: 0.523739 | Acc: 77.87%
+epoch   9 | iteration   100 | Loss 0.467820 | Acc 79.69%
+Average Training Loss of Epoch 9: 0.426869 | Acc: 81.28%
+Average Validation Loss: 0.461712 | Acc: 79.41%
+epoch  10 | iteration   100 | Loss 0.504781 | Acc 70.31%
+Average Training Loss of Epoch 10: 0.403134 | Acc: 82.10%
+Average Validation Loss: 0.488284 | Acc: 78.58%
+epoch  11 | iteration   100 | Loss 0.464420 | Acc 76.56%
+Average Training Loss of Epoch 11: 0.390815 | Acc: 82.68%
+Average Validation Loss: 0.436652 | Acc: 80.71%
+epoch  12 | iteration   100 | Loss 0.411809 | Acc 79.69%
+Average Training Loss of Epoch 12: 0.361486 | Acc: 83.33%
+Average Validation Loss: 0.486913 | Acc: 78.93%
+epoch  13 | iteration   100 | Loss 0.360723 | Acc 81.25%
+Average Training Loss of Epoch 13: 0.345306 | Acc: 83.66%
+Average Validation Loss: 0.429166 | Acc: 80.83%
+epoch  14 | iteration   100 | Loss 0.380792 | Acc 82.81%
+Average Training Loss of Epoch 14: 0.326646 | Acc: 85.23%
+Average Validation Loss: 0.445586 | Acc: 81.07%
+epoch  15 | iteration   100 | Loss 0.301364 | Acc 85.94%
+Average Training Loss of Epoch 15: 0.312858 | Acc: 85.95%
+Average Validation Loss: 0.433185 | Acc: 80.71%
+epoch  16 | iteration   100 | Loss 0.326012 | Acc 85.94%
+Average Training Loss of Epoch 16: 0.292365 | Acc: 86.55%
+Average Validation Loss: 0.447371 | Acc: 80.24%
+epoch  17 | iteration   100 | Loss 0.246212 | Acc 87.50%
+Average Training Loss of Epoch 17: 0.273263 | Acc: 86.83%
+Average Validation Loss: 0.440677 | Acc: 81.54%
+epoch  18 | iteration   100 | Loss 0.170927 | Acc 87.50%
+Average Training Loss of Epoch 18: 0.264602 | Acc: 87.80%
+Average Validation Loss: 0.458238 | Acc: 80.12%
+epoch  19 | iteration   100 | Loss 0.339468 | Acc 84.38%
+Average Training Loss of Epoch 19: 0.249199 | Acc: 88.35%
+Average Validation Loss: 0.471071 | Acc: 80.00%
+epoch  20 | iteration   100 | Loss 0.195606 | Acc 92.19%
+Average Training Loss of Epoch 20: 0.239959 | Acc: 88.38%
+Average Validation Loss: 0.447274 | Acc: 80.36%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
+
+cuda
+Starting training
+../../kaokore_imagenet_style/status/train
+Loaded data
+['commoner', 'incarnation', 'noble', 'warrior'] 4 ['vgg19', [0, 7, 21, 28]]
+epoch   1 | iteration   100 | Loss 0.674874 | Acc 73.44%
+Average Training Loss of Epoch 1: 1.059566 | Acc: 56.34%
+Average Validation Loss: 0.799786 | Acc: 69.82%
+epoch   2 | iteration   100 | Loss 0.625623 | Acc 68.75%
+Average Training Loss of Epoch 2: 0.772175 | Acc: 68.78%
+Average Validation Loss: 0.662058 | Acc: 75.27%
+epoch   3 | iteration   100 | Loss 0.700548 | Acc 68.75%
+Average Training Loss of Epoch 3: 0.665180 | Acc: 73.34%
+Average Validation Loss: 0.639350 | Acc: 74.20%
+epoch   4 | iteration   100 | Loss 0.448342 | Acc 85.94%
+Average Training Loss of Epoch 4: 0.603800 | Acc: 74.85%
+Average Validation Loss: 0.553165 | Acc: 77.04%
+epoch   5 | iteration   100 | Loss 0.548369 | Acc 68.75%
+Average Training Loss of Epoch 5: 0.549529 | Acc: 76.97%
+Average Validation Loss: 0.543120 | Acc: 77.51%
+epoch   6 | iteration   100 | Loss 0.499692 | Acc 76.56%
+Average Training Loss of Epoch 6: 0.506108 | Acc: 78.51%
+Average Validation Loss: 0.514502 | Acc: 79.76%
+epoch   7 | iteration   100 | Loss 0.334767 | Acc 81.25%
+Average Training Loss of Epoch 7: 0.474289 | Acc: 79.99%
+Average Validation Loss: 0.480033 | Acc: 80.83%
+epoch   8 | iteration   100 | Loss 0.342936 | Acc 89.06%
+Average Training Loss of Epoch 8: 0.444626 | Acc: 81.32%
+Average Validation Loss: 0.450113 | Acc: 81.66%
+epoch   9 | iteration   100 | Loss 0.363488 | Acc 81.25%
+Average Training Loss of Epoch 9: 0.418028 | Acc: 81.60%
+Average Validation Loss: 0.439726 | Acc: 82.25%
+epoch  10 | iteration   100 | Loss 0.313204 | Acc 89.06%
+Average Training Loss of Epoch 10: 0.388022 | Acc: 82.98%
+Average Validation Loss: 0.442131 | Acc: 81.18%
+epoch  11 | iteration   100 | Loss 0.426231 | Acc 85.94%
+Average Training Loss of Epoch 11: 0.364123 | Acc: 83.72%
+Average Validation Loss: 0.426302 | Acc: 82.96%
+epoch  12 | iteration   100 | Loss 0.341457 | Acc 82.81%
+Average Training Loss of Epoch 12: 0.342299 | Acc: 84.43%
+Average Validation Loss: 0.435505 | Acc: 81.54%
+epoch  13 | iteration   100 | Loss 0.299914 | Acc 89.06%
+Average Training Loss of Epoch 13: 0.323378 | Acc: 85.78%
+Average Validation Loss: 0.459583 | Acc: 80.71%
+epoch  14 | iteration   100 | Loss 0.275114 | Acc 89.06%
+Average Training Loss of Epoch 14: 0.298225 | Acc: 86.60%
+Average Validation Loss: 0.436748 | Acc: 82.13%
+epoch  15 | iteration   100 | Loss 0.183987 | Acc 95.31%
+Average Training Loss of Epoch 15: 0.279939 | Acc: 87.31%
+Average Validation Loss: 0.427052 | Acc: 82.84%
+epoch  16 | iteration   100 | Loss 0.345669 | Acc 82.81%
+Average Training Loss of Epoch 16: 0.256088 | Acc: 88.35%
+Average Validation Loss: 0.426144 | Acc: 83.20%
+epoch  17 | iteration   100 | Loss 0.216110 | Acc 95.31%
+Average Training Loss of Epoch 17: 0.240724 | Acc: 89.21%
+Average Validation Loss: 0.437460 | Acc: 81.78%
+epoch  18 | iteration   100 | Loss 0.190310 | Acc 93.75%
+Average Training Loss of Epoch 18: 0.226056 | Acc: 89.55%
+Average Validation Loss: 0.435870 | Acc: 82.13%
+epoch  19 | iteration   100 | Loss 0.230648 | Acc 87.50%
+Average Training Loss of Epoch 19: 0.213337 | Acc: 89.99%
+Average Validation Loss: 0.481761 | Acc: 79.64%
+epoch  20 | iteration   100 | Loss 0.165504 | Acc 92.19%
+Average Training Loss of Epoch 20: 0.204418 | Acc: 90.42%
+Average Validation Loss: 0.458987 | Acc: 81.18%
+Saving Model to visualize
+torch.Size([3, 518, 1034]) torch.Size([8, 1, 256, 256]) torch.Size([8, 1, 128, 128]) torch.Size([8, 1, 32, 32]) torch.Size([8, 1, 16, 16])
+Making the confusion matrix
+Logging the most and least confident images
+Evaluations logged
 

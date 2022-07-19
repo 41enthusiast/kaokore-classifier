@@ -8,10 +8,10 @@
 #SBATCH -t 1-0 # Set maximum walltime to 1 day
 #SBATCH --job-name=paintings-classifier # Name of the job
 #SBATCH --mem=16G # Request 16Gb of memory
-#SBATCH --nodelist=gpu11
+#SBATCH --nodelist=gpu12
 
-#SBATCH -o program_output4.txt
-#SBATCH -e whoopsies4.txt
+#SBATCH -o program_output1.txt
+#SBATCH -e whoopsies1.txt
 
 # Load the global bash profile
 source /etc/profile
@@ -25,4 +25,4 @@ source ../../mv_test1/bin/activate
 #model attention code:
 #nb_epochs=20
 #python cnn-with-attention.py --train --experiment-name kaokore --arch resnet --epochs $nb_epochs --save_path experiments/attention_models --visualize --batch_size 8 --num-workers 4
-wandb agent mridulav/kaokore-attention-sweeps/d3r85zj4
+wandb agent mridulav/kaokore-attention-sweeps/jl0few8d

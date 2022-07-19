@@ -14,6 +14,11 @@ parameters:
                 ../../fst-kaokore-cb-100pct,
                 ../../fst-kaokore-2-cb-100pct,
                 ../../kaokore_imagenet_style/status/train ]
+  model_subtypes:
+    values: [   [vgg11, [0, 3, 11, 18]],
+                [vgg13, [0, 7, 15, 22]],
+                [vgg19, [0, 7, 21, 28]]
+            ]
   weight_decay:
     values: [ 1e-3 ]
   dropout_p:

@@ -12,10 +12,17 @@ from utils import drop_connect
 VGG-16 with attention
 """
 class AttnVGG(nn.Module): #the vgg n densnet versions
-    def __init__(self, num_classes, output_layers, dropout_mode, p, attention=True, normalize_attn=True):
+    def __init__(self, num_classes, output_layers, dropout_mode, p, attention=True, normalize_attn=True, model_subtype = 'vgg16'):
         super(AttnVGG, self).__init__()
         # conv blocks
-        self.pretrained = models.vgg16(True).features
+        if model_subtype == 'vgg16':
+            self.pretrained = models.vgg16(True).features#30 layers
+        elif model_subtype == 'vgg11':
+            self.pretrained = models.vgg11(True).features#20 layers
+        elif model_subtype == 'vgg13':
+            self.pretrained = models.vgg13(True).features#24 layers
+        elif model_subtype == 'vgg19':
+            self.pretrained = models.vgg19(True).features#36 layers
 
         # Freeze Parameters
         for param in self.pretrained.parameters():
@@ -208,12 +215,18 @@ class AttnResnet(nn.Module): #the vgg n densnet versions
 
 # Test
 if __name__ == '__main__':
-    model = AttnVGG(num_classes=10, output_layers=[0, 7, 21, 28], dropout_mode='dropconnect', p=0.2)
+
+    model = AttnVGG(num_classes=10, output_layers=[0, 7, 15, 22], dropout_mode='dropout', p=0.2, model_subtype='vgg13')
     x = torch.randn(16,3,256,256)
     out, c0, c1, c2, c3 = model(x)
     print('VGG', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
 
-    model = AttnResnet(num_classes=10, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'], dropout_mode='dropout', p=0.2)
-    x = torch.randn(16, 3, 256, 256)
-    out, c0, c1, c2, c3 = model(x)
-    print('Resnet', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
+    #model = AttnVGG(num_classes=10, output_layers=[0, 7, 21, 28], dropout_mode='dropconnect', p=0.2)
+    #x = torch.randn(16,3,256,256)
+    #out, c0, c1, c2, c3 = model(x)
+    #print('VGG', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
+
+    #model = AttnResnet(num_classes=10, output_layers=['0', '4.1.4', '6.2.2', '7.1.2'], dropout_mode='dropout', p=0.2)
+    #x = torch.randn(16, 3, 256, 256)
+    #out, c0, c1, c2, c3 = model(x)
+    #print('Resnet', out.shape, c0.shape, c1.shape, c2.shape, c3.shape)
